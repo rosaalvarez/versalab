@@ -4,259 +4,1735 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jabones Artesanales: Crea y Vende desde Casa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
-  
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #fdf6f0 0%, #fff5eb 50%, #fef0e7 100%);
-    min-height: 100vh;
-    color: #3d2c2c;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background: linear-gradient(180deg, #fff 0%, transparent 100%);
-  }
-  
-  .hero-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #e8985a, #d4764e);
-    color: white;
-    padding: 6px 18px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-  }
-  
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    color: #2c1810;
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  
-  h1 span { color: #d4764e; }
-  
-  .subtitle {
-    font-size: 1.1rem;
-    color: #6b5050;
-    max-width: 550px;
-    margin: 0 auto 30px;
-    line-height: 1.6;
-  }
-  
-  .modules {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: #2c1810;
-    margin: 20px 0 8px;
-    padding-left: 4px;
-  }
-  
-  .card {
-    background: white;
-    border-radius: 16px;
-    padding: 24px 28px;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    box-shadow: 0 2px 12px rgba(180,120,80,0.08);
-    transition: all 0.25s ease;
-    border: 1px solid rgba(212,118,78,0.1);
-  }
-  
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 30px rgba(180,120,80,0.15);
-    border-color: rgba(212,118,78,0.3);
-  }
-  
-  .card-num {
-    width: 52px;
-    height: 52px;
-    min-width: 52px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-  }
-  
-  .m1 .card-num { background: linear-gradient(135deg, #e8985a, #d4764e); }
-  .m2 .card-num { background: linear-gradient(135deg, #7cb87a, #5a9e58); }
-  .m3 .card-num { background: linear-gradient(135deg, #e07bac, #c7577d); }
-  .m4 .card-num { background: linear-gradient(135deg, #5b9bd5, #4178b0); }
-  .m5 .card-num { background: linear-gradient(135deg, #9b7ed8, #7c5fbf); }
-  .bonus .card-num { background: linear-gradient(135deg, #f0c040, #e0a020); font-size: 1.3rem; }
-  
-  .card-text h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: #2c1810;
-  }
-  
-  .card-text p {
-    font-size: 0.88rem;
-    color: #8a7070;
-    line-height: 1.4;
-  }
-  
-  .card-arrow {
-    margin-left: auto;
-    font-size: 1.2rem;
-    color: #cbb8a8;
-    transition: transform 0.2s;
-  }
-  
-  .card:hover .card-arrow { transform: translateX(4px); color: #d4764e; }
-  
-  .footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #a08080;
-    font-size: 0.85rem;
-  }
-  
-  .footer a {
-    color: #d4764e;
-    text-decoration: none;
-  }
+/* ============ RESET & BASE ============ */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:70px;}
+body{font-family:'Open Sans',sans-serif;background:#FFF8F0;color:#3D2B1F;line-height:1.7;}
 
-  .cta-section {
-    text-align: center;
-    padding: 40px 20px;
-  }
+/* ============ PROGRESS BAR ============ */
+#progress-bar{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#E8743F,#D4A24E);z-index:10001;transition:width .15s;}
 
-  .cta-btn {
-    display: inline-block;
-    background: linear-gradient(135deg, #e8985a, #d4764e);
-    color: white;
-    padding: 16px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: 600;
-    box-shadow: 0 4px 20px rgba(212,118,78,0.35);
-    transition: all 0.3s;
-  }
+/* ============ HEADER ============ */
+.site-header{position:fixed;top:4px;left:0;right:0;height:56px;background:rgba(255,248,240,.97);backdrop-filter:blur(8px);border-bottom:1px solid #f0e0d0;display:flex;align-items:center;padding:0 20px;z-index:10000;}
+.site-header h1{font-family:'Playfair Display',serif;font-size:18px;color:#E8743F;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hamburger{display:none;background:none;border:none;font-size:24px;cursor:pointer;color:#E8743F;margin-right:12px;padding:4px 8px;}
 
-  .cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 28px rgba(212,118,78,0.45);
-  }
+/* ============ SIDEBAR ============ */
+.sidebar{position:fixed;top:60px;left:0;bottom:0;width:280px;background:#fff;border-right:1px solid #f0e0d0;overflow-y:auto;z-index:9999;padding:20px 0;transition:transform .3s;}
+.sidebar .nav-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#999;padding:12px 20px 6px;font-weight:700;}
+.sidebar a{display:block;padding:10px 20px;color:#3D2B1F;text-decoration:none;font-size:14px;border-left:3px solid transparent;transition:all .2s;}
+.sidebar a:hover,.sidebar a.active{background:#FFF3E0;border-left-color:#E8743F;color:#E8743F;}
+.sidebar a .nav-emoji{margin-right:8px;}
+.sidebar .bonus-divider{height:1px;background:#f0e0d0;margin:12px 20px;}
+
+/* ============ MAIN CONTENT ============ */
+.main{margin-left:280px;padding:80px 0 40px;}
+.section-wrap{max-width:860px;margin:0 auto;padding:0 30px;}
+
+/* ============ MODULE COVERS ============ */
+.module-cover{padding:60px 40px;text-align:center;color:#fff;margin-bottom:40px;border-radius:16px;}
+.module-cover .mod-num{font-size:13px;letter-spacing:3px;opacity:.85;margin-bottom:8px;}
+.module-cover h2{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:8px;}
+.module-cover p{font-size:17px;opacity:.9;}
+.cover-m1{background:linear-gradient(135deg,#E8743F,#D4A24E);}
+.cover-m2{background:linear-gradient(135deg,#5A7247,#8BC34A);}
+.cover-m3{background:linear-gradient(135deg,#E8743F,#FF9800,#D4A24E);}
+.cover-m4{background:linear-gradient(135deg,#1B5E20,#4CAF50);}
+.cover-m5{background:linear-gradient(135deg,#6A1B9A,#AB47BC);}
+.cover-b1{background:linear-gradient(135deg,#D4A24E,#E8743F);}
+.cover-b2{background:linear-gradient(135deg,#1B5E20,#4CAF50);}
+.cover-b3{background:linear-gradient(135deg,#5A7247,#8BC34A);}
+
+/* ============ TYPOGRAPHY ============ */
+.section-wrap h2{font-family:'Playfair Display',serif;color:#E8743F;font-size:26px;margin:40px 0 18px;border-bottom:3px solid #F5DEB3;padding-bottom:10px;}
+.section-wrap h3{color:#5A7247;font-size:20px;margin:25px 0 12px;}
+.section-wrap h4{color:#E8743F;font-size:17px;margin:18px 0 8px;}
+.section-wrap p{margin-bottom:14px;font-size:15.5px;}
+.section-wrap ul,.section-wrap ol{margin:10px 0 20px 25px;}
+.section-wrap li{margin-bottom:7px;}
+
+/* ============ BOXES ============ */
+.highlight-box{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);border-left:5px solid #E8743F;padding:22px 26px;border-radius:0 12px 12px 0;margin:22px 0;}
+.green-box{background:linear-gradient(135deg,#E8F5E9,#F1F8E9);border-left:5px solid #5A7247;padding:22px 26px;border-radius:0 12px 12px 0;margin:22px 0;}
+.purple-box{background:linear-gradient(135deg,#F3E5F5,#EDE7F6);border-left:5px solid #6A1B9A;padding:22px 26px;border-radius:0 12px 12px 0;margin:22px 0;}
+.tip{background:#FFF8E1;border:2px dashed #FFB74D;padding:18px;border-radius:12px;margin:18px 0;}
+.warning{background:#FBE9E7;border:2px solid #E57373;padding:18px;border-radius:12px;margin:18px 0;}
+.tip-inline{background:#FFFDE7;border-left:3px solid #FFB74D;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px;}
+.error-box{background:#FBE9E7;border-left:3px solid #E57373;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px;}
+.variation-box{background:#E8F5E9;border-left:3px solid #66BB6A;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0;font-size:14px;}
+
+/* ============ TABLES ============ */
+table{width:100%;border-collapse:collapse;margin:18px 0;border-radius:12px;overflow:hidden;}
+th{background:#E8743F;color:#fff;padding:12px 16px;text-align:left;font-size:13px;}
+td{padding:10px 16px;border-bottom:1px solid #F5DEB3;font-size:14px;}
+tr:nth-child(even){background:#FFF8F0;}
+tr:hover{background:#FFF3E0;}
+.green-th th{background:#5A7247;}
+.dark-th th{background:#1B5E20;}
+.purple-th th{background:#6A1B9A;}
+.gold-th th{background:#D4A24E;}
+
+/* ============ STAT GRID ============ */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0;}
+.stat-card{background:#fff;border-radius:16px;padding:26px 18px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.08);}
+.stat-card .number{font-family:'Playfair Display',serif;font-size:34px;color:#E8743F;}
+.stat-card .label{font-size:13px;color:#666;margin-top:6px;}
+
+/* ============ FOUR GRID ============ */
+.four-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:24px 0;}
+.four-grid .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 3px 12px rgba(0,0,0,.06);text-align:center;}
+.four-grid .card .icon{font-size:38px;margin-bottom:8px;}
+
+/* ============ STORY CARDS ============ */
+.story-card{background:#fff;border-radius:16px;padding:24px 28px;margin:18px 0;box-shadow:0 4px 15px rgba(0,0,0,.08);border-left:5px solid #D4A24E;}
+.story-card .name{font-family:'Playfair Display',serif;font-size:19px;color:#D4A24E;margin-bottom:4px;}
+.story-card .location{font-size:13px;color:#999;margin-bottom:10px;}
+.quote{font-style:italic;color:#666;border-left:3px solid #E8743F;padding-left:15px;margin:14px 0;}
+
+/* ============ RECIPE CARDS ============ */
+.recipe-card{background:#fff;border-radius:16px;padding:28px;margin:28px 0;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:5px solid #E8743F;}
+.recipe-card.terapeutico{border-top-color:#5A7247;}
+.recipe-card.premium{border-top-color:#D4A24E;}
+.recipe-card.creativo{border-top-color:#6A1B9A;}
+.recipe-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;flex-wrap:wrap;gap:8px;}
+.recipe-title{font-family:'Playfair Display',serif;font-size:22px;color:#3D2B1F;}
+.recipe-badges{display:flex;gap:6px;flex-wrap:wrap;}
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;}
+.badge-easy{background:#E8F5E9;color:#2E7D32;}
+.badge-medium{background:#FFF3E0;color:#E65100;}
+.badge-time{background:#E3F2FD;color:#1565C0;}
+.badge-cost{background:#FCE4EC;color:#C62828;}
+.badge-price{background:#F3E5F5;color:#6A1B9A;}
+.ingredients{background:#FFF8F0;padding:18px;border-radius:12px;margin:14px 0;}
+.ingredients h4{color:#E8743F;margin-bottom:8px;}
+.steps h4{color:#5A7247;margin-bottom:8px;}
+
+/* ============ SECTION INTROS ============ */
+.section-intro{background:linear-gradient(135deg,#FFF3E0,#FFFDE7);padding:24px;border-radius:12px;margin:28px 0;text-align:center;}
+.section-intro.green{background:linear-gradient(135deg,#E8F5E9,#F1F8E9);}
+.section-intro.gold{background:linear-gradient(135deg,#FFF8E1,#FFF3E0);}
+.section-intro.purple{background:linear-gradient(135deg,#F3E5F5,#EDE7F6);}
+.section-intro h2{border:none!important;margin:0!important;padding:0!important;}
+
+/* ============ KIT CARDS ============ */
+.kit-card{background:#fff;border-radius:16px;padding:28px;margin:24px 0;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:5px solid #5A7247;}
+.kit-card.intermedio{border-top-color:#E8743F;}
+.kit-card.avanzado{border-top-color:#D4A24E;}
+.kit-price{font-family:'Playfair Display',serif;font-size:34px;color:#5A7247;text-align:center;margin:8px 0;}
+.kit-card.intermedio .kit-price{color:#E8743F;}
+.kit-card.avanzado .kit-price{color:#D4A24E;}
+
+/* ============ CHANNEL CARDS ============ */
+.channel-card{background:#fff;border-radius:16px;padding:28px;margin:24px 0;box-shadow:0 4px 20px rgba(0,0,0,.08);border-top:5px solid #6A1B9A;}
+.hashtags{background:#F3E5F5;padding:14px;border-radius:8px;font-size:13px;word-spacing:4px;color:#6A1B9A;}
+
+/* ============ STYLE CARDS (EMPAQUE) ============ */
+.style-card{background:#fff;border-radius:14px;padding:24px;margin:18px 0;box-shadow:0 4px 15px rgba(0,0,0,.06);border-left:5px solid #D4A24E;}
+.materials{background:#FFF8F0;padding:14px 18px;border-radius:10px;margin:10px 0;}
+
+/* ============ LABELS GRID ============ */
+.labels-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:28px 0;}
+.label{border:2px solid #E0E0E0;border-radius:12px;padding:24px;text-align:center;background:#fff;}
+.label-style-1{border-color:#D4A24E;background:linear-gradient(135deg,#FFFDE7,#FFF8E1);}
+.label-style-1 .brand{font-family:'Dancing Script',cursive;font-size:22px;color:#D4A24E;}
+.label-style-1 .product{font-family:'Playfair Display',serif;font-size:16px;color:#3D2B1F;margin:8px 0;}
+.label-style-1 .details{font-size:10px;color:#999;}
+.label-style-2{border-color:#5A7247;background:#FAFFF7;}
+.label-style-2 .brand{font-family:'Open Sans',sans-serif;font-weight:700;font-size:18px;color:#5A7247;letter-spacing:3px;text-transform:uppercase;}
+.label-style-2 .product{font-size:14px;color:#666;margin:8px 0;}
+.label-style-2 .line{width:40px;height:2px;background:#5A7247;margin:8px auto;}
+.label-style-3{border-color:#E8743F;background:#fff;border-radius:50%;width:180px;height:180px;display:flex;flex-direction:column;justify-content:center;margin:0 auto;}
+.label-style-3 .brand{font-family:'Playfair Display',serif;font-size:14px;color:#E8743F;}
+.label-style-3 .product{font-size:12px;margin:5px 0;}
+.label-style-4{border:none;background:#3D2B1F;color:#fff;border-radius:8px;}
+.label-style-4 .brand{font-family:'Playfair Display',serif;font-size:20px;color:#D4A24E;}
+.label-style-4 .product{font-size:13px;color:#CCC;margin:8px 0;}
+.label-style-4 .details{font-size:10px;color:#888;}
+.full-label{border:1px dashed #CCC;padding:28px;margin:24px 0;background:#fff;border-radius:12px;}
+
+/* ============ CALCULADORA ============ */
+.editable{background:#FFFDE7;border:2px solid #FFD54F;}
+.formula-row{background:#E8F5E9!important;font-weight:700;}
+.instructions{background:#FFF3E0;padding:18px;border-radius:10px;margin:18px 0;border-left:4px solid #E8743F;}
+
+/* ============ MONEY BOX ============ */
+.money-box{background:linear-gradient(135deg,#FFF8E1,#FFFDE7);border:3px solid #FFD54F;padding:28px;border-radius:16px;margin:24px 0;text-align:center;}
+.money-box .big-number{font-family:'Playfair Display',serif;font-size:44px;color:#1B5E20;}
+
+/* ============ FORMULA ============ */
+.formula{background:#fff;border:2px solid #E8743F;padding:18px 28px;border-radius:12px;margin:18px 0;text-align:center;font-size:20px;font-weight:700;color:#E8743F;}
+
+/* ============ TIMELINE ============ */
+.timeline-item{background:#fff;border-radius:12px;padding:18px 24px;margin:14px 0;box-shadow:0 3px 12px rgba(0,0,0,.06);border-left:5px solid #4CAF50;}
+.timeline-item.investment{border-left-color:#E57373;}
+.timeline-item.growth{border-left-color:#FFB74D;}
+.timeline-item.stable{border-left-color:#1B5E20;}
+
+/* ============ PROCESS BOX ============ */
+.process-box{background:#E8F5E9;padding:24px;border-radius:12px;margin:28px 0;border:2px solid #A5D6A7;}
+
+/* ============ BACK TO TOP ============ */
+#back-top{position:fixed;bottom:30px;right:30px;width:48px;height:48px;border-radius:50%;background:#E8743F;color:#fff;border:none;font-size:22px;cursor:pointer;box-shadow:0 4px 15px rgba(232,116,63,.4);opacity:0;transform:translateY(20px);transition:all .3s;z-index:9999;display:flex;align-items:center;justify-content:center;}
+#back-top.show{opacity:1;transform:translateY(0);}
+#back-top:hover{background:#d4632e;transform:translateY(-2px);}
+
+/* ============ FOOTER ============ */
+.site-footer{text-align:center;padding:40px 30px;color:#999;font-size:13px;border-top:2px solid #F5DEB3;margin-top:60px;background:#fff;}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:900px){
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .labels-grid{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .hamburger{display:block;}
+  .sidebar{transform:translateX(-100%);}
+  .sidebar.open{transform:translateX(0);box-shadow:4px 0 20px rgba(0,0,0,.15);}
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:9998;}
+  .sidebar-overlay.show{display:block;}
+  .main{margin-left:0;}
+  .stat-grid{grid-template-columns:1fr 1fr;}
+  .four-grid{grid-template-columns:1fr;}
+  .module-cover h2{font-size:26px;}
+  .module-cover{padding:40px 24px;}
+  .section-wrap{padding:0 18px;}
+  table{font-size:13px;}
+  th,td{padding:8px 10px;}
+}
+@media(max-width:480px){
+  .stat-grid{grid-template-columns:1fr;}
+  .site-header h1{font-size:15px;}
+  .recipe-header{flex-direction:column;}
+}
 </style>
 </head>
 <body>
 
-<div class="hero">
-  <div class="hero-badge">Curso Completo</div>
-  <h1>Jabones Artesanales:<br><span>Crea y Vende desde Casa</span></h1>
-  <p class="subtitle">Aprende paso a paso a crear jabones artesanales hermosos y monta tu negocio desde casa con una inversión mínima.</p>
+<!-- PROGRESS BAR -->
+<div id="progress-bar" style="width:0%"></div>
+
+<!-- HEADER -->
+<header class="site-header">
+  <button class="hamburger" onclick="toggleSidebar()" aria-label="Menú">☰</button>
+  <h1>🧼 Jabones Artesanales: Crea y Vende desde Casa</h1>
+</header>
+
+<!-- SIDEBAR OVERLAY (mobile) -->
+<div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
+<nav class="sidebar" id="sidebar">
+  <div class="nav-label">Módulos</div>
+  <a href="#modulo-1"><span class="nav-emoji">📖</span> Módulo 1: Por Qué Jabones</a>
+  <a href="#modulo-2"><span class="nav-emoji">🛒</span> Módulo 2: Materiales</a>
+  <a href="#modulo-3"><span class="nav-emoji">🧪</span> Módulo 3: 20 Recetas</a>
+  <a href="#modulo-4"><span class="nav-emoji">💰</span> Módulo 4: Costos y Precios</a>
+  <a href="#modulo-5"><span class="nav-emoji">📱</span> Módulo 5: Cómo Vender</a>
+  <div class="bonus-divider"></div>
+  <div class="nav-label">Bonos</div>
+  <a href="#bono-1"><span class="nav-emoji">🎁</span> Guía de Empaque</a>
+  <a href="#bono-2"><span class="nav-emoji">🧮</span> Calculadora de Costos</a>
+  <a href="#bono-3"><span class="nav-emoji">🏷️</span> Plantillas de Etiquetas</a>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main">
+
+<!-- ===================== MÓDULO 1 ===================== -->
+<section id="modulo-1">
+<div class="section-wrap">
+<div class="module-cover cover-m1">
+  <div class="mod-num">MÓDULO 1</div>
+  <h2>🧼 Por Qué Jabones Artesanales</h2>
+  <p>Un negocio rentable que puedes empezar desde tu cocina</p>
 </div>
 
-<div class="modules">
-  <div class="section-title">📚 Módulos del Curso</div>
-  
-  <a href="modulo-1-por-que-jabones.html" class="card m1">
-    <div class="card-num">1</div>
-    <div class="card-text">
-      <h3>¿Por Qué Jabones Artesanales?</h3>
-      <p>El mercado, la oportunidad y por qué este negocio funciona</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <a href="modulo-2-materiales-proveedores.html" class="card m2">
-    <div class="card-num">2</div>
-    <div class="card-text">
-      <h3>Materiales y Proveedores</h3>
-      <p>Todo lo que necesitas, dónde comprarlo y 3 kits según tu presupuesto</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <a href="modulo-3-recetas.html" class="card m3">
-    <div class="card-num">3</div>
-    <div class="card-text">
-      <h3>20 Recetas Paso a Paso</h3>
-      <p>De básico a avanzado — jabones que la gente quiere comprar</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <a href="modulo-4-costos-precios.html" class="card m4">
-    <div class="card-num">4</div>
-    <div class="card-text">
-      <h3>Costos, Precios y Plan de Negocio</h3>
-      <p>Cuánto invertir, cuánto cobrar y tu plan mes a mes</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <a href="modulo-5-como-vender.html" class="card m5">
-    <div class="card-num">5</div>
-    <div class="card-text">
-      <h3>Cómo Vender</h3>
-      <p>WhatsApp, Instagram, ferias y estrategias que funcionan</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <div class="section-title">🎁 Bonos Incluidos</div>
-  
-  <a href="bonos/calculadora-costos.html" class="card bonus">
-    <div class="card-num">🧮</div>
-    <div class="card-text">
-      <h3>Calculadora de Costos</h3>
-      <p>Calcula el costo exacto de cada jabón al instante</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <a href="bonos/guia-empaque-profesional.html" class="card bonus">
-    <div class="card-num">📦</div>
-    <div class="card-text">
-      <h3>Guía de Empaque Profesional</h3>
-      <p>Presenta tus jabones como producto premium</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
-  
-  <a href="bonos/plantilla-etiquetas.html" class="card bonus">
-    <div class="card-num">🏷️</div>
-    <div class="card-text">
-      <h3>Plantillas de Etiquetas</h3>
-      <p>Etiquetas listas para imprimir y personalizar</p>
-    </div>
-    <div class="card-arrow">→</div>
-  </a>
+<h2>🌟 ¿Por qué jabones artesanales?</h2>
+
+<p>El mercado de jabones artesanales y cosmética natural está en pleno crecimiento. Cada vez más personas buscan alternativas naturales a los productos industriales llenos de químicos. Y aquí es donde TÚ entras.</p>
+
+<p>No estamos hablando de una moda pasajera. El movimiento hacia lo natural, lo artesanal y lo consciente es una <strong>megatendencia global</strong> que lleva más de una década creciendo y no muestra señales de detenerse. De hecho, la pandemia de 2020 aceleró esta tendencia: la gente se dio cuenta de que quiere saber QUÉ se pone en la piel, quiere apoyar negocios locales y quiere productos hechos con amor, no en fábricas.</p>
+
+<div class="highlight-box">
+<p><strong>📊 Datos de mercado que debes conocer:</strong></p>
+<ul>
+<li>El mercado global de jabones artesanales alcanzó los <strong>$5.5 mil millones de dólares en 2023</strong> y se proyecta un crecimiento del 8-10% anual hasta 2030 (Grand View Research).</li>
+<li>El mercado de cosmética natural y orgánica superó los <strong>$30 mil millones en 2023</strong> (Statista).</li>
+<li>En Latinoamérica, el mercado de productos naturales de cuidado personal creció un <strong>12% anual</strong> entre 2020-2024.</li>
+<li>El <strong>73% de los millennials</strong> prefieren comprar productos de cuidado personal naturales o con ingredientes reconocibles (Nielsen).</li>
+<li>Las búsquedas de "jabón artesanal" en Google han crecido un <strong>340% en los últimos 5 años</strong> en América Latina.</li>
+</ul>
 </div>
 
-<div class="footer">
-  <p>© 2026 Jabones Artesanales — Un curso de <a href="https://versalab.pro">VersaLab</a></p>
+<h3>📈 La tendencia del "consumo consciente" en números</h3>
+
+<div class="stat-grid">
+<div class="stat-card">
+<div class="number">73%</div>
+<div class="label">de consumidores prefieren productos naturales para su piel</div>
+</div>
+<div class="stat-card">
+<div class="number">65%</div>
+<div class="label">pagarían MÁS por un producto artesanal vs industrial</div>
+</div>
+<div class="stat-card">
+<div class="number">8-10%</div>
+<div class="label">crecimiento anual del mercado de jabones artesanales</div>
+</div>
 </div>
 
+<p>¿Qué significa esto para ti? Que hay una <strong>demanda creciente</strong> de personas que están BUSCANDO exactamente lo que tú vas a ofrecer. No tienes que convencer a nadie de que lo artesanal es mejor — el mercado ya lo sabe. Solo tienes que estar ahí para venderles.</p>
+
+<h2>🏠 ¿Qué hace especial a este negocio?</h2>
+
+<p>Hay muchos negocios que puedes empezar desde casa. Pero el negocio de jabones artesanales tiene una combinación única de ventajas que lo hacen ideal para emprendedoras, especialmente en Latinoamérica:</p>
+
+<div class="four-grid">
+<div class="card"><div class="icon">💰</div><strong>Inversión Mínima</strong><p style="font-size:14px;margin-top:8px;">Puedes empezar con $30-50 USD. Hay pocos negocios con una barrera de entrada tan baja.</p></div>
+<div class="card"><div class="icon">🏡</div><strong>Sin Local Comercial</strong><p style="font-size:14px;margin-top:8px;">Tu cocina o un rincón de tu casa es tu taller. Sin renta, sin gastos fijos.</p></div>
+<div class="card"><div class="icon">👩‍🍳</div><strong>Sin Empleados</strong><p style="font-size:14px;margin-top:8px;">Tú sola puedes producir 20-50 jabones al día. Solo necesitas tus manos y creatividad.</p></div>
+<div class="card"><div class="icon">📈</div><strong>Márgenes Altísimos</strong><p style="font-size:14px;margin-top:8px;">Un jabón que cuesta $0.80-1.50 lo vendes a $3-8 USD. Margen del 200-400%.</p></div>
+<div class="card"><div class="icon">🔄</div><strong>Producto Recurrente</strong><p style="font-size:14px;margin-top:8px;">El jabón se CONSUME. Tus clientes vuelven a comprarte cada 1-2 meses.</p></div>
+<div class="card"><div class="icon">🚀</div><strong>Escalable</strong><p style="font-size:14px;margin-top:8px;">Puedes crecer a tu ritmo: 5 jabones/día hoy, 50 jabones/día el próximo año.</p></div>
+<div class="card"><div class="icon">📦</div><strong>No Perecedero</strong><p style="font-size:14px;margin-top:8px;">Los jabones duran 1-2 años. No pierdes producto. No hay urgencia de vender "hoy".</p></div>
+<div class="card"><div class="icon">🎨</div><strong>Creativo y Divertido</strong><p style="font-size:14px;margin-top:8px;">Cada jabón es una obra de arte. Mezclas colores, aromas, texturas. ¡Es terapéutico!</p></div>
+</div>
+
+<h2>💰 Los Números Reales</h2>
+
+<p>Hablemos de lo que importa: <strong>¿cuánto dinero puedes ganar?</strong></p>
+
+<div class="stat-grid">
+<div class="stat-card"><div class="number">$1.20</div><div class="label">Costo promedio por jabón (incluido empaque)</div></div>
+<div class="stat-card"><div class="number">$5.00</div><div class="label">Precio de venta promedio</div></div>
+<div class="stat-card"><div class="number">317%</div><div class="label">Margen de ganancia promedio</div></div>
+</div>
+
+<h3>📋 Tabla de márgenes reales por tipo de jabón</h3>
+<table>
+<tr><th>Tipo de jabón</th><th>Costo</th><th>Precio venta</th><th>Ganancia</th><th>Margen</th></tr>
+<tr><td>🧼 Jabón básico (glicerina/avena)</td><td>$0.70-$1.00</td><td>$3.00-$4.00</td><td>$2.30-$3.00</td><td>~300%</td></tr>
+<tr><td>🌿 Jabón terapéutico</td><td>$1.00-$1.50</td><td>$4.50-$6.00</td><td>$3.50-$4.50</td><td>~350%</td></tr>
+<tr><td>✨ Jabón premium/regalo</td><td>$1.50-$2.50</td><td>$6.00-$10.00</td><td>$4.50-$7.50</td><td>~300%</td></tr>
+<tr><td>🎁 Kit regalo (3 jabones)</td><td>$3.50-$5.00</td><td>$15.00-$25.00</td><td>$11.50-$20.00</td><td>~350%</td></tr>
+<tr><td>🏨 Jabones hoteles (lote 50)</td><td>$0.50-$0.80 c/u</td><td>$2.00-$3.00 c/u</td><td>$75-$110/lote</td><td>~275%</td></tr>
+<tr><td>💒 Recuerdos eventos (lote 30)</td><td>$0.60-$1.00 c/u</td><td>$2.50-$4.00 c/u</td><td>$45-$90/lote</td><td>~300%</td></tr>
+</table>
+
+<h2>💵 Inversión Inicial: Lo Mínimo para Empezar</h2>
+
+<div class="green-box">
+<h3 style="color:#5A7247;margin-top:0;">🟢 Kit de inicio por ~$35-50 USD:</h3>
+<ul>
+<li>🧱 Base de glicerina (1 kg): $5-8 USD</li>
+<li>🌿 Aceites esenciales (2-3 básicos): $8-12 USD</li>
+<li>🎨 Colorantes naturales: $3-5 USD</li>
+<li>🔲 Moldes de silicona (2-3): $6-10 USD</li>
+<li>🌾 Aditivos naturales (avena, miel, café): $3-5 USD</li>
+<li>📦 Empaque básico: $5-8 USD</li>
+<li>🔧 Utensilios: $3-5 USD</li>
+</ul>
+<p><strong>💡 Con esta inversión puedes hacer tus primeros 15-25 jabones y recuperar la inversión con las primeras 10 ventas.</strong></p>
+</div>
+
+<h3>📊 Comparación con otros negocios:</h3>
+<table>
+<tr><th>Negocio</th><th>Inversión inicial</th><th>Tiempo recuperar</th></tr>
+<tr><td>🧼 Jabones artesanales</td><td style="color:#2E7D32;font-weight:700;">$35-50 USD</td><td style="color:#2E7D32;font-weight:700;">1-2 semanas</td></tr>
+<tr><td>🍰 Repostería</td><td>$80-200 USD</td><td>2-4 semanas</td></tr>
+<tr><td>👗 Venta de ropa</td><td>$200-500 USD</td><td>1-3 meses</td></tr>
+<tr><td>💅 Uñas/manicure</td><td>$150-300 USD</td><td>1-2 meses</td></tr>
+<tr><td>🍔 Comida preparada</td><td>$100-300 USD</td><td>2-4 semanas</td></tr>
+</table>
+
+<h2>📈 ¿Cuánto Puedes Ganar Realmente?</h2>
+
+<h3>🟢 Escenario 1: Ingreso Extra (1-2 horas/día)</h3>
+<div class="highlight-box">
+<p>Vendes <strong>5 jabones al día</strong> a $4.50 promedio</p>
+<p>= $22.50/día × 25 días = <strong>$562 USD/mes</strong></p>
+<p>Menos costos (~$150): <strong>Ganancia neta ~$412 USD/mes</strong></p>
+</div>
+
+<h3>🟡 Escenario 2: Negocio Serio (4-6 horas/día)</h3>
+<div class="highlight-box">
+<p>Vendes <strong>15 jabones al día</strong> a $5.00 promedio</p>
+<p>= $75/día × 25 días = <strong>$1,875 USD/mes</strong></p>
+<p>Menos costos (~$450): <strong>Ganancia neta ~$1,425 USD/mes</strong></p>
+</div>
+
+<h3>🔴 Escenario 3: Marca Establecida</h3>
+<div class="green-box">
+<p>Vendes <strong>20 jabones + 5 kits regalo al día</strong> + pedidos mayoristas</p>
+<p>= ($100 + $100)/día × 25 días = <strong>$5,000 USD/mes</strong></p>
+<p>Menos costos (~$1,500): <strong>Ganancia neta ~$3,500 USD/mes</strong></p>
+</div>
+
+<h3>📊 ¿Cuánto es eso en moneda local?</h3>
+<table>
+<tr><th>Escenario</th><th>🇺🇸 USD</th><th>🇨🇴 COP</th><th>🇲🇽 MXN</th><th>🇦🇷 ARS</th><th>🇵🇪 PEN</th></tr>
+<tr><td>🟢 Extra</td><td>$412</td><td>$1,700,000</td><td>$8,200</td><td>$370,000</td><td>S/1,540</td></tr>
+<tr><td>🟡 Serio</td><td>$1,425</td><td>$5,900,000</td><td>$28,500</td><td>$1,280,000</td><td>S/5,340</td></tr>
+<tr><td>🔴 Marca</td><td>$3,500</td><td>$14,500,000</td><td>$70,000</td><td>$3,150,000</td><td>S/13,100</td></tr>
+</table>
+<p style="font-size:12px;color:#999;">*Tipos de cambio aproximados a febrero 2026.</p>
+
+<h2>🌟 Historias Reales de Emprendedoras</h2>
+
+<div class="story-card">
+<div class="name">🇲🇽 María Fernanda — "Jabones de la Abuela"</div>
+<div class="location">Guadalajara, México · Empezó en 2019</div>
+<p>María Fernanda era ama de casa con dos hijos. Empezó haciendo jabones como hobby con $40 USD de inversión. Hoy vende en 3 tiendas naturistas y genera <strong>más de $25,000 MXN/mes (~$1,250 USD)</strong>.</p>
+<div class="quote">"Nunca pensé que algo que me relaja y me divierte me iba a dar independencia financiera."</div>
+</div>
+
+<div class="story-card">
+<div class="name">🇨🇴 Valentina — "Saponé Cosmética Natural"</div>
+<div class="location">Medellín, Colombia · Empezó en 2020</div>
+<p>Valentina perdió su trabajo durante la pandemia. Con $150,000 COP (~$35 USD) empezó a vender por Instagram y WhatsApp. Hoy factura <strong>$4,000,000 COP/mes (~$950 USD)</strong>.</p>
+<div class="quote">"Lo mejor de este negocio es que mis clientes vuelven solos."</div>
+</div>
+
+<div class="story-card">
+<div class="name">🇦🇷 Luciana — "Alma Jabones"</div>
+<div class="location">Buenos Aires, Argentina · Empezó en 2021</div>
+<p>Luciana es contadora y empezó los jabones como "escape creativo". Su nicho: jabones premium para regalo. Genera <strong>$500,000+ ARS/mes solo en ferias</strong>.</p>
+<div class="quote">"En las ferias la gente se acerca sola por el aroma. Mi mejor vendedor es el de café."</div>
+</div>
+
+<div class="story-card">
+<div class="name">🇵🇪 Rosa — "Herbalia Perú"</div>
+<div class="location">Lima, Perú · Empezó en 2018</div>
+<p>Rosa comenzó vendiendo en el mercado de su barrio. Hoy suministra jabones a <strong>5 hoteles boutique y 8 spas</strong>. Factura <strong>más de S/8,000/mes (~$2,100 USD)</strong>.</p>
+<div class="quote">"El negocio mayorista fue la clave. Un hotel me compra 200 jabones al mes."</div>
+</div>
+
+<div class="tip">
+<p>💡 <strong>¿Qué tienen en común?</strong> Todas empezaron con menos de $50 USD, ninguna tenía experiencia previa, todas empezaron vendiendo a familia y amigos, y todas crecieron gradualmente.</p>
+</div>
+
+<h2>⚡ Comparativa: Jabones vs Otros Negocios desde Casa</h2>
+
+<table>
+<tr><th>Característica</th><th>🧼 Jabones</th><th>👗 Ropa</th><th>🍰 Repostería</th><th>💅 Uñas</th></tr>
+<tr><td>Inversión inicial</td><td style="background:#E8F5E9;">✅ $30-50</td><td>❌ $200-500</td><td>⚠️ $80-200</td><td>⚠️ $150-300</td></tr>
+<tr><td>Producto perecedero</td><td style="background:#E8F5E9;">✅ No (1-2 años)</td><td>✅ No</td><td>❌ Sí (días)</td><td>N/A</td></tr>
+<tr><td>Margen de ganancia</td><td style="background:#E8F5E9;">✅ 200-400%</td><td>⚠️ 50-100%</td><td>⚠️ 80-150%</td><td>✅ 200-300%</td></tr>
+<tr><td>Recompra del cliente</td><td style="background:#E8F5E9;">✅ Cada 1-2 meses</td><td>❌ Esporádica</td><td>✅ Frecuente</td><td>✅ Cada 2-3 sem</td></tr>
+<tr><td>Flexibilidad horaria</td><td style="background:#E8F5E9;">✅ Total</td><td>✅ Total</td><td>⚠️ Pedidos con fecha</td><td>❌ Citas fijas</td></tr>
+<tr><td>Competencia local</td><td style="background:#E8F5E9;">✅ Baja-Media</td><td>❌ Altísima</td><td>❌ Alta</td><td>❌ Alta</td></tr>
+</table>
+
+<h2>🧠 La Psicología detrás del Jabón Artesanal</h2>
+
+<div class="highlight-box">
+<h4>1. 🌿 La "revolución clean beauty"</h4>
+<p>Los consumidores buscan alternativas "limpias" que no dañen su piel ni el medio ambiente.</p>
+</div>
+<div class="highlight-box">
+<h4>2. 🎁 El jabón como "lujo accesible"</h4>
+<p>Un jabón artesanal de $5-8 es un lujo que cualquiera se puede dar. Perfecto como regalo.</p>
+</div>
+<div class="highlight-box">
+<h4>3. 💜 La conexión emocional</h4>
+<p>Tú NO vendes jabón — vendes experiencia, aroma, autocuidado y una historia.</p>
+</div>
+<div class="highlight-box">
+<h4>4. 📸 El "factor Instagram"</h4>
+<p>Los jabones artesanales son FOTOGÉNICOS. Tu producto se promociona solo cuando alguien lo pone en sus stories.</p>
+</div>
+
+<h2>🎯 ¿Para Quién es Este Negocio?</h2>
+<ul>
+<li>✅ Mamás que quieren generar ingresos sin salir de casa</li>
+<li>✅ Quienes buscan un negocio con inversión mínima y buen margen</li>
+<li>✅ Personas creativas que disfrutan hacer cosas con las manos</li>
+<li>✅ Quienes quieren un ingreso extra sin dejar su trabajo</li>
+<li>✅ Quienes buscan independencia financiera paso a paso</li>
+<li>✅ Amantes de productos naturales y autocuidado</li>
+<li>✅ Estudiantes que necesitan dinero con horarios flexibles</li>
+</ul>
+
+<div class="warning">
+<p>⚠️ <strong>Honestidad total:</strong> Este negocio NO es para ti si esperas hacerte rica de la noche a la mañana. Como todo negocio real, requiere trabajo, constancia y paciencia.</p>
+</div>
+
+<h2>🗓️ Línea de Tiempo Realista</h2>
+<table>
+<tr><th>Momento</th><th>Qué pasa</th><th>Ingresos</th></tr>
+<tr><td><strong>Semana 1</strong></td><td>Compras materiales, primeros jabones</td><td>$0 (inversión)</td></tr>
+<tr><td><strong>Semana 2-3</strong></td><td>Primeras ventas a familia y amigos</td><td>$20-50</td></tr>
+<tr><td><strong>Mes 1</strong></td><td>Recuperas inversión. 10-15 clientes</td><td>$80-150</td></tr>
+<tr><td><strong>Mes 2-3</strong></td><td>Boca a boca. Primeros pedidos por Instagram</td><td>$200-400</td></tr>
+<tr><td><strong>Mes 4-6</strong></td><td>Clientes recurrentes. Tiendas en consignación</td><td>$400-800</td></tr>
+<tr><td><strong>Mes 6-12</strong></td><td>Negocio estable. Marca definida</td><td>$800-1,500+</td></tr>
+</table>
+
+<h2>🤔 Preguntas Frecuentes</h2>
+
+<div class="highlight-box">
+<h4>❓ "¿Y si no soy creativa?"</h4>
+<p>Las recetas son paso a paso — como seguir una receta de cocina. Si puedes calentar algo en microondas, puedes hacer jabones.</p>
+</div>
+<div class="highlight-box">
+<h4>❓ "¿Y si nadie me compra?"</h4>
+<p>Tus primeros 10 clientes ya están en tu WhatsApp. Solo necesitas mostrarles lo que haces.</p>
+</div>
+<div class="highlight-box">
+<h4>❓ "¿No hay mucha competencia?"</h4>
+<p>La competencia es MUCHO menor que en ropa, comida o belleza. Además, cada jabonera tiene su estilo único.</p>
+</div>
+<div class="highlight-box">
+<h4>❓ "¿Cuánto tiempo necesito dedicarle?"</h4>
+<p>Hacer un lote de 10 jabones toma ~1 hora de trabajo activo + 3-4 horas de secado (donde no haces nada).</p>
+</div>
+
+<h2>🚀 Lo Que Vas a Aprender en Este Curso</h2>
+<div class="green-box">
+<ol style="margin-left:20px;">
+<li><strong>Módulo 1</strong> (este): Por qué este negocio es para ti ✅</li>
+<li><strong>Módulo 2:</strong> Todos los materiales y dónde comprarlos</li>
+<li><strong>Módulo 3:</strong> 20 recetas paso a paso</li>
+<li><strong>Módulo 4:</strong> Costos, precios, proyecciones y legalidad</li>
+<li><strong>Módulo 5:</strong> Cómo vender por WhatsApp, Instagram, ferias y más</li>
+<li><strong>BONO 1:</strong> Guía de empaque profesional</li>
+<li><strong>BONO 2:</strong> Plantillas de etiquetas profesionales</li>
+<li><strong>BONO 3:</strong> Calculadora de costos y ganancias</li>
+</ol>
+</div>
+
+<div class="tip">
+<p>💪 <strong>Mi promesa para ti:</strong> Al terminar este curso vas a tener el conocimiento, las recetas, los números y las estrategias para empezar a vender jabones artesanales esta misma semana.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ===================== MÓDULO 2 ===================== -->
+<section id="modulo-2">
+<div class="section-wrap">
+<div class="module-cover cover-m2">
+  <div class="mod-num">MÓDULO 2</div>
+  <h2>🛒 Materiales y Proveedores</h2>
+  <p>Todo lo que necesitas, dónde comprarlo y cuánto invertir</p>
+</div>
+
+<h2>📦 Lista Completa de Materiales</h2>
+<p>Antes de hacer tu primer jabón, necesitas conocer cada material, para qué sirve y cuánto cuesta.</p>
+
+<h3>1. 🧱 Bases de Jabón de Glicerina</h3>
+<p>La base de glicerina es el ingrediente principal. Es una base <strong>pre-saponificada</strong> — tú solo la derritas, le agregas ingredientes y listo. Sin peligro, sin sosa cáustica.</p>
+
+<table class="green-th">
+<tr><th>Base</th><th>Color</th><th>Mejor para</th><th>Espuma</th><th>Precio/kg</th></tr>
+<tr><td><strong>Transparente</strong></td><td>Cristalina</td><td>Jabones con flores, capas, colores</td><td>Media</td><td>$5-8</td></tr>
+<tr><td><strong>Blanca (opaca)</strong></td><td>Blanco cremoso</td><td>Jabones con aditivos, colores pastel</td><td>Abundante</td><td>$5-8</td></tr>
+<tr><td><strong>Leche de cabra</strong></td><td>Blanco marfil</td><td>Pieles secas, sensibles, bebés</td><td>Suave, rica</td><td>$7-10</td></tr>
+<tr><td><strong>Aloe vera</strong></td><td>Verde traslúcido</td><td>Pieles irritadas, quemaduras solares</td><td>Media</td><td>$7-10</td></tr>
+<tr><td><strong>Karité</strong></td><td>Crema/marfil</td><td>Pieles maduras, extra hidratación</td><td>Rica, densa</td><td>$8-12</td></tr>
+</table>
+
+<div class="green-box">
+<h4 style="margin-top:0;color:#5A7247;">¿Cuál comprar primero?</h4>
+<p><strong>Si solo puedes comprar UNA:</strong> Base transparente — la más versátil.</p>
+<p><strong>Si puedes comprar DOS:</strong> Transparente + blanca. Con estas dos haces el 90% de las recetas.</p>
+<p><strong>Para línea premium:</strong> Agrega leche de cabra.</p>
+</div>
+
+<div class="tip">
+<p>💡 <strong>TIP:</strong> Con 1 kg de base haces entre 8-10 jabones de 100g. ¡Tu primer kilo es suficiente para empezar!</p>
+</div>
+
+<div class="warning">
+<p>⚠️ <strong>CUIDADO:</strong> No confundas "glicerina líquida" (de farmacias) con "base de glicerina para jabones". Son productos DIFERENTES. Necesitas la BASE SÓLIDA tipo melt &amp; pour.</p>
+</div>
+
+<h3>2. 🌿 Guía Completa de Aceites Esenciales</h3>
+
+<div class="warning">
+<p>⚠️ <strong>IMPORTANTE:</strong> Los aceites esenciales son CONCENTRADOS de plantas. <strong>Dosificación segura: 1-3% del peso total</strong> (5-9 gotas por 100g de base). NUNCA apliques aceite esencial puro sobre la piel.</p>
+</div>
+
+<h4>🌸 Top 20 Aceites Esenciales para Jabonería</h4>
+<table class="green-th">
+<tr><th>#</th><th>Aceite</th><th>Propiedades</th><th>Tipo de Piel</th><th>Aroma</th><th>~10ml</th></tr>
+<tr><td>1</td><td><strong>Lavanda</strong></td><td>Relajante, cicatrizante</td><td>Todas, sensible</td><td>Floral herbal</td><td>$3-5</td></tr>
+<tr><td>2</td><td><strong>Tea Tree</strong></td><td>Antibacterial, antifúngico</td><td>Grasa, acné</td><td>Herbal medicinal</td><td>$3-5</td></tr>
+<tr><td>3</td><td><strong>Eucalipto</strong></td><td>Descongestionante, refrescante</td><td>Mixta, grasa</td><td>Fresco mentolado</td><td>$2-4</td></tr>
+<tr><td>4</td><td><strong>Menta</strong></td><td>Energizante, refrescante</td><td>Grasa, normal</td><td>Fresco intenso</td><td>$3-4</td></tr>
+<tr><td>5</td><td><strong>Romero</strong></td><td>Estimulante, fortalece cabello</td><td>Mixta, capilar</td><td>Herbal fresco</td><td>$3-5</td></tr>
+<tr><td>6</td><td><strong>Naranja dulce</strong></td><td>Antiestrés, tonificante</td><td>Opaca, normal</td><td>Cítrico dulce</td><td>$2-3</td></tr>
+<tr><td>7</td><td><strong>Limón</strong></td><td>Astringente, aclarante</td><td>Grasa, mixta</td><td>Cítrico fresco</td><td>$2-3</td></tr>
+<tr><td>8</td><td><strong>Geranio</strong></td><td>Equilibrante, regenerador</td><td>Todas, madura</td><td>Floral rosado</td><td>$4-7</td></tr>
+<tr><td>9</td><td><strong>Ylang ylang</strong></td><td>Hidratante, regulador sebáceo</td><td>Mixta, seca</td><td>Floral exótico</td><td>$5-8</td></tr>
+<tr><td>10</td><td><strong>Manzanilla</strong></td><td>Calmante, hipoalergénico</td><td>Sensible, bebés</td><td>Herbal dulce</td><td>$6-10</td></tr>
+</table>
+
+<h4>🧪 Combinaciones de Aromas que Funcionan</h4>
+<table class="green-th">
+<tr><th>Combinación</th><th>Personalidad</th><th>Ideal para</th></tr>
+<tr><td>Lavanda + Naranja dulce</td><td>Relajante cálido</td><td>Jabón nocturno, anti-estrés</td></tr>
+<tr><td>Menta + Eucalipto</td><td>Spa refrescante</td><td>Ducha matutina</td></tr>
+<tr><td>Tea tree + Limón</td><td>Limpieza profunda</td><td>Piel grasa, acné</td></tr>
+<tr><td>Geranio + Lavanda</td><td>Floral elegante</td><td>Línea femenina premium</td></tr>
+<tr><td>Cedro + Romero</td><td>Herbal masculino</td><td>Línea para hombres</td></tr>
+<tr><td>Canela + Naranja</td><td>Cálido especiado</td><td>Navidad, edición invernal</td></tr>
+<tr><td>Rosa + Incienso</td><td>Lujo meditativo</td><td>Jabón premium, spa</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>REGLA DE LOS TERCIOS:</strong> nota alta (cítricos, menta) + nota media (lavanda, geranio) + nota baja (cedro, vetiver). Mezcla una de cada nivel para un aroma profesional.</p>
+</div>
+
+<h3>3. 🎨 Colorantes: Naturales vs Sintéticos</h3>
+
+<h4>Colorantes Naturales</h4>
+<table class="green-th">
+<tr><th>Colorante</th><th>Color</th><th>Cantidad/100g</th><th>Estabilidad</th></tr>
+<tr><td><strong>Cúrcuma</strong></td><td>Amarillo dorado</td><td>1/4-1/2 cdta</td><td>⭐⭐⭐</td></tr>
+<tr><td><strong>Carbón activado</strong></td><td>Negro intenso</td><td>1/4-1/2 cdta</td><td>⭐⭐⭐⭐⭐</td></tr>
+<tr><td><strong>Arcilla verde</strong></td><td>Verde oliva</td><td>1/2-1 cdta</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><strong>Cacao en polvo</strong></td><td>Marrón chocolate</td><td>1 cdta</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><strong>Café molido</strong></td><td>Marrón moteado</td><td>1/2-1 cdta</td><td>⭐⭐⭐⭐</td></tr>
+<tr><td><strong>Spirulina</strong></td><td>Verde azulado</td><td>1/4 cdta</td><td>⭐⭐⭐</td></tr>
+</table>
+
+<h3>4. 🌾 Aditivos Principales</h3>
+
+<h4>🧹 Exfoliantes</h4>
+<table class="green-th">
+<tr><th>Exfoliante</th><th>Intensidad</th><th>Beneficio extra</th><th>Cantidad/100g</th></tr>
+<tr><td><strong>Avena molida fina</strong></td><td>Suave ⭐</td><td>Calmante</td><td>1/2-1 cdta</td></tr>
+<tr><td><strong>Café molido fino</strong></td><td>Media ⭐⭐</td><td>Anticelulítico</td><td>1/2-1 cda</td></tr>
+<tr><td><strong>Azúcar morena</strong></td><td>Media ⭐⭐</td><td>Humectante natural</td><td>1/2 cdta</td></tr>
+<tr><td><strong>Sal de mar fina</strong></td><td>Fuerte ⭐⭐⭐</td><td>Desintoxicante</td><td>1/2 cdta</td></tr>
+<tr><td><strong>Coco rallado</strong></td><td>Suave ⭐</td><td>Aroma tropical</td><td>1/2-1 cdta</td></tr>
+</table>
+
+<h4>🌿 Hierbas y Flores</h4>
+<table class="green-th">
+<tr><th>Hierba/Flor</th><th>Propiedades</th><th>Uso</th><th>Cantidad/100g</th></tr>
+<tr><td><strong>Lavanda seca</strong></td><td>Relajante</td><td>Decorar, infusión</td><td>1/4 cdta + pétalos encima</td></tr>
+<tr><td><strong>Pétalos de rosa</strong></td><td>Antioxidante</td><td>Decorar</td><td>5-8 pétalos</td></tr>
+<tr><td><strong>Caléndula seca</strong></td><td>Antiinflamatoria</td><td>Decorar + propiedades</td><td>1 cda de pétalos</td></tr>
+<tr><td><strong>Manzanilla seca</strong></td><td>Calmante</td><td>Infusión + decorar</td><td>1/2 cda</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>OJO con las flores frescas:</strong> NUNCA metas flores frescas en el jabón. Se pudren. Solo usa flores y hierbas SECAS.</p>
+</div>
+
+<h3>5. 🔧 Herramientas y Utensilios</h3>
+<table class="green-th">
+<tr><th>Utensilio</th><th>Uso</th><th>Precio</th><th>¿Imprescindible?</th></tr>
+<tr><td>Moldes de silicona</td><td>Dar forma</td><td>$3-8 c/u</td><td>✅ SÍ</td></tr>
+<tr><td>Recipiente apto microondas</td><td>Derretir base</td><td>$1-3</td><td>✅ SÍ</td></tr>
+<tr><td>Espátula de silicona</td><td>Mezclar</td><td>$1-2</td><td>✅ SÍ</td></tr>
+<tr><td>Alcohol isopropílico spray</td><td>Eliminar burbujas</td><td>$2-3</td><td>✅ SÍ</td></tr>
+<tr><td>Balanza digital</td><td>Pesar ingredientes</td><td>$5-8</td><td>✅ SÍ</td></tr>
+<tr><td>Gotero/pipeta</td><td>Dosificar aceites</td><td>$1</td><td>✅ SÍ</td></tr>
+<tr><td>Termómetro de cocina</td><td>Controlar temp.</td><td>$3-5</td><td>⭐ Recomendado</td></tr>
+</table>
+
+<h2>🛍️ 3 Kits de Inicio — Elige el Tuyo</h2>
+
+<div class="kit-card">
+<h3 style="color:#5A7247;margin-top:0;text-align:center;">🌱 KIT BÁSICO — "Emprendedora"</h3>
+<div class="kit-price">~$30 USD</div>
+<p style="text-align:center;color:#666;">Para hacer tus primeros 15-20 jabones</p>
+<table class="green-th">
+<tr><th>Item</th><th>Cantidad</th><th>Costo</th></tr>
+<tr><td>Base glicerina transparente</td><td>1 kg</td><td>$6</td></tr>
+<tr><td>AE lavanda</td><td>10 ml</td><td>$4</td></tr>
+<tr><td>AE naranja dulce</td><td>10 ml</td><td>$3</td></tr>
+<tr><td>Micas cosméticas (set 4)</td><td>1 set</td><td>$4</td></tr>
+<tr><td>Avena molida</td><td>200g</td><td>$1</td></tr>
+<tr><td>Miel de abejas</td><td>250g</td><td>$2</td></tr>
+<tr><td>Molde silicona 6 cavidades</td><td>1</td><td>$4</td></tr>
+<tr><td>Alcohol isopropílico + gotero</td><td></td><td>$3</td></tr>
+<tr style="background:#E8F5E9;font-weight:700;"><td colspan="2">TOTAL</td><td>~$31 USD</td></tr>
+</table>
+<p>📦 <strong>Produces:</strong> ~10 jabones → Vendes a $4 = <strong>$40 en ventas. ¡Recuperas inversión!</strong></p>
+</div>
+
+<div class="kit-card intermedio">
+<h3 style="color:#E8743F;margin-top:0;text-align:center;">🌿 KIT INTERMEDIO — "Jabonera Pro"</h3>
+<div class="kit-price">~$60 USD</div>
+<p style="text-align:center;color:#666;">Para crear 6-8 tipos de jabones</p>
+<table>
+<tr><th>Item</th><th>Cantidad</th><th>Costo</th></tr>
+<tr><td>Base transparente + blanca</td><td>1 kg c/u</td><td>$12</td></tr>
+<tr><td>AE × 4 (lavanda, tea tree, menta, naranja)</td><td>4 × 10ml</td><td>$14</td></tr>
+<tr><td>Micas cosméticas (set 8) + carbón activado</td><td></td><td>$9</td></tr>
+<tr><td>Aditivos (avena, café, miel, coco)</td><td></td><td>$5</td></tr>
+<tr><td>Aceite de coco virgen</td><td>250ml</td><td>$4</td></tr>
+<tr><td>Moldes silicona (2) + balanza + alcohol</td><td></td><td>$16</td></tr>
+<tr style="background:#FFF3E0;font-weight:700;"><td colspan="2">TOTAL</td><td>~$60 USD</td></tr>
+</table>
+<p>📦 <strong>Produces:</strong> ~20 jabones variados → Vendes a $5 = <strong>$100. Ganancia neta ~$40.</strong></p>
+</div>
+
+<div class="kit-card avanzado">
+<h3 style="color:#D4A24E;margin-top:0;text-align:center;">✨ KIT AVANZADO — "Negocio Serio"</h3>
+<div class="kit-price">~$100 USD</div>
+<p style="text-align:center;color:#666;">Para producción seria: 10+ tipos + kits regalo + línea premium</p>
+<table class="gold-th">
+<tr><th>Item</th><th>Cantidad</th><th>Costo</th></tr>
+<tr><td>Bases (transparente + blanca + leche cabra)</td><td>4.5 kg total</td><td>$27</td></tr>
+<tr><td>Aceites esenciales × 6</td><td>6 × 10ml</td><td>$20</td></tr>
+<tr><td>Micas (set 12) + carbón + arcilla + spirulina</td><td></td><td>$14</td></tr>
+<tr><td>Aditivos + aceites vegetales + flores secas</td><td></td><td>$21</td></tr>
+<tr><td>Moldes (4) + balanza + alcohol</td><td></td><td>$20</td></tr>
+<tr style="background:#FFFDE7;font-weight:700;"><td colspan="2">TOTAL</td><td>~$102 USD</td></tr>
+</table>
+<p>📦 <strong>Produces:</strong> ~45 jabones variados → Vendes a $5.50 = <strong>$247. Ganancia neta ~$145.</strong></p>
+</div>
+
+<h2>🏪 Dónde Comprar — Proveedores</h2>
+
+<h3>🛒 Amazon — Productos Recomendados</h3>
+<div class="green-box">
+<ul>
+<li><strong>"Crafter's Choice Glycerin Melt & Pour Soap Base"</strong> (~$10/900g)</li>
+<li><strong>"CraftZee Soap Making Kit"</strong> (~$25-30, kit completo)</li>
+<li><strong>"Lagunamoon Essential Oils Top 6 Set"</strong> (~$10-12)</li>
+<li><strong>"Mica Powder 24 Colors by Seisso"</strong> (~$8-10)</li>
+<li><strong>"Rectangle Silicone Soap Mold 6 Cavity"</strong> (~$5-7)</li>
+</ul>
+</div>
+
+<h3>🛒 MercadoLibre — Búsquedas Exactas</h3>
+<div class="green-box">
+<ul>
+<li><strong>"base de glicerina melt and pour 1 kg"</strong></li>
+<li><strong>"kit jabones artesanales"</strong></li>
+<li><strong>"aceites esenciales puros set"</strong></li>
+<li><strong>"micas cosméticas jabón"</strong></li>
+<li><strong>"molde silicona jabón"</strong></li>
+</ul>
+</div>
+
+<h3>🌎 Proveedores por País</h3>
+
+<h4>🇨🇴 Colombia</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Químicos JM</strong> (quimicosjm.com) — Base, aceites, colorantes</li>
+<li><strong>Disproalquímicos</strong> — Insumos cosméticos, Bogotá</li>
+<li><strong>Natural Mystic Cosmetics</strong> — Aceites esenciales, Medellín</li>
+<li>Grupos Facebook: "Jaboneras Artesanales Colombia"</li>
+</ul>
+</div>
+
+<h4>🇲🇽 México</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Materias Primas San Ángel</strong> (materiasprimassanangel.com)</li>
+<li><strong>La Casa del Jabón</strong> — Insumos especializados</li>
+<li><strong>Prodexa Químicos</strong> — CDMX</li>
+<li>Grupos Facebook: "Jaboneras de México"</li>
+</ul>
+</div>
+
+<h4>🇦🇷 Argentina</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Del Jabón</strong> — CABA, envíos nacionales</li>
+<li><strong>Hierbas del Oasis</strong> — Aceites esenciales</li>
+<li>Grupos Facebook: "Jabones Artesanales Argentina"</li>
+</ul>
+</div>
+
+<h4>🇵🇪 Perú</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Insumos Naturales Perú</strong> — Lima</li>
+<li>Boticas y farmacias naturistas</li>
+<li>Grupos Facebook: "Jaboneras Artesanales Perú"</li>
+</ul>
+</div>
+
+<div class="tip">
+<p>💡 <strong>TRUCO PRO:</strong> Busca en Facebook "Jaboneras artesanales [tu país]" — comparten proveedores y hacen compras grupales para bajar costos.</p>
+</div>
+
+<h2>📐 Tabla de Equivalencias y Medidas</h2>
+<table class="green-th">
+<tr><th>Medida</th><th>Equivalente</th></tr>
+<tr><td>1 jabón estándar</td><td>80-120 gramos</td></tr>
+<tr><td>1 kg de base</td><td>8-12 jabones</td></tr>
+<tr><td>1 frasco de 10 ml AE</td><td>~200 gotas = 25-40 jabones</td></tr>
+<tr><td>Dosificación por jabón 100g</td><td>5-9 gotas (0.5-1%)</td></tr>
+<tr><td>Derretir la base</td><td>55-65°C (130-150°F)</td></tr>
+<tr><td>NUNCA pasar de</td><td>70°C (158°F)</td></tr>
+</table>
+
+<h2>📋 Checklist — ¿Tienes Todo?</h2>
+<div class="highlight-box">
+<ul>
+<li>☐ Base de glicerina (mínimo 1 kg)</li>
+<li>☐ Al menos 2 aceites esenciales</li>
+<li>☐ Algún colorante</li>
+<li>☐ 1-2 aditivos (avena, miel, café)</li>
+<li>☐ Molde de silicona</li>
+<li>☐ Alcohol isopropílico en spray</li>
+<li>☐ Recipiente apto microondas + espátula</li>
+</ul>
+<p style="margin-bottom:0;">✅ <strong>¿Tienes al menos los primeros 6? ¡Estás lista!</strong></p>
+</div>
+
+</div>
+</section>
+
+<!-- ===================== MÓDULO 3 ===================== -->
+<section id="modulo-3">
+<div class="section-wrap">
+<div class="module-cover cover-m3">
+  <div class="mod-num">MÓDULO 3</div>
+  <h2>🧪 20 Recetas Paso a Paso</h2>
+  <p>El corazón del curso — jabones reales que puedes hacer y vender hoy</p>
+</div>
+
+<h2>📖 Antes de Empezar: El Proceso Base</h2>
+
+<div class="process-box">
+<h3 style="margin-top:0;">🔄 El método Melt & Pour (Derretir y Verter)</h3>
+<p>Todas las recetas usan el método <strong>"Melt & Pour"</strong>:</p>
+<ul>
+<li>❌ NO requiere sosa cáustica</li>
+<li>❌ NO necesita "curado" de semanas</li>
+<li>✅ Solo derritas, agregas ingredientes, viertes en molde</li>
+<li>✅ Jabones listos en 2-4 horas</li>
+</ul>
+
+<h3>📝 Pasos base para TODAS las recetas:</h3>
+<ol>
+<li><strong>Cortar</strong> la base en cubos de ~2 cm</li>
+<li><strong>Derretir</strong> en microondas: intervalos de 20-30 seg, revolviendo. NO dejar hervir</li>
+<li><strong>Esperar</strong> 30-60 seg a que baje la temperatura</li>
+<li><strong>Agregar</strong> colorantes → aceites esenciales → aditivos sólidos</li>
+<li><strong>Mezclar</strong> suavemente con espátula (sin batir)</li>
+<li><strong>Verter</strong> en molde lentamente</li>
+<li><strong>Rociar</strong> con alcohol isopropílico</li>
+<li><strong>Esperar</strong> 2-4 horas hasta que solidifique</li>
+<li><strong>Desmoldar</strong> con cuidado</li>
+</ol>
+</div>
+
+<div class="warning">
+<p>⚠️ <strong>REGLAS DE SEGURIDAD:</strong> La base derretida QUEMA. Los aceites esenciales son potentes — no excedas las cantidades. Si la base empieza a hervir en el microondas, PARA inmediatamente.</p>
+</div>
+
+<!-- SECCIÓN BÁSICOS -->
+<div class="section-intro">
+<h2 style="border:none;margin:0;">🧼 JABONES BÁSICOS (1-5)</h2>
+<p style="margin:0;">5 recetas fáciles, económicas y las más vendidas</p>
+</div>
+
+<!-- Receta 1 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">1. 💜 Jabón de Glicerina Pura con Lavanda</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h</span>
+<span class="badge badge-cost">💰 $0.80</span>
+<span class="badge badge-price">💵 $3.50</span>
+</div>
+</div>
+<p>El clásico de clásicos. Transparente, aromático, elegante. Perfecto como tu primer jabón y como regalo.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g base glicerina transparente</li>
+<li>6-8 gotas AE lavanda</li>
+<li>1-2 gotas colorante violeta (o pizca de mica lila)</li>
+<li>Opcional: brotes de lavanda seca para decorar</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta la base en cubos pequeños. Derrite en microondas (intervalos de 20 seg).</li>
+<li>Deja reposar 30 seg. Agrega el colorante (empieza con 1 gota — menos es más).</li>
+<li>Agrega las gotas de AE lavanda. Mezcla suavemente.</li>
+<li>Si usas brotes: coloca algunos en el fondo del molde ANTES de verter.</li>
+<li>Vierte la mezcla lentamente. Rocía con alcohol. Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">🔄 <strong>Variaciones:</strong> "Lavanda y Vainilla" (agrega 3 gotas de vainilla). "Lavanda Luxury" (usa base leche de cabra + aceite almendras). "Campo de lavanda" (mitad base blanca, mitad transparente morada + flores).</div>
+<div class="tip-inline">💡 <strong>Tip de venta:</strong> Empacado en celofán con cinta lila, se ve de $10.</div>
+</div>
+
+<!-- Receta 2 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">2. 🌾 Jabón Exfoliante de Avena y Miel</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h</span>
+<span class="badge badge-cost">💰 $0.90</span>
+<span class="badge badge-price">💵 $4.00</span>
+</div>
+</div>
+<p>Best-seller absoluto. Si solo puedes hacer UN jabón para vender, que sea este.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes:</h4>
+<ul><li>100g base blanca</li><li>1 cdta avena molida fina</li><li>1/2 cdta miel pura</li><li>5-6 gotas AE naranja dulce</li></ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Prepara la avena (licúa hojuelas). Derrite la base blanca.</li>
+<li>Agrega miel, mezcla bien. Agrega avena. Agrega AE naranja.</li>
+<li>Vierte rápido. Espolvorea avena en hojuelas encima para look rústico.</li>
+<li>Rocía con alcohol. Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="error-box">❌ <strong>Errores:</strong> Avena muy gruesa = rasposa. Mucha miel (>1 cdta) = jabón pegajoso.</div>
+<div class="tip-inline">💡 Esparcir avena en hojuelas encima crea una presentación rústica que grita "ARTESANAL". Perfecto para ferias.</div>
+</div>
+
+<!-- Receta 3 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">3. 🥛 Jabón Hidratante de Miel y Leche de Cabra</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h</span>
+<span class="badge badge-cost">💰 $1.10</span>
+<span class="badge badge-price">💵 $4.50</span>
+</div>
+</div>
+<p>Ultra hidratante y cremoso. La leche de cabra suena premium y justifica precio más alto.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base leche de cabra</li><li>1 cdta miel pura</li><li>1/2 cdta aceite de coco</li><li>4-5 gotas AE vainilla o naranja</li><li>Pizca de mica dorada (opcional)</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite la base de leche de cabra (intervalos de 15 seg — es más delicada).</li><li>Agrega aceite de coco, miel, mica, AE. Mezcla.</li><li>Vierte, rocía alcohol, enfriar, desmoldar.</li></ol></div>
+</div>
+
+<!-- Receta 4 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">4. ⚫ Jabón Purificante de Carbón Activado</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h</span>
+<span class="badge badge-cost">💰 $0.95</span>
+<span class="badge badge-price">💵 $4.50</span>
+</div>
+</div>
+<p>Visualmente impactante y excelente para piel grasa y acné. ¡De los más instagrameables!</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base transparente</li><li>1/2 cdta carbón activado</li><li>6-8 gotas AE tea tree</li><li>Opcional: 2-3 gotas eucalipto</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Agrega carbón poco a poco (muy pigmentado).</li><li>Agrega AE. Vierte, rocía alcohol, enfriar, desmoldar.</li></ol></div>
+<div class="variation-box">🔄 <strong>"Mármol Blanco y Negro":</strong> Derrite base negra y base blanca por separado, vierte alternando y pasa un palillo. ¡INCREÍBLE!</div>
+<div class="tip-inline">💡 Negro sobre fondo blanco de mármol = foto que vende sola en Instagram.</div>
+</div>
+
+<!-- Receta 5 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">5. 🍊 Jabón Cítrico Energizante de Naranja</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h</span>
+<span class="badge badge-cost">💰 $0.85</span>
+<span class="badge badge-price">💵 $3.50</span>
+</div>
+</div>
+<p>Fresco, alegre. El AE de naranja es uno de los más BARATOS ($2-3/10ml) con mejor aroma.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base transparente</li><li>8-10 gotas AE naranja dulce</li><li>Colorante naranja o 1/4 cdta cúrcuma</li><li>Opcional: ralladura de naranja seca</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Agrega colorante. Agrega AE al final (los cítricos se evaporan rápido). Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+</div>
+
+<!-- SECCIÓN TERAPÉUTICOS -->
+<div class="section-intro green">
+<h2 style="border:none;margin:0;color:#5A7247;">🌿 JABONES TERAPÉUTICOS (6-10)</h2>
+<p style="margin:0;">5 recetas con propiedades especiales</p>
+</div>
+
+<!-- Receta 6 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">6. 🌳 Jabón Antibacterial de Tea Tree</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.10</span><span class="badge badge-price">💵 $5.00</span></div>
+</div>
+<p>El tea tree es reconocido mundialmente por sus propiedades antibacteriales. Altísima demanda entre adolescentes y adultos con piel grasa.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base transparente</li><li>8-10 gotas AE tea tree</li><li>3-4 gotas AE limón</li><li>Pizca de colorante verde o spirulina</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Colorante verde suave ("verde naturaleza"). Agrega AE. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+</div>
+
+<!-- Receta 7 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">7. 🌼 Jabón Calmante de Caléndula</div>
+<div class="recipe-badges"><span class="badge badge-medium">🟡 Medio</span><span class="badge badge-cost">💰 $1.30</span><span class="badge badge-price">💵 $5.50</span></div>
+</div>
+<p>Antiinflamatoria y cicatrizante. Los pétalos dentro del jabón transparente se ven PRECIOSOS.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca o transparente</li><li>1 cda pétalos de caléndula secos</li><li>1/2 cdta aceite de caléndula o almendras</li><li>5-6 gotas AE manzanilla o lavanda</li></ul></div>
+<div class="steps"><h4>👣 Técnica de pétalos flotantes:</h4><ol><li>Coloca pétalos en el fondo del molde. Vierte un poco de base (1cm). Rocía alcohol. Espera 2-3 min.</li><li>Agrega resto de pétalos a la base sobrante. Vierte el resto. Rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 La versión transparente con pétalos dentro cobra 20-30% más como "premium visual".</div>
+</div>
+
+<!-- Receta 8 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">8. 🌱 Jabón Hidratante de Aloe Vera</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.00</span><span class="badge badge-price">💵 $4.50</span></div>
+</div>
+<p>Ideal para pieles quemadas, irritadas, con eczema o secas. Si tienes sábila en casa, ¡tu ingrediente es GRATIS!</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base transparente</li><li>1 cda gel aloe vera puro</li><li>5-6 gotas AE lavanda</li><li>Colorante verde (opcional)</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Deja enfriar 45-60 seg (el aloe pierde propiedades con calor). Agrega aloe, colorante, AE. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+</div>
+
+<!-- Receta 9 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">9. 🌿 Jabón Estimulante de Romero</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.00</span><span class="badge badge-price">💵 $4.50</span></div>
+</div>
+<p>Estimula circulación, fortalece cabello. Perfecto para línea masculina.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>8-10 gotas AE romero</li><li>1/2 cdta hojas romero seco triturado</li><li>Colorante verde oscuro o spirulina</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Colorante verde "bosque". Agrega AE y hojas. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 Empaca con papel kraft oscuro, cuerda yute y ramita de romero. Véndelo como línea "para él".</div>
+</div>
+
+<!-- Receta 10 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">10. 🟢 Jabón Detox de Arcilla Verde</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.10</span><span class="badge badge-price">💵 $5.00</span></div>
+</div>
+<p>Clásico de la cosmética natural. Absorbe grasa, desintoxica poros, deja piel mate.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1 cdta arcilla verde</li><li>5-6 gotas AE limón</li><li>3-4 gotas AE eucalipto</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Agrega arcilla poco a poco (puedes pre-mezclar con agua tibia). Agrega AE. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 ¡Tres variantes con la misma receta! Arcilla verde (grasas), blanca (sensibles), roja (maduras). Véndelas como "Colección Arcillas".</div>
+</div>
+
+<!-- SECCIÓN PREMIUM -->
+<div class="section-intro gold">
+<h2 style="border:none;margin:0;color:#BF8C00;">✨ JABONES PREMIUM / REGALO (11-15)</h2>
+<p style="margin:0;">5 recetas de mayor valor</p>
+</div>
+
+<!-- Receta 11 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">11. 🌹 Jabón Regenerador de Rosa Mosqueta</div>
+<div class="recipe-badges"><span class="badge badge-medium">🟡 Medio</span><span class="badge badge-cost">💰 $1.80</span><span class="badge badge-price">💵 $7.00</span></div>
+</div>
+<p>Aceite de rosa mosqueta: oro líquido antiarrugas, antimanchas, regenerador celular. Se siente, se ve y se vende como lujo.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1 cdta aceite rosa mosqueta</li><li>5-6 gotas AE geranio</li><li>Mica rosa pálido</li><li>Opcional: vitamina E + pétalos de rosa</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Agrega rosa mosqueta, vitamina E, mica rosa. Agrega AE geranio. Si usas pétalos: colocar en fondo del molde. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 Envuelve en papel tissue rosa + cinta raso blanca + flor seca. Se ve de $15+ y te costó centavos.</div>
+</div>
+
+<!-- Receta 12 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">12. ☕ Jabón Exfoliante de Café</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $0.90</span><span class="badge badge-price">💵 $5.00</span></div>
+</div>
+<p>¡De los más vendidos en TODO el mundo! Aroma irresistible. Tiene el MEJOR margen porque el café puede ser gratis.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca o transparente</li><li>1 cda café molido o borra seca</li><li>1/2 cdta aceite de coco</li><li>5-6 gotas AE vainilla o canela</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Si usas borra: secar bien (horno 80°C, 30-45 min). Derrite base. Agrega aceite de coco, AE, café. Vierte RÁPIDO. Rocía, enfriar, desmoldar.</li></ol></div>
+<div class="variation-box">🔄 <strong>"Café Mocha":</strong> Agrega 1 cdta cacao. <strong>"Café con Leche":</strong> Mitad base blanca, mitad transparente con café.</div>
+<div class="tip-inline">💡 ¿Cafetería cerca? La borra es GRATIS. Costo $0.90, venta $5.00 = $4.10 de ganancia (455%).</div>
+</div>
+
+<!-- Receta 13 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">13. 🥥 Jabón Tropical de Coco y Vainilla</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.20</span><span class="badge badge-price">💵 $5.50</span></div>
+</div>
+<p>El aroma coco-vainilla enamora a todo el mundo. Éxito garantizado en primavera/verano.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1 cdta aceite de coco + 1 cdta coco rallado</li><li>6-8 gotas fragancia vainilla + 2-3 gotas AE naranja</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Agrega aceite de coco, fragancia, mitad del coco rallado. Vierte. Espolvorea coco arriba. Rocía, enfriar, desmoldar.</li></ol></div>
+</div>
+
+<!-- Receta 14 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">14. 🍫 Jabón Gourmet de Chocolate</div>
+<div class="recipe-badges"><span class="badge badge-medium">🟡 Medio</span><span class="badge badge-cost">💰 $1.40</span><span class="badge badge-price">💵 $6.00</span></div>
+</div>
+<p>Parece y huele a chocolate. ¡La gente lo AMA como regalo! Perfecto para San Valentín y Día de la Madre.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1 cda cacao puro</li><li>1 cdta manteca de cacao (o aceite de coco)</li><li>5-6 gotas fragancia chocolate o vainilla</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite manteca de cacao aparte. Derrite base. Agrega manteca, cacao poco a poco, fragancia. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 Moldes de corazón → "Set Bombones de Chocolate para la Piel" = $15-20 en San Valentín.</div>
+</div>
+
+<!-- Receta 15 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">15. 🌿❄️ Jabón Spa de Eucalipto y Menta</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.10</span><span class="badge badge-price">💵 $5.50</span></div>
+</div>
+<p>Pura frescura. La sensación "mentolada" es adictiva — tus clientes van a recomprar este más que ningún otro.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base transparente</li><li>5-6 gotas AE eucalipto + 4-5 gotas AE menta</li><li>Colorante verde esmeralda</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Colorante verde "spa". Agrega ambos AE. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 PERFECTO para temporada de gripes e invierno. Promuévelo en otoño/invierno.</div>
+</div>
+
+<!-- SECCIÓN CREATIVOS -->
+<div class="section-intro purple">
+<h2 style="border:none;margin:0;color:#6A1B9A;">🎨 JABONES CREATIVOS (16-20)</h2>
+<p style="margin:0;">5 recetas únicas para diferenciarte</p>
+</div>
+
+<!-- Receta 16 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">16. 🍺 Jabón de Cerveza Artesanal</div>
+<div class="recipe-badges"><span class="badge badge-medium">🟡 Medio</span><span class="badge badge-cost">💰 $1.30</span><span class="badge badge-price">💵 $6.00</span></div>
+</div>
+<p>¡Sí, cerveza en un jabón! Rica en vitaminas B. Perfecto como regalo para hombres.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1 cda cerveza desgasificada</li><li>1/2 cdta miel</li><li>5-6 gotas AE naranja o cedro</li><li>Pizca de cúrcuma para color ámbar</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Desgasificar cerveza (dejar 12-24h sin tapa). Derrite base. Agrega cerveza, miel, cúrcuma, AE. Vierte. Espolvorea avena encima (simula espuma). Rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 Empaca estilo "cervecería artesanal": papel kraft, etiqueta vintage. Regalo perfecto Día del Padre.</div>
+</div>
+
+<!-- Receta 17 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">17. 🥥 Jabón de Leche de Coco</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.15</span><span class="badge badge-price">💵 $5.50</span></div>
+</div>
+<p>Hidratante tropical poderoso. Cremoso, blanco puro, aroma dulce.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1 cda leche de coco (de lata, espesa)</li><li>1/2 cdta aceite de coco</li><li>6-8 gotas fragancia coco o AE ylang ylang</li><li>Coco rallado para decorar</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Derrite base. Agrega leche de coco, aceite, fragancia. Vierte. Espolvorea coco rallado encima. Rocía, enfriar, desmoldar.</li></ol></div>
+</div>
+
+<!-- Receta 18 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">18. 🌾 Jabón de Cúrcuma y Jengibre</div>
+<div class="recipe-badges"><span class="badge badge-easy">🟢 Fácil</span><span class="badge badge-cost">💰 $1.00</span><span class="badge badge-price">💵 $5.00</span></div>
+</div>
+<p>Antiinflamatoria, antioxidante, ilumina piel, reduce manchas. Color dorado espectacular.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base blanca</li><li>1/2 cdta cúrcuma + 1/4 cdta jengibre en polvo</li><li>1/2 cdta miel</li><li>5-6 gotas AE naranja o jengibre</li><li>Pizca de mica dorada</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>⚠️ Protege superficie (cúrcuma mancha). Derrite base. Agrega cúrcuma + jengibre, mezcla vigorosamente. Agrega miel, mica, AE. Vierte, rocía, enfriar, desmoldar.</li></ol></div>
+<div class="tip-inline">💡 "Jabón Iluminador de Cúrcuma — piel radiante y sin manchas". Suena a producto de $20.</div>
+</div>
+
+<!-- Receta 19 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">19. 🍃🍫 Jabón de Menta y Chocolate Blanco</div>
+<div class="recipe-badges"><span class="badge badge-medium">🟡 Medio</span><span class="badge badge-cost">💰 $1.35</span><span class="badge badge-price">💵 $6.00</span></div>
+</div>
+<p>Bicolor verde y blanco. Combina frescura de menta con cremosidad de chocolate blanco.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>60g base blanca + 40g base transparente</li><li>1/2 cdta manteca de cacao</li><li>6-8 gotas AE menta + colorante verde</li><li>3-4 gotas fragancia vainilla (capa blanca)</li></ul></div>
+<div class="steps"><h4>👣 Técnica de 2 Capas:</h4><ol><li><strong>Capa 1:</strong> Derrite 60g blanca + manteca cacao + vainilla. Vierte. Rocía. Espera 25-30 min.</li><li>Raspa superficie con tenedor. Rocía alcohol.</li><li><strong>Capa 2:</strong> Derrite 40g transparente + verde + menta. Vierte suavemente encima.</li><li>Rocía. Enfriar 3-4 horas. Desmoldar.</li></ol></div>
+</div>
+
+<!-- Receta 20 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">20. 🍷 Jabón de Vino Tinto Antioxidante</div>
+<div class="recipe-badges"><span class="badge badge-medium">🟡 Medio</span><span class="badge badge-cost">💰 $1.40</span><span class="badge badge-price">💵 $7.00</span></div>
+</div>
+<p>¡El más original y lujoso! Vino tinto = resveratrol antioxidante. Color burdeos ELEGANTÍSIMO.</p>
+<div class="ingredients"><h4>📋 Ingredientes:</h4><ul><li>100g base transparente</li><li>1 cda vino tinto (reducido)</li><li>1/2 cdta aceite semilla de uva</li><li>5-6 gotas AE geranio o lavanda</li><li>Colorante burdeos + pizca mica dorada</li></ul></div>
+<div class="steps"><h4>👣 Paso a paso:</h4><ol><li>Reducir el vino: calentar 2-3 min a fuego bajo (evapora alcohol). Enfriar.</li><li>Derrite base. Agrega vino reducido, aceite de uva, colorante burdeos, mica dorada, AE. Vierte, rocía. Enfriar 4 horas. Desmoldar.</li></ol></div>
+<div class="tip-inline">💡 "Jabón Anti-Edad de Vino Tinto — Vinoterapia para tu Piel". Empácalo en papel negro con etiqueta dorada. Se ve de $15+.</div>
+</div>
+
+<!-- RESUMEN RECETAS -->
+<h2>📊 Resumen de las 20 Recetas</h2>
+<table>
+<tr><th>#</th><th>Jabón</th><th>Categoría</th><th>Costo</th><th>Venta</th><th>Ganancia</th></tr>
+<tr><td>1</td><td>💜 Lavanda</td><td>Básico</td><td>$0.80</td><td>$3.50</td><td>$2.70</td></tr>
+<tr><td>2</td><td>🌾 Avena y Miel</td><td>Básico</td><td>$0.90</td><td>$4.00</td><td>$3.10</td></tr>
+<tr><td>3</td><td>🥛 Miel y Leche</td><td>Básico</td><td>$1.10</td><td>$4.50</td><td>$3.40</td></tr>
+<tr><td>4</td><td>⚫ Carbón</td><td>Básico</td><td>$0.95</td><td>$4.50</td><td>$3.55</td></tr>
+<tr><td>5</td><td>🍊 Naranja</td><td>Básico</td><td>$0.85</td><td>$3.50</td><td>$2.65</td></tr>
+<tr><td>6</td><td>🌳 Tea Tree</td><td>Terapéutico</td><td>$1.10</td><td>$5.00</td><td>$3.90</td></tr>
+<tr><td>7</td><td>🌼 Caléndula</td><td>Terapéutico</td><td>$1.30</td><td>$5.50</td><td>$4.20</td></tr>
+<tr><td>8</td><td>🌱 Aloe Vera</td><td>Terapéutico</td><td>$1.00</td><td>$4.50</td><td>$3.50</td></tr>
+<tr><td>9</td><td>🌿 Romero</td><td>Terapéutico</td><td>$1.00</td><td>$4.50</td><td>$3.50</td></tr>
+<tr><td>10</td><td>🟢 Arcilla Verde</td><td>Terapéutico</td><td>$1.10</td><td>$5.00</td><td>$3.90</td></tr>
+<tr><td>11</td><td>🌹 Rosa Mosqueta</td><td>Premium</td><td>$1.80</td><td>$7.00</td><td>$5.20</td></tr>
+<tr><td>12</td><td>☕ Café</td><td>Premium</td><td>$0.90</td><td>$5.00</td><td>$4.10</td></tr>
+<tr><td>13</td><td>🥥 Coco-Vainilla</td><td>Premium</td><td>$1.20</td><td>$5.50</td><td>$4.30</td></tr>
+<tr><td>14</td><td>🍫 Chocolate</td><td>Premium</td><td>$1.40</td><td>$6.00</td><td>$4.60</td></tr>
+<tr><td>15</td><td>🌿❄️ Eucalipto-Menta</td><td>Premium</td><td>$1.10</td><td>$5.50</td><td>$4.40</td></tr>
+<tr><td>16</td><td>🍺 Cerveza</td><td>Creativo</td><td>$1.30</td><td>$6.00</td><td>$4.70</td></tr>
+<tr><td>17</td><td>🥥 Leche de Coco</td><td>Creativo</td><td>$1.15</td><td>$5.50</td><td>$4.35</td></tr>
+<tr><td>18</td><td>🌾 Cúrcuma</td><td>Creativo</td><td>$1.00</td><td>$5.00</td><td>$4.00</td></tr>
+<tr><td>19</td><td>🍃🍫 Menta-Choc</td><td>Creativo</td><td>$1.35</td><td>$6.00</td><td>$4.65</td></tr>
+<tr><td>20</td><td>🍷 Vino Tinto</td><td>Creativo</td><td>$1.40</td><td>$7.00</td><td>$5.60</td></tr>
+<tr style="background:#FFF3E0;font-weight:700;"><td></td><td colspan="2">PROMEDIO</td><td>$1.13</td><td>$5.15</td><td>$4.02</td></tr>
+</table>
+
+<div class="process-box">
+<h3 style="margin-top:0;">🎯 ¿Cuáles hacer primero?</h3>
+<ol>
+<li><strong>Lavanda (#1)</strong> — ganar confianza</li>
+<li><strong>Avena y Miel (#2)</strong> — el más popular</li>
+<li><strong>Café (#12)</strong> — mejor margen</li>
+<li><strong>Carbón (#4)</strong> — impactante para Instagram</li>
+<li><strong>Cúrcuma (#18)</strong> — ingrediente de moda</li>
+</ol>
+</div>
+
+</div>
+</section>
+
+<!-- ===================== MÓDULO 4 ===================== -->
+<section id="modulo-4">
+<div class="section-wrap">
+<div class="module-cover cover-m4">
+  <div class="mod-num">MÓDULO 4</div>
+  <h2>💰 Costos, Precios y Ganancias</h2>
+  <p>Los números detrás de tu negocio</p>
+</div>
+
+<h2>📊 Desglose de Costos por Jabón</h2>
+
+<table class="dark-th">
+<tr><th>Componente</th><th>Cantidad/jabón</th><th>Costo unitario</th></tr>
+<tr><td>🧱 Base de glicerina</td><td>100g</td><td>$0.50-$0.80</td></tr>
+<tr><td>🌿 Aceite esencial</td><td>6-8 gotas</td><td>$0.15-$0.30</td></tr>
+<tr><td>🎨 Colorante</td><td>Pizca</td><td>$0.02-$0.05</td></tr>
+<tr><td>🌾 Aditivos</td><td>1/2-1 cdta</td><td>$0.03-$0.15</td></tr>
+<tr><td>📦 Empaque</td><td>1 unidad</td><td>$0.15-$0.30</td></tr>
+<tr style="background:#E8F5E9;font-weight:700;"><td colspan="2">COSTO TOTAL PROMEDIO</td><td>$0.90-$1.70</td></tr>
+</table>
+
+<h2>💲 Cómo Precificar: La Regla del ×3</h2>
+
+<div class="formula">PRECIO DE VENTA = COSTO DE PRODUCCIÓN × 3 (mínimo)</div>
+
+<ul>
+<li>✅ <strong>1× = Costo de materiales</strong></li>
+<li>✅ <strong>1× = Tu tiempo + gastos indirectos</strong></li>
+<li>✅ <strong>1× = Ganancia neta</strong></li>
+</ul>
+
+<div class="green-box">
+<p>💡 <strong>El empaque sube el precio:</strong> El MISMO jabón de $4 empacado con etiqueta bonita se vende a $6. Con caja elegante, a $8-10. ¡El empaque puede subir tu precio 30-100%!</p>
+</div>
+
+<h2>📈 Proyecciones de Ingreso</h2>
+
+<h3>🟢 Conservador: 5 jabones/día</h3>
+<div class="money-box">
+<p>Vendiendo 5 jabones/día (1-2 horas):</p>
+<div class="big-number">$393 USD/mes</div>
+<p>🇨🇴 ~$1,600,000 COP | 🇲🇽 ~$7,800 MXN | 🇦🇷 ~$350,000 ARS</p>
+</div>
+
+<h3>🟡 Moderado: 15 jabones/día</h3>
+<div class="money-box">
+<p>Vendiendo 15 jabones/día (medio tiempo):</p>
+<div class="big-number">$1,368 USD/mes</div>
+<p>🇨🇴 ~$5,600,000 COP | 🇲🇽 ~$27,400 MXN | 🇦🇷 ~$1,230,000 ARS</p>
+</div>
+
+<h3>🔴 Agresivo: 25+ jabones/día + kits + mayoreo</h3>
+<div class="money-box">
+<p>Negocio establecido con múltiples canales:</p>
+<div class="big-number">$3,275 USD/mes</div>
+<p>🇨🇴 ~$13,400,000 COP | 🇲🇽 ~$65,500 MXN | 🇦🇷 ~$2,950,000 ARS</p>
+</div>
+
+<h2>📅 Tu Negocio Mes a Mes</h2>
+
+<div class="timeline-item investment">
+<h4>📅 MES 1 — Inversión y Aprendizaje</h4>
+<p>Inversión: -$45 | Ventas: 8-10 jabones | Ingresos: $40-45 | <strong>Balance: ~$0</strong></p>
+</div>
+<div class="timeline-item growth">
+<h4>📅 MES 2 — Primeras Ventas Reales</h4>
+<p>Ventas: 25-30 jabones | Ingresos: $125-150 | <strong style="color:#4CAF50;">Ganancia: +$95-120</strong></p>
+</div>
+<div class="timeline-item growth">
+<h4>📅 MES 3 — Crecimiento</h4>
+<p>Ventas: 60-70 jabones | Primera feria | Ingresos: $300-350 | <strong style="color:#4CAF50;">Ganancia: +$250-300</strong></p>
+</div>
+<div class="timeline-item growth">
+<h4>📅 MES 4-5 — Expansión</h4>
+<p>Ventas: 100-120/mes | Tiendas en consignación | Ingresos: $500-700 | <strong style="color:#4CAF50;">Ganancia: +$400-550</strong></p>
+</div>
+<div class="timeline-item stable">
+<h4>📅 MES 6 — Negocio Estable 🏆</h4>
+<p>Ventas: 180-250/mes | Múltiples canales | Ingresos: $900-1,500 | <strong style="color:#1B5E20;">Ganancia: +$700-1,200</strong></p>
+</div>
+
+<h2>📋 Impuestos y Legalidad Básica</h2>
+
+<div class="green-box">
+<h4 style="margin-top:0;">🟢 Para empezar (venta informal):</h4>
+<p>Si vendes a amigos, por WhatsApp, en ferias pequeñas, en la mayoría de países de LATAM <strong>NO necesitas permisos especiales</strong>.</p>
+</div>
+
+<div class="highlight-box">
+<h4>🟡 Cuando crezcas:</h4>
+<ul>
+<li><strong>Registro como emprendedor/monotributista</strong></li>
+<li><strong>Notificación sanitaria</strong> (trámite simple)</li>
+<li><strong>Etiquetado correcto:</strong> ingredientes, peso, productor, lote</li>
+</ul>
+</div>
+
+<div class="warning">
+<h4>🔴 Lo que NO puedes hacer:</h4>
+<ul>
+<li>❌ Claims médicos ("cura el acné") — puedes decir "ayuda a", "para pieles con tendencia a"</li>
+<li>❌ Vender sin lista de ingredientes en tiendas</li>
+</ul>
+</div>
+
+<table class="dark-th">
+<tr><th>País</th><th>Régimen tributario</th><th>Organismo sanitario</th></tr>
+<tr><td>🇨🇴 Colombia</td><td>Régimen Simple</td><td>INVIMA</td></tr>
+<tr><td>🇲🇽 México</td><td>RESICO</td><td>COFEPRIS</td></tr>
+<tr><td>🇦🇷 Argentina</td><td>Monotributo A/B</td><td>ANMAT</td></tr>
+<tr><td>🇵🇪 Perú</td><td>Nuevo RUS / MYPE</td><td>DIGEMID</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>Consejo:</strong> No dejes que la parte legal te paralice. Empieza vendiendo informalmente. Cuando vendas $300+/mes, formaliza. El 90% de las jaboneras empiezan así.</p>
+</div>
+
+<h2>💡 10 Tips para Maximizar Ganancias</h2>
+<div class="highlight-box"><h4>1. 📦 Compra al por mayor</h4><p>5 kg en vez de 1 kg ahorra 20-35%.</p></div>
+<div class="highlight-box"><h4>2. 🎁 Crea kits y sets</h4><p>3 jabones de $5 empacados como kit → $18. Mejor margen.</p></div>
+<div class="highlight-box"><h4>3. 🎄 Ediciones especiales</h4><p>Jabones temáticos justifican 30-50% más de precio.</p></div>
+<div class="highlight-box"><h4>4. 📦 Sube el empaque = sube el precio</h4><p>Invierte $0.50 extra y cobra $3 más.</p></div>
+<div class="highlight-box"><h4>5. 🏨 Clientes mayoristas</h4><p>Un hotel = 100 jabones/mes = $250 fijo sin esfuerzo.</p></div>
+<div class="highlight-box"><h4>6. ☕ Usa ingredientes gratis</h4><p>Borra de café, aloe vera del jardín, hierbas.</p></div>
+<div class="highlight-box"><h4>7. 📸 Invierte en buenas fotos</h4><p>Con tu celular + luz natural. Inversión de $0 con retorno infinito.</p></div>
+<div class="highlight-box"><h4>8. 💬 Consigue testimonios</h4><p>Cada cliente satisfecho es un anuncio gratis.</p></div>
+
+</div>
+</section>
+
+<!-- ===================== MÓDULO 5 ===================== -->
+<section id="modulo-5">
+<div class="section-wrap">
+<div class="module-cover cover-m5">
+  <div class="mod-num">MÓDULO 5</div>
+  <h2>📱 Cómo Vender tus Jabones</h2>
+  <p>Estrategias probadas para generar ventas desde el día 1</p>
+</div>
+
+<h2>📱 Canal #1: WhatsApp (Tu arma secreta)</h2>
+
+<div class="channel-card">
+<h3>📲 WhatsApp Business — Configuración</h3>
+<ol>
+<li>Descarga <strong>WhatsApp Business</strong> (gratis)</li>
+<li>Configura perfil: nombre, foto de tu mejor jabón, descripción, horario</li>
+<li>Crea tu <strong>catálogo</strong>: foto + nombre + descripción + precio de cada jabón</li>
+</ol>
+
+<h3>📸 Estados de WhatsApp (¡esto vende!)</h3>
+<ul>
+<li>🌅 <strong>Mañana:</strong> Foto haciendo jabones</li>
+<li>🧼 <strong>Mediodía:</strong> Producto terminado con precio</li>
+<li>📦 <strong>Tarde:</strong> Empacando pedidos</li>
+<li>💬 <strong>Noche:</strong> Testimonio de cliente</li>
+<li>🔥 <strong>Domingo:</strong> "¡Últimos 5 jabones de café!" (urgencia)</li>
+</ul>
+</div>
+
+<h3>💬 Scripts de WhatsApp — Copia y Pega</h3>
+
+<div class="highlight-box">
+<h4 style="margin-top:0;">📱 Script 1: Primer contacto (estados)</h4>
+<p style="background:#fff;padding:14px;border-radius:8px;font-size:14px;">🧼✨ ¡Hola! Les cuento que empecé a hacer jabones artesanales 100% naturales<br><br>🌿 Lavanda (relajante) · 🍯 Avena y Miel · ☕ Café exfoliante · 🌹 Rosa Mosqueta<br><br>💰 Desde $_____ · 🎁 Kit de 3 por $_____<br>📦 Envíos · 💳 Nequi / Daviplata / efectivo<br><br>¿Te interesa? Escríbeme 💕</p>
+</div>
+
+<div class="highlight-box">
+<h4 style="margin-top:0;">📱 Script 2: Respuesta a interesado</h4>
+<p style="background:#fff;padding:14px;border-radius:8px;font-size:14px;">¡Hola [nombre]! 😊 Son 100% artesanales, sin químicos agresivos 🌿<br><br>Los más pedidos: 🧼 Lavanda ($___) · 🧼 Avena y Miel ($___) · 🧼 Café ($___)<br><br>Kit de 3 por $_____ (incluye caja 🎁)<br><br>¿Cuál te llama? 😊</p>
+</div>
+
+<div class="highlight-box">
+<h4 style="margin-top:0;">📱 Script 3: Cerrar venta</h4>
+<p style="background:#fff;padding:14px;border-radius:8px;font-size:14px;">¡Perfecto! Te va a encantar 😍<br><br>💜 Nequi: [número] · 💙 Daviplata: [número] · 🏦 Transferencia: [cuenta]<br><br>¿A qué dirección te lo envío? 📦<br>¡Gracias por apoyar lo artesanal! 🙏✨</p>
+</div>
+
+<h2>📸 Canal #2: Instagram</h2>
+
+<div class="channel-card">
+<h3>🎨 Qué publicar</h3>
+<p><strong>Feed (3-4 posts/semana):</strong> Fotos de producto, reels del proceso, carruseles educativos, testimonios, sorteos.</p>
+<p><strong>Reels que funcionan:</strong></p>
+<ul>
+<li>🎬 Proceso satisfactorio (derretir, verter, desmoldar)</li>
+<li>🎬 Cortar jabón (ASMR visual)</li>
+<li>🎬 "Pack an order with me"</li>
+</ul>
+
+<h3>#️⃣ Hashtags</h3>
+<div class="hashtags">#jabonartesanal #jabonesnaturales #cosmeticanatural #skincare #handmadesoap #emprendedora #negocioencasa #jabondelavanda #jabondecafe #regalosoriginales #ecofriendly</div>
+</div>
+
+<h2>🏪 Canal #3: Ferias y Mercados</h2>
+
+<div class="channel-card">
+<h3>🎯 Tips para vender en ferias:</h3>
+<ul>
+<li>✅ Deja que la gente TOQUE y HUELA los jabones</li>
+<li>✅ Ten jabón cortándose como demo</li>
+<li>✅ Ofrece "3×2" o "lleva 3 por $12"</li>
+<li>✅ Acepta todo tipo de pago</li>
+<li>✅ Recoge WhatsApps para vender después</li>
+</ul>
+<div class="highlight-box">
+<p>💰 <strong>Expectativa:</strong> $100-300 USD por fin de semana en una buena feria.</p>
+</div>
+</div>
+
+<h2>🏬 Canal #4: Tiendas en Consignación</h2>
+
+<div class="channel-card">
+<p><strong>Modelo:</strong> Precio venta $5.00 → Tienda se queda 30-40% → Tú recibes $3.00-3.50 → <strong>Ganancia: $1.90-2.40 sin hacer NADA</strong></p>
+<h3>Dónde ofrecer:</h3>
+<ul>
+<li>☕ Cafeterías artesanales</li>
+<li>💆 Spas y salones de belleza</li>
+<li>🌿 Tiendas naturistas</li>
+<li>🎁 Tiendas de regalos</li>
+<li>🏨 Hoteles boutique</li>
+</ul>
+</div>
+
+<h2>📸 Fotos Profesionales (con tu celular)</h2>
+<div class="green-box">
+<ol>
+<li><strong>Luz natural:</strong> Cerca de ventana, de día. NUNCA flash.</li>
+<li><strong>Fondo:</strong> Tela blanca, madera rústica, o vinilo mármol ($3).</li>
+<li><strong>Props:</strong> Ramitas, flores secas, granos de café.</li>
+<li><strong>Ángulo:</strong> 45 grados o cenital.</li>
+<li><strong>Edición:</strong> VSCO o Lightroom (gratis).</li>
+</ol>
+</div>
+
+<h2>🚀 Plan de Acción: Tu Primera Semana</h2>
+<div class="highlight-box">
+<table style="background:transparent;">
+<tr><th>Día</th><th>Acción</th></tr>
+<tr><td><strong>Lunes</strong></td><td>Compra materiales del kit básico</td></tr>
+<tr><td><strong>Martes</strong></td><td>Haz tus primeros 3 jabones</td></tr>
+<tr><td><strong>Miércoles</strong></td><td>Desmolda, empaca, toma fotos. Crea WhatsApp Business</td></tr>
+<tr><td><strong>Jueves</strong></td><td>Crea Instagram. Publica 3 fotos + 1 reel</td></tr>
+<tr><td><strong>Viernes</strong></td><td>Regala 3 jabones a amigas. Pide foto y reseña</td></tr>
+<tr><td><strong>Sábado</strong></td><td>Publica estados + stories. ¡Primera venta!</td></tr>
+<tr><td><strong>Domingo</strong></td><td>Haz más jabones. Busca ferias</td></tr>
+</table>
+</div>
+
+</div>
+</section>
+
+<!-- ===================== BONO 1 ===================== -->
+<section id="bono-1">
+<div class="section-wrap">
+<div class="module-cover cover-b1">
+  <div class="mod-num">🎁 BONO #1</div>
+  <h2>📦 Guía de Empaque Profesional</h2>
+  <p>Cómo hacer que tus jabones se vean de $15 gastando centavos</p>
+</div>
+
+<p>El empaque convierte un jabón artesanal en un <strong>regalo</strong>. Es la diferencia entre vender a $3 y vender a $8.</p>
+
+<h2>🎨 Estilo 1: Rústico Natural (el más popular)</h2>
+<div class="style-card">
+<div class="materials"><strong>Materiales:</strong> Papel kraft + cuerda yute + ramita seca + etiqueta · <strong>Costo:</strong> $0.15-0.20</div>
+<ol><li>Film transparente (protección)</li><li>Envolver con papel kraft</li><li>Atar con cuerda de yute</li><li>Ramita de romero/lavanda bajo la cuerda</li><li>Pegar etiqueta</li></ol>
+</div>
+
+<h2>🎨 Estilo 2: Minimalista Moderno</h2>
+<div class="style-card">
+<div class="materials"><strong>Materiales:</strong> Film termoencogible + faja impresa · <strong>Costo:</strong> $0.10-0.15</div>
+<ol><li>Film termoencogible (con secador de pelo)</li><li>"Faja" de papel con tu marca alrededor</li></ol>
+</div>
+
+<h2>🎨 Estilo 3: Bolsa Organza / Tela</h2>
+<div class="style-card">
+<div class="materials"><strong>Materiales:</strong> Bolsita organza + etiqueta colgante · <strong>Costo:</strong> $0.25-0.40</div>
+<p><strong>Ideal para:</strong> Regalos, bodas, eventos</p>
+</div>
+
+<h2>🎨 Estilo 4: Caja Kit Regalo</h2>
+<div class="style-card">
+<div class="materials"><strong>Materiales:</strong> Caja kraft + papel de seda + cinta + tarjeta · <strong>Costo:</strong> $0.80-1.50/kit</div>
+<p><strong>Ideal para:</strong> Día de la Madre, Navidad. Cobra $15-25 por kit.</p>
+</div>
+
+<h2>🎨 Estilo 5: Eco-Friendly</h2>
+<div class="style-card">
+<div class="materials"><strong>Materiales:</strong> Tela reutilizable + estampa · <strong>Costo:</strong> $0.10-0.20</div>
+<p>Envuelve estilo "furoshiki" japonés. El cliente reutiliza la tela (valor agregado).</p>
+</div>
+
+<div class="tip">
+<p>💡 <strong>REGLA DE ORO:</strong> Invierte máximo 5-10% del precio de venta en empaque. Si vendes a $5, gasta máx $0.50.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ===================== BONO 2 ===================== -->
+<section id="bono-2">
+<div class="section-wrap">
+<div class="module-cover cover-b2">
+  <div class="mod-num">🎁 BONO #2</div>
+  <h2>🧮 Calculadora de Costos y Ganancias</h2>
+  <p>Imprime esta tabla, llénala y conoce tu ganancia exacta</p>
+</div>
+
+<div class="instructions">
+<p>📝 <strong>Instrucciones:</strong> Escribe tus costos reales en los campos y la calculadora hará las cuentas automáticamente.</p>
+</div>
+
+<h2>📊 Calculadora de Costo por Jabón</h2>
+<div style="background:white;padding:25px;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,0.08);margin:20px 0;">
+<table class="dark-th" style="margin:0;">
+<tr><th>Ingrediente</th><th>Costo por jabón (USD)</th></tr>
+<tr><td>🧴 Base de glicerina</td><td><input type="number" id="c-base" step="0.01" placeholder="0.80" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;"></td></tr>
+<tr><td>🌿 Aceite esencial #1</td><td><input type="number" id="c-ae1" step="0.01" placeholder="0.15" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;"></td></tr>
+<tr><td>🌸 Aceite esencial #2</td><td><input type="number" id="c-ae2" step="0.01" placeholder="0.00" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;"></td></tr>
+<tr><td>🎨 Colorante / mica</td><td><input type="number" id="c-color" step="0.01" placeholder="0.05" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;"></td></tr>
+<tr><td>🧂 Aditivo (avena, café, etc.)</td><td><input type="number" id="c-aditivo" step="0.01" placeholder="0.10" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;"></td></tr>
+<tr><td>📦 Empaque</td><td><input type="number" id="c-empaque" step="0.01" placeholder="0.15" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;"></td></tr>
+</table>
+
+<div style="margin-top:20px;display:grid;grid-template-columns:repeat(2,1fr);gap:15px;">
+<div style="background:linear-gradient(135deg,#FFF3E0,#FFFDE7);padding:20px;border-radius:12px;text-align:center;">
+<p style="margin:0;font-size:13px;color:#666;">💰 COSTO TOTAL</p>
+<p style="margin:5px 0 0;font-size:32px;font-weight:700;color:#E8743F;" id="r-costo">$0.00</p>
+</div>
+<div style="background:linear-gradient(135deg,#FFF3E0,#FFFDE7);padding:20px;border-radius:12px;text-align:center;">
+<p style="margin:0;font-size:13px;color:#666;">🏷️ PRECIO MÍNIMO (×3)</p>
+<p style="margin:5px 0 0;font-size:32px;font-weight:700;color:#E8743F;" id="r-minimo">$0.00</p>
+</div>
+</div>
+
+<div style="margin-top:15px;background:linear-gradient(135deg,#E8F5E9,#F1F8E9);padding:20px;border-radius:12px;">
+<p style="margin:0 0 10px;font-size:14px;color:#666;">💵 ¿A cuánto vas a vender cada jabón?</p>
+<input type="number" id="c-venta" step="0.01" placeholder="4.50" style="width:100%;padding:12px;border:2px solid #A5D6A7;border-radius:8px;font-size:18px;background:white;">
+<div style="margin-top:15px;display:grid;grid-template-columns:repeat(2,1fr);gap:15px;">
+<div style="background:white;padding:15px;border-radius:10px;text-align:center;">
+<p style="margin:0;font-size:13px;color:#666;">✅ GANANCIA/JABÓN</p>
+<p style="margin:5px 0 0;font-size:28px;font-weight:700;color:#1B5E20;" id="r-ganancia">$0.00</p>
+</div>
+<div style="background:white;padding:15px;border-radius:10px;text-align:center;">
+<p style="margin:0;font-size:13px;color:#666;">📊 MARGEN %</p>
+<p style="margin:5px 0 0;font-size:28px;font-weight:700;color:#1B5E20;" id="r-margen">0%</p>
+</div>
+</div>
+</div>
+</div>
+
+<h2>📈 Proyección de Ganancias Mensuales</h2>
+<div style="background:white;padding:25px;border-radius:16px;box-shadow:0 4px 15px rgba(0,0,0,0.08);margin:20px 0;">
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-bottom:15px;">
+<div>
+<p style="margin:0 0 5px;font-size:14px;color:#666;">🧼 Jabones vendidos por día:</p>
+<input type="number" id="p-dia" step="1" placeholder="10" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;">
+</div>
+<div>
+<p style="margin:0 0 5px;font-size:14px;color:#666;">📅 Días de trabajo al mes:</p>
+<input type="number" id="p-dias" step="1" placeholder="25" value="25" style="width:100%;padding:10px;border:2px solid #F5DEB3;border-radius:8px;font-size:16px;background:#FFFDE7;">
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:20px;">
+<div style="background:linear-gradient(135deg,#FFF3E0,#FFFDE7);padding:20px;border-radius:12px;text-align:center;">
+<p style="margin:0;font-size:12px;color:#666;">📦 JABONES/MES</p>
+<p style="margin:5px 0 0;font-size:28px;font-weight:700;color:#E8743F;" id="r-jabmes">0</p>
+</div>
+<div style="background:linear-gradient(135deg,#FFF3E0,#FFFDE7);padding:20px;border-radius:12px;text-align:center;">
+<p style="margin:0;font-size:12px;color:#666;">💵 INGRESOS/MES</p>
+<p style="margin:5px 0 0;font-size:28px;font-weight:700;color:#E8743F;" id="r-ingmes">$0</p>
+</div>
+<div style="background:linear-gradient(135deg,#E8F5E9,#F1F8E9);padding:20px;border-radius:12px;text-align:center;border:2px solid #A5D6A7;">
+<p style="margin:0;font-size:12px;color:#666;">🎉 GANANCIA NETA/MES</p>
+<p style="margin:5px 0 0;font-size:28px;font-weight:700;color:#1B5E20;" id="r-ganmes">$0</p>
+</div>
+</div>
+</div>
+
+<script>
+function calcular(){
+  var base=parseFloat(document.getElementById('c-base').value)||0;
+  var ae1=parseFloat(document.getElementById('c-ae1').value)||0;
+  var ae2=parseFloat(document.getElementById('c-ae2').value)||0;
+  var col=parseFloat(document.getElementById('c-color').value)||0;
+  var adi=parseFloat(document.getElementById('c-aditivo').value)||0;
+  var emp=parseFloat(document.getElementById('c-empaque').value)||0;
+  var costo=base+ae1+ae2+col+adi+emp;
+  var venta=parseFloat(document.getElementById('c-venta').value)||0;
+  var ganancia=venta-costo;
+  var margen=costo>0?((ganancia/costo)*100):0;
+  var dia=parseFloat(document.getElementById('p-dia').value)||0;
+  var dias=parseFloat(document.getElementById('p-dias').value)||25;
+  var jabmes=dia*dias;
+  document.getElementById('r-costo').textContent='$'+costo.toFixed(2);
+  document.getElementById('r-minimo').textContent='$'+(costo*3).toFixed(2);
+  document.getElementById('r-ganancia').textContent='$'+ganancia.toFixed(2);
+  document.getElementById('r-margen').textContent=margen.toFixed(0)+'%';
+  document.getElementById('r-jabmes').textContent=jabmes;
+  document.getElementById('r-ingmes').textContent='$'+(jabmes*venta).toFixed(0);
+  document.getElementById('r-ganmes').textContent='$'+(jabmes*ganancia).toFixed(0);
+}
+document.querySelectorAll('#bono-2 input').forEach(function(el){el.addEventListener('input',calcular);});
+</script>
+
+<h2>💡 Fórmulas Rápidas</h2>
+<table class="dark-th">
+<tr><th>Fórmula</th><th>Cálculo</th></tr>
+<tr><td>Costo por gramo de base</td><td>Precio del kg ÷ 1000</td></tr>
+<tr><td>Costo por gota de AE</td><td>Precio del frasco ÷ 200</td></tr>
+<tr><td>Precio mínimo de venta</td><td>Costo total × 3</td></tr>
+<tr><td>Margen de ganancia %</td><td>(Ganancia ÷ Costo) × 100</td></tr>
+<tr><td>Jabones por kg de base</td><td>1000 ÷ gramos por jabón</td></tr>
+<tr><td>Punto de equilibrio</td><td>Inversión ÷ Ganancia por jabón</td></tr>
+</table>
+
+</div>
+</section>
+
+<!-- ===================== BONO 3 ===================== -->
+<section id="bono-3">
+<div class="section-wrap">
+<div class="module-cover cover-b3">
+  <div class="mod-num">🎁 BONO #3</div>
+  <h2>🏷️ Plantillas de Etiquetas</h2>
+  <p>4 diseños profesionales — solo cambia el nombre y listo</p>
+</div>
+
+<p>Elige el estilo que más te guste para tu marca. Edítalas en Canva (gratis) o imprímelas directamente.</p>
+
+<h2>📐 Los 4 Estilos</h2>
+
+<div class="labels-grid">
+<div class="label label-style-1">
+<div class="brand">Tu Marca Aquí</div>
+<div style="font-size:11px;color:#D4A24E;margin:3px 0;">✦ jabones artesanales ✦</div>
+<div class="product">Jabón de Lavanda</div>
+<div style="font-size:11px;color:#666;margin:5px 0;">Relajante & Aromático</div>
+<div class="details">100g · Ingredientes naturales<br>Hecho a mano con amor 💜</div>
+</div>
+<div class="label label-style-2">
+<div class="brand">TU MARCA</div>
+<div class="line"></div>
+<div class="product">jabón de café exfoliante</div>
+<div class="line"></div>
+<div style="font-size:10px;color:#999;">100g · artesanal · natural</div>
+</div>
+<div class="label label-style-3">
+<div class="brand">Tu Marca</div>
+<div class="product">🌿 Carbón Activado</div>
+<div style="font-size:10px;color:#999;">100g · natural</div>
+</div>
+<div class="label label-style-4">
+<div class="brand">TU MARCA</div>
+<div class="product">Rosa Mosqueta</div>
+<div style="font-size:11px;color:#D4A24E;">✦ Premium ✦</div>
+<div class="details">100g · regenerador · artesanal</div>
+</div>
+</div>
+
+<h2>📋 Plantilla Completa (para imprimir)</h2>
+<div class="full-label">
+<div style="text-align:center;margin-bottom:14px;">
+<div style="font-family:'Dancing Script',cursive;font-size:28px;color:#D4A24E;">[Tu Marca]</div>
+<div style="font-size:12px;color:#999;letter-spacing:2px;">JABONES ARTESANALES</div>
+</div>
+<div style="text-align:center;margin:14px 0;">
+<div style="font-family:'Playfair Display',serif;font-size:20px;">[Nombre del Jabón]</div>
+<div style="font-size:13px;color:#666;margin-top:5px;">[Beneficio principal]</div>
+</div>
+<hr style="border:1px solid #F0F0F0;margin:14px 0;">
+<div style="font-size:11px;color:#888;">
+<p style="margin-bottom:5px;"><strong>Ingredientes:</strong> Base de glicerina vegetal, [aceite esencial], [aditivo natural], [colorante natural]</p>
+<p style="margin-bottom:5px;"><strong>Peso neto:</strong> 100g</p>
+<p style="margin-bottom:5px;"><strong>Modo de uso:</strong> Aplicar sobre piel húmeda, hacer espuma y enjuagar.</p>
+<p style="margin-bottom:5px;">🧼 Hecho a mano · 100% artesanal · Sin parabenos</p>
+</div>
+<div style="text-align:center;margin-top:14px;font-size:11px;color:#999;">📱 @[tu_instagram] · 💬 [tu WhatsApp]</div>
+</div>
+
+<h2>✏️ Cómo Personalizar</h2>
+<div class="instructions">
+<ol>
+<li><strong>Canva (gratis):</strong> canva.com → "Crear diseño" → busca "etiqueta" → edita → exporta PDF</li>
+<li><strong>En casa:</strong> Imprime, recorta y pega</li>
+<li><strong>Papelería:</strong> Impresión en papel adhesivo: $0.05-0.10 c/u</li>
+<li><strong>Tip pro:</strong> Papel kraft adhesivo = look rústico. Papel transparente = look moderno.</li>
+</ol>
+</div>
+
+<h2>📝 Qué Debe Incluir Toda Etiqueta</h2>
+<ul>
+<li>✅ Nombre de tu marca</li>
+<li>✅ Nombre del jabón</li>
+<li>✅ Peso (100g)</li>
+<li>✅ Ingredientes principales</li>
+<li>✅ Tu contacto (Instagram / WhatsApp)</li>
+<li>✅ "Hecho a mano" / "Artesanal" / "Natural"</li>
+</ul>
+
+</div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="site-footer">
+<p style="font-family:'Playfair Display',serif;font-size:18px;color:#E8743F;margin-bottom:8px;">🧼 Jabones Artesanales: Crea y Vende desde Casa</p>
+<p>© 2026 Jabones Artesanales: Crea y Vende desde Casa — Todos los derechos reservados</p>
+<p style="margin-top:8px;font-size:12px;">Este material es para uso personal del estudiante. Prohibida su distribución.</p>
+</footer>
+
+</div><!-- /main -->
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Volver arriba">↑</button>
+
+<script>
+// Progress bar
+const pb=document.getElementById('progress-bar');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement.scrollHeight-window.innerHeight;
+  pb.style.width=(window.scrollY/h*100)+'%';
+  document.getElementById('back-top').classList.toggle('show',window.scrollY>400);
+});
+
+// Sidebar toggle (mobile)
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.querySelector('.sidebar-overlay').classList.toggle('show');
+}
+
+// Close sidebar on nav click (mobile)
+document.querySelectorAll('.sidebar a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    if(window.innerWidth<=768){
+      document.getElementById('sidebar').classList.remove('open');
+      document.querySelector('.sidebar-overlay').classList.remove('show');
+    }
+  });
+});
+
+// Active nav on scroll
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.sidebar a');
+window.addEventListener('scroll',()=>{
+  let current='';
+  sections.forEach(s=>{
+    if(window.scrollY>=s.offsetTop-100) current=s.getAttribute('id');
+  });
+  navLinks.forEach(a=>{
+    a.classList.remove('active');
+    if(a.getAttribute('href')==='#'+current) a.classList.add('active');
+  });
+});
+</script>
 </body>
 </html>
