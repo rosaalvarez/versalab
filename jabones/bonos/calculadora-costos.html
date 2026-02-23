@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BONO — Calculadora de Costos y Ganancias</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background: #FFF8F0; color: #3D2B1F; line-height: 1.7; }
+.cover { background: linear-gradient(135deg, #1B5E20 0%, #4CAF50 100%); color: white; text-align: center; padding: 60px 40px; }
+.cover h1 { font-family: 'Playfair Display', serif; font-size: 36px; margin-bottom: 10px; }
+.container { max-width: 900px; margin: 0 auto; padding: 40px 30px; }
+h2 { font-family: 'Playfair Display', serif; color: #1B5E20; font-size: 24px; margin: 35px 0 15px; }
+p { margin-bottom: 12px; font-size: 15px; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+th { background: #1B5E20; color: white; padding: 12px 15px; text-align: left; font-size: 13px; }
+td { padding: 10px 15px; border: 1px solid #E0E0E0; font-size: 14px; }
+tr:nth-child(even) { background: #F9FBF7; }
+.editable { background: #FFFDE7; border: 2px solid #FFD54F; }
+.formula-row { background: #E8F5E9 !important; font-weight: bold; }
+.note { font-size: 13px; color: #888; font-style: italic; margin: 10px 0; }
+.instructions { background: #FFF3E0; padding: 20px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #E8743F; }
+.footer { text-align: center; padding: 25px; color: #999; font-size: 12px; border-top: 2px solid #C8E6C9; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<p style="font-size: 14px; letter-spacing: 3px; margin-bottom: 10px;">🎁 BONO #3</p>
+<h1>🧮 Calculadora de Costos y Ganancias</h1>
+<p>Imprime esta tabla, llénala a mano y conoce tu ganancia exacta</p>
+</div>
+
+<div class="container">
+
+<div class="instructions">
+<p>📝 <strong>Instrucciones:</strong> Imprime esta página. Para cada jabón que hagas, llena los campos amarillos con tus costos reales. La tabla te calcula automáticamente tu costo total, precio sugerido y ganancia.</p>
+</div>
+
+<h2>📊 Tabla 1: Costo por Jabón Individual</h2>
+
+<table>
+<tr>
+<th>Ingrediente</th>
+<th>Cantidad usada</th>
+<th>Precio comprado</th>
+<th>Costo por jabón</th>
+</tr>
+<tr>
+<td>Base de glicerina</td>
+<td class="editable">_____ g</td>
+<td class="editable">$_____ / kg</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Aceite esencial #1</td>
+<td class="editable">_____ gotas</td>
+<td class="editable">$_____ / 10ml</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Aceite esencial #2</td>
+<td class="editable">_____ gotas</td>
+<td class="editable">$_____ / 10ml</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Colorante / mica</td>
+<td class="editable">_____ gotas/pizca</td>
+<td class="editable">$_____ / frasco</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Aditivo (avena, café, etc.)</td>
+<td class="editable">_____ cdta</td>
+<td class="editable">$_____ / paquete</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Aceite vegetal extra</td>
+<td class="editable">_____ cdta</td>
+<td class="editable">$_____ / frasco</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Empaque (film + etiqueta + cinta)</td>
+<td>1 unidad</td>
+<td class="editable">$_____</td>
+<td class="editable">$_____</td>
+</tr>
+<tr class="formula-row">
+<td colspan="3">COSTO TOTAL POR JABÓN</td>
+<td class="editable" style="font-size: 18px;">$_____</td>
+</tr>
+<tr class="formula-row">
+<td colspan="3">PRECIO MÍNIMO (Costo × 3)</td>
+<td class="editable" style="font-size: 18px;">$_____</td>
+</tr>
+<tr class="formula-row">
+<td colspan="3">PRECIO DE VENTA (tu decisión)</td>
+<td class="editable" style="font-size: 18px; color: #1B5E20;">$_____</td>
+</tr>
+<tr class="formula-row">
+<td colspan="3">GANANCIA POR JABÓN (Venta - Costo)</td>
+<td class="editable" style="font-size: 18px; color: #1B5E20;">$_____</td>
+</tr>
+</table>
+
+<p class="note">Nombre del jabón: _________________________________ Fecha: _____________</p>
+
+<h2>📈 Tabla 2: Proyección Mensual</h2>
+
+<table>
+<tr>
+<th>Concepto</th>
+<th>Cálculo</th>
+<th>Tu número</th>
+</tr>
+<tr>
+<td>Jabones vendidos por día</td>
+<td>—</td>
+<td class="editable" style="font-size: 16px;">_____</td>
+</tr>
+<tr>
+<td>Precio promedio de venta</td>
+<td>—</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Ingresos por día</td>
+<td>jabones × precio</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Ingresos por mes (25 días)</td>
+<td>diario × 25</td>
+<td class="editable" style="font-weight: bold;">$_____</td>
+</tr>
+<tr>
+<td>Costo promedio por jabón</td>
+<td>—</td>
+<td class="editable">$_____</td>
+</tr>
+<tr>
+<td>Costo total por mes</td>
+<td>jabones/día × 25 × costo</td>
+<td class="editable">$_____</td>
+</tr>
+<tr class="formula-row">
+<td>GANANCIA NETA MENSUAL</td>
+<td>Ingresos - Costos</td>
+<td class="editable" style="font-size: 20px; color: #1B5E20;">$_____</td>
+</tr>
+</table>
+
+<h2>📋 Tabla 3: Control de Inventario (llena cada semana)</h2>
+
+<table>
+<tr>
+<th>Jabón</th>
+<th>Producidos</th>
+<th>Vendidos</th>
+<th>Stock</th>
+<th>Ingreso</th>
+</tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr><td class="editable">______________</td><td class="editable">____</td><td class="editable">____</td><td class="editable">____</td><td class="editable">$_____</td></tr>
+<tr class="formula-row"><td colspan="4">TOTAL SEMANA</td><td class="editable">$_____</td></tr>
+</table>
+
+<p class="note">Semana del _____________ al _____________</p>
+
+<h2>💡 Fórmulas Rápidas de Referencia</h2>
+<table>
+<tr><th>Fórmula</th><th>Cálculo</th></tr>
+<tr><td>Costo por gramo de base</td><td>Precio del kg ÷ 1000</td></tr>
+<tr><td>Costo por gota de aceite esencial</td><td>Precio del frasco ÷ 200 (gotas en 10ml)</td></tr>
+<tr><td>Precio mínimo de venta</td><td>Costo total × 3</td></tr>
+<tr><td>Margen de ganancia %</td><td>(Ganancia ÷ Costo) × 100</td></tr>
+<tr><td>Jabones por kg de base</td><td>1000 ÷ gramos por jabón</td></tr>
+<tr><td>Punto de equilibrio (inversión inicial)</td><td>Inversión total ÷ Ganancia por jabón</td></tr>
+</table>
+
+<div class="footer">
+<p>Jabones Artesanales: Crea y Vende desde Casa © 2026</p>
+<p>Imprime varias copias de esta hoja — una por cada tipo de jabón 📋</p>
+</div>
+</div>
+</body>
+</html>

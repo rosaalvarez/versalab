@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 4 — Costos, Precios y Ganancias</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background: #FFF8F0; color: #3D2B1F; line-height: 1.7; }
+.cover { background: linear-gradient(135deg, #1B5E20 0%, #4CAF50 100%); color: white; text-align: center; padding: 80px 40px; }
+.cover h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
+.cover p { font-size: 20px; opacity: 0.9; }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 30px; }
+h2 { font-family: 'Playfair Display', serif; color: #1B5E20; font-size: 28px; margin: 40px 0 20px; border-bottom: 3px solid #C8E6C9; padding-bottom: 10px; }
+h3 { color: #E8743F; font-size: 20px; margin: 25px 0 12px; }
+h4 { color: #1B5E20; font-size: 17px; margin: 18px 0 8px; }
+p { margin-bottom: 15px; font-size: 16px; }
+.highlight-box { background: linear-gradient(135deg, #FFF3E0, #FFFDE7); border-left: 5px solid #E8743F; padding: 25px 30px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+.green-box { background: linear-gradient(135deg, #E8F5E9, #F1F8E9); border-left: 5px solid #1B5E20; padding: 25px 30px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+.money-box { background: linear-gradient(135deg, #FFF8E1, #FFFDE7); border: 3px solid #FFD54F; padding: 30px; border-radius: 16px; margin: 25px 0; text-align: center; }
+.money-box .big-number { font-family: 'Playfair Display', serif; font-size: 48px; color: #1B5E20; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; }
+th { background: #1B5E20; color: white; padding: 14px 18px; text-align: left; font-size: 14px; }
+td { padding: 12px 18px; border-bottom: 1px solid #E0E0E0; font-size: 15px; }
+tr:nth-child(even) { background: #F1F8E9; }
+.formula { background: white; border: 2px solid #E8743F; padding: 20px 30px; border-radius: 12px; margin: 20px 0; text-align: center; font-size: 22px; font-weight: 700; color: #E8743F; }
+.footer { text-align: center; padding: 30px; color: #999; font-size: 13px; border-top: 2px solid #C8E6C9; margin-top: 50px; }
+.tip { background: #FFF8E1; border: 2px dashed #FFB74D; padding: 20px; border-radius: 12px; margin: 20px 0; }
+.warning { background: #FBE9E7; border: 2px solid #E57373; padding: 20px; border-radius: 12px; margin: 20px 0; }
+.timeline-item { background: white; border-radius: 12px; padding: 20px 25px; margin: 15px 0; box-shadow: 0 3px 12px rgba(0,0,0,0.06); border-left: 5px solid #4CAF50; }
+.timeline-item.investment { border-left-color: #E57373; }
+.timeline-item.growth { border-left-color: #FFB74D; }
+.timeline-item.stable { border-left-color: #1B5E20; }
+ul { margin: 10px 0 20px 25px; }
+li { margin-bottom: 8px; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<p style="font-size: 16px; letter-spacing: 3px; margin-bottom: 15px;">MÓDULO 4</p>
+<h1>💰 Costos, Precios y Ganancias</h1>
+<p>Los números detrás de tu negocio — desde el primer jabón hasta tu marca estable</p>
+</div>
+
+<div class="container">
+
+<h2>📊 Desglose de Costos por Jabón</h2>
+
+<p>Cada jabón tiene un costo de producción que debes conocer EXACTAMENTE para poder precificar correctamente. No adivines — calcula. Aquí está el desglose detallado:</p>
+
+<h3>🔍 Costo por componente (jabón de 100g):</h3>
+<table>
+<tr><th>Componente</th><th>Cantidad por jabón</th><th>Costo unitario</th><th>Cómo calcularlo</th></tr>
+<tr><td>🧱 Base de glicerina</td><td>100g</td><td>$0.50 - $0.80</td><td>Precio del kg ÷ 10</td></tr>
+<tr><td>🌿 Aceite esencial</td><td>6-8 gotas (~0.5ml)</td><td>$0.15 - $0.30</td><td>Precio del frasco ÷ 200 gotas × gotas usadas</td></tr>
+<tr><td>🎨 Colorante/mica</td><td>Pizca</td><td>$0.02 - $0.05</td><td>Mínimo — un set dura meses</td></tr>
+<tr><td>🌾 Aditivos (avena, café, etc.)</td><td>1/2 - 1 cucharadita</td><td>$0.03 - $0.15</td><td>Precio paquete ÷ porciones posibles</td></tr>
+<tr><td>🧴 Aceite vegetal adicional</td><td>1/2 cucharadita</td><td>$0.05 - $0.10</td><td>Precio frasco ÷ cucharaditas totales</td></tr>
+<tr><td>📦 Empaque (film + etiqueta + cinta)</td><td>1 unidad</td><td>$0.15 - $0.30</td><td>Suma de materiales de empaque</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td colspan="2">COSTO TOTAL PROMEDIO</td><td>$0.90 - $1.70</td><td></td></tr>
+</table>
+
+<h3>📋 Ejemplo detallado: Costo real del Jabón de Café Exfoliante</h3>
+<table>
+<tr><th>Ingrediente</th><th>Cálculo</th><th>Costo</th></tr>
+<tr><td>Base glicerina blanca (100g)</td><td>$7/kg → $7 ÷ 10 = $0.70</td><td>$0.70</td></tr>
+<tr><td>Café molido (1 cda)</td><td>Borra gratis de cafetería o $3/500g → casi nada</td><td>$0.03</td></tr>
+<tr><td>Aceite de coco (1/2 cdta)</td><td>$4/250ml → $4 ÷ 100 cdtas</td><td>$0.04</td></tr>
+<tr><td>AE vainilla (6 gotas)</td><td>$5/200 gotas × 6</td><td>$0.15</td></tr>
+<tr><td>Film transparente</td><td>$3/rollo ÷ 60 jabones</td><td>$0.05</td></tr>
+<tr><td>Etiqueta impresa</td><td>$3/50 etiquetas</td><td>$0.06</td></tr>
+<tr><td>Cinta/cuerda yute</td><td>$2/rollo ÷ 30 jabones</td><td>$0.07</td></tr>
+<tr style="background: #FFF3E0; font-weight: bold;"><td colspan="2">COSTO TOTAL</td><td>$1.10</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td colspan="2">PRECIO DE VENTA: $5.00</td><td>Ganancia: $3.90 (355%)</td></tr>
+</table>
+
+<h3>📋 Ejemplo: Jabón Premium de Rosa Mosqueta</h3>
+<table>
+<tr><th>Ingrediente</th><th>Cálculo</th><th>Costo</th></tr>
+<tr><td>Base glicerina blanca (100g)</td><td>$7/kg → $0.70</td><td>$0.70</td></tr>
+<tr><td>Aceite de rosa mosqueta (1 cdta)</td><td>$8/30ml → $8 ÷ 6 cdtas</td><td>$1.33</td></tr>
+<tr><td>AE geranio (6 gotas)</td><td>$6/200 gotas × 6</td><td>$0.18</td></tr>
+<tr><td>Mica rosa</td><td>Pizca</td><td>$0.03</td></tr>
+<tr><td>Pétalos de rosa</td><td>$4/50g — usas 2g</td><td>$0.16</td></tr>
+<tr><td>Empaque premium (papel tissue + cinta raso)</td><td></td><td>$0.40</td></tr>
+<tr style="background: #FFF3E0; font-weight: bold;"><td colspan="2">COSTO TOTAL</td><td>$2.80</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td colspan="2">PRECIO DE VENTA: $7.00-8.00</td><td>Ganancia: $4.20-5.20</td></tr>
+</table>
+
+<h2>💲 Cómo Precificar: La Regla del ×3</h2>
+
+<div class="formula">
+PRECIO DE VENTA = COSTO DE PRODUCCIÓN × 3 (mínimo)
+</div>
+
+<p>Esta regla es el estándar de la industria artesanal y garantiza que cubras:</p>
+<ul>
+<li>✅ <strong>1× = Costo de materiales</strong> (lo que gastaste en ingredientes y empaque)</li>
+<li>✅ <strong>1× = Tu tiempo de trabajo + gastos indirectos</strong> (gas, agua, luz, transporte, internet)</li>
+<li>✅ <strong>1× = Ganancia neta</strong> (lo que te queda en el bolsillo)</li>
+</ul>
+
+<div class="highlight-box">
+<p><strong>Ejemplo:</strong> Un jabón de café exfoliante te cuesta $1.10 en materiales.</p>
+<p>$1.10 × 3 = <strong>$3.30 (precio mínimo)</strong></p>
+<p>Pero como es un jabón atractivo con beneficios claros, puedes venderlo a <strong>$5.00</strong> sin problema.</p>
+<p>Eso te da un margen de <strong>$3.90 por jabón (355%)</strong> 🔥</p>
+</div>
+
+<div class="tip">
+<p>💡 <strong>¿Cuándo puedes cobrar MÁS del ×3?</strong></p>
+<ul style="margin-bottom: 0;">
+<li>Cuando el ingrediente principal suena "premium" (rosa mosqueta, vino tinto, leche de cabra)</li>
+<li>Cuando el empaque es elegante (caja, cinta de raso, flor seca)</li>
+<li>Cuando vendes en ferias/tiendas (el contexto eleva el valor)</li>
+<li>Cuando es edición especial/temporada (Navidad, Día de la Madre)</li>
+<li>Cuando vendes sets/kits (el valor percibido sube con la presentación)</li>
+</ul>
+</div>
+
+<h3>📊 Tabla de precios sugeridos por categoría y mercado:</h3>
+<table>
+<tr><th>Categoría</th><th>Costo prom.</th><th>Precio WhatsApp/directo</th><th>Precio ferias</th><th>Precio tiendas</th><th>Precio premium/regalo</th></tr>
+<tr><td>🧼 Básicos</td><td>$0.85</td><td>$3.50 - $4.00</td><td>$4.00 - $5.00</td><td>$4.50 - $5.50</td><td>$5.00 - $6.00</td></tr>
+<tr><td>🌿 Terapéuticos</td><td>$1.10</td><td>$4.50 - $5.50</td><td>$5.00 - $6.50</td><td>$5.50 - $7.00</td><td>$6.00 - $8.00</td></tr>
+<tr><td>✨ Premium</td><td>$1.30</td><td>$5.50 - $7.00</td><td>$6.00 - $8.00</td><td>$7.00 - $9.00</td><td>$8.00 - $12.00</td></tr>
+<tr><td>🎁 Kit 3 jabones</td><td>$3.00</td><td>$12.00 - $15.00</td><td>$15.00 - $18.00</td><td>$18.00 - $22.00</td><td>$20.00 - $30.00</td></tr>
+<tr><td>🏨 Mayorista (×50+)</td><td>$0.60-0.80</td><td colspan="4">$2.00 - $3.50 por unidad (negociable por volumen)</td></tr>
+</table>
+
+<div class="green-box">
+<p>💡 <strong>El empaque sube el precio:</strong> El MISMO jabón de $4 empacado en papel kraft con etiqueta bonita y cinta de yute se puede vender a $6. Con caja elegante y flores secas, a $8-10. ¡El empaque puede subir tu precio un 30-100% sin cambiar el producto!</p>
+</div>
+
+<h2>📈 Proyecciones de Ingreso — 3 Escenarios</h2>
+
+<h3>🟢 Escenario Conservador: 5 jabones/día (1-2 horas)</h3>
+<table>
+<tr><th>Concepto</th><th>Diario</th><th>Semanal</th><th>Mensual (25 días)</th></tr>
+<tr><td>Ventas (5 × $4.50)</td><td>$22.50</td><td>$112.50</td><td>$562.50</td></tr>
+<tr><td>Costo materiales (5 × $1.10)</td><td>$5.50</td><td>$27.50</td><td>$137.50</td></tr>
+<tr><td>Empaque (5 × $0.25)</td><td>$1.25</td><td>$6.25</td><td>$31.25</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td>GANANCIA NETA</td><td>$15.75</td><td>$78.75</td><td>$393.75</td></tr>
+</table>
+
+<div class="money-box">
+<p>Vendiendo solo 5 jabones al día (1-2 horas de trabajo):</p>
+<div class="big-number">$393 USD/mes</div>
+<p>🇨🇴 ~$1,600,000 COP | 🇲🇽 ~$7,800 MXN | 🇦🇷 ~$350,000 ARS | 🇵🇪 ~S/1,470</p>
+</div>
+
+<h3>🟡 Escenario Moderado: 15 jabones/día (3-4 horas)</h3>
+<table>
+<tr><th>Concepto</th><th>Diario</th><th>Semanal</th><th>Mensual (25 días)</th></tr>
+<tr><td>Ventas (15 × $5.00)</td><td>$75.00</td><td>$375.00</td><td>$1,875.00</td></tr>
+<tr><td>Costo materiales (15 × $1.10)</td><td>$16.50</td><td>$82.50</td><td>$412.50</td></tr>
+<tr><td>Empaque (15 × $0.25)</td><td>$3.75</td><td>$18.75</td><td>$93.75</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td>GANANCIA NETA</td><td>$54.75</td><td>$273.75</td><td>$1,368.75</td></tr>
+</table>
+
+<div class="money-box">
+<p>Vendiendo 15 jabones al día (negocio serio, medio tiempo):</p>
+<div class="big-number">$1,368 USD/mes</div>
+<p>🇨🇴 ~$5,600,000 COP | 🇲🇽 ~$27,400 MXN | 🇦🇷 ~$1,230,000 ARS | 🇵🇪 ~S/5,100</p>
+</div>
+
+<h3>🔴 Escenario Agresivo: 25 jabones/día + kits + mayoreo</h3>
+<table>
+<tr><th>Concepto</th><th>Diario</th><th>Semanal</th><th>Mensual (25 días)</th></tr>
+<tr><td>Jabones individuales (20 × $5.00)</td><td>$100.00</td><td>$500.00</td><td>$2,500.00</td></tr>
+<tr><td>Kits regalo (3 × $18.00)</td><td>$54.00</td><td>$270.00</td><td>$1,350.00</td></tr>
+<tr><td>Pedido mayorista (semanal 50 × $2.50)</td><td>—</td><td>$125.00</td><td>$500.00</td></tr>
+<tr><td>Costos totales</td><td>$38.00</td><td>$215.00</td><td>$1,075.00</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td>GANANCIA NETA</td><td>—</td><td>$680.00</td><td>$3,275.00</td></tr>
+</table>
+
+<div class="money-box">
+<p>Negocio establecido con múltiples canales:</p>
+<div class="big-number">$3,275 USD/mes</div>
+<p>🇨🇴 ~$13,400,000 COP | 🇲🇽 ~$65,500 MXN | 🇦🇷 ~$2,950,000 ARS | 🇵🇪 ~S/12,200</p>
+</div>
+
+<h2>📅 Tu Negocio Mes a Mes — Ejemplo Real</h2>
+
+<p>Así se ve un negocio de jabones artesanales creciendo orgánicamente durante los primeros 6 meses:</p>
+
+<div class="timeline-item investment">
+<h4>📅 MES 1 — Inversión y Aprendizaje</h4>
+<table>
+<tr><td><strong>Inversión Kit Básico:</strong></td><td>-$45 USD</td></tr>
+<tr><td><strong>Jabones producidos:</strong></td><td>20 jabones (practicando)</td></tr>
+<tr><td><strong>Jabones vendidos:</strong></td><td>8-10 (familia, amigos)</td></tr>
+<tr><td><strong>Jabones regalados (marketing):</strong></td><td>5-7</td></tr>
+<tr><td><strong>Ingresos:</strong></td><td>$40-45 USD</td></tr>
+<tr style="font-weight: bold;"><td><strong>Balance del mes:</strong></td><td style="color: #E57373;">-$0 a -$5 (recuperaste CASI toda la inversión)</td></tr>
+</table>
+<p>✅ <strong>Logros:</strong> Aprendiste la técnica, hiciste tus primeros jabones, creaste WhatsApp Business, publicaste en Instagram.</p>
+</div>
+
+<div class="timeline-item growth">
+<h4>📅 MES 2 — Primeras Ventas Reales</h4>
+<table>
+<tr><td><strong>Compra de materiales:</strong></td><td>-$30 USD (con ganancia del mes 1)</td></tr>
+<tr><td><strong>Jabones producidos:</strong></td><td>40-50</td></tr>
+<tr><td><strong>Jabones vendidos:</strong></td><td>25-30 (boca a boca funcionando)</td></tr>
+<tr><td><strong>Canales:</strong></td><td>WhatsApp + Instagram + 1-2 pedidos de Facebook</td></tr>
+<tr><td><strong>Ingresos:</strong></td><td>$125-150 USD</td></tr>
+<tr style="font-weight: bold;"><td><strong>Ganancia neta:</strong></td><td style="color: #4CAF50;">+$95-120 USD</td></tr>
+</table>
+<p>✅ <strong>Logros:</strong> Primeros clientes recurrentes, testimonios para redes, defines tus 5 jabones estrella.</p>
+</div>
+
+<div class="timeline-item growth">
+<h4>📅 MES 3 — Crecimiento</h4>
+<table>
+<tr><td><strong>Compra de materiales:</strong></td><td>-$50 USD (mayor variedad)</td></tr>
+<tr><td><strong>Jabones producidos:</strong></td><td>80-100</td></tr>
+<tr><td><strong>Jabones vendidos:</strong></td><td>60-70</td></tr>
+<tr><td><strong>Canales:</strong></td><td>WhatsApp + Instagram + primera feria + MercadoLibre</td></tr>
+<tr><td><strong>Ingresos:</strong></td><td>$300-350 USD</td></tr>
+<tr style="font-weight: bold;"><td><strong>Ganancia neta:</strong></td><td style="color: #4CAF50;">+$250-300 USD</td></tr>
+</table>
+<p>✅ <strong>Logros:</strong> Primera feria artesanal, primeros kits regalo, 50+ seguidores en Instagram.</p>
+</div>
+
+<div class="timeline-item growth">
+<h4>📅 MES 4-5 — Expansión</h4>
+<table>
+<tr><td><strong>Compra al por mayor:</strong></td><td>-$80-100 USD (5kg de base, más aceites)</td></tr>
+<tr><td><strong>Jabones producidos:</strong></td><td>120-150/mes</td></tr>
+<tr><td><strong>Jabones vendidos:</strong></td><td>100-120/mes</td></tr>
+<tr><td><strong>Canales:</strong></td><td>Todos + primera tienda en consignación + pedidos mayoristas</td></tr>
+<tr><td><strong>Ingresos:</strong></td><td>$500-700 USD/mes</td></tr>
+<tr style="font-weight: bold;"><td><strong>Ganancia neta:</strong></td><td style="color: #4CAF50;">+$400-550 USD/mes</td></tr>
+</table>
+<p>✅ <strong>Logros:</strong> Primera tienda que vende tus jabones, pedidos por Instagram de otras ciudades, marca definida.</p>
+</div>
+
+<div class="timeline-item stable">
+<h4>📅 MES 6 — Negocio Estable 🏆</h4>
+<table>
+<tr><td><strong>Producción mensual:</strong></td><td>200-300 jabones</td></tr>
+<tr><td><strong>Ventas mensuales:</strong></td><td>180-250 jabones + kits</td></tr>
+<tr><td><strong>Canales funcionando:</strong></td><td>WhatsApp, Instagram, 2-3 tiendas, ferias quincenales, MercadoLibre</td></tr>
+<tr><td><strong>Ingresos:</strong></td><td>$900-1,500 USD/mes</td></tr>
+<tr style="font-weight: bold;"><td><strong>Ganancia neta:</strong></td><td style="color: #1B5E20;">+$700-1,200 USD/mes</td></tr>
+</table>
+<p>✅ <strong>Logros:</strong> Ingresos estables y predecibles, clientes recurrentes, marca reconocida localmente.</p>
+</div>
+
+<h2>📦 Descuentos por Compra al Por Mayor</h2>
+
+<p>A medida que crezcas, comprar al mayor te reduce costos SIGNIFICATIVAMENTE:</p>
+
+<table>
+<tr><th>Material</th><th>Precio minorista (1 kg)</th><th>Precio mayorista (5 kg)</th><th>Precio mayorista (10+ kg)</th><th>Ahorro</th></tr>
+<tr><td>Base glicerina</td><td>$7.00/kg</td><td>$5.50/kg</td><td>$4.50/kg</td><td>Hasta 36%</td></tr>
+<tr><td>Aceite esencial lavanda</td><td>$4.50/10ml</td><td>$10/30ml ($3.33/10ml)</td><td>$25/100ml ($2.50/10ml)</td><td>Hasta 44%</td></tr>
+<tr><td>Micas (set)</td><td>$8/set 12</td><td>$15/set 24</td><td>$25/set 50</td><td>Hasta 38%</td></tr>
+<tr><td>Film termoencogible</td><td>$5/rollo (50)</td><td>$12/rollo (200)</td><td>$20/rollo (500)</td><td>Hasta 60%</td></tr>
+</table>
+
+<div class="highlight-box">
+<h4>💡 Impacto en tu ganancia al comprar al mayor:</h4>
+<table style="background: transparent;">
+<tr><th style="background: #E8743F;">Concepto</th><th style="background: #E8743F;">Comprando minorista</th><th style="background: #E8743F;">Comprando al mayor</th></tr>
+<tr><td>Costo promedio por jabón</td><td>$1.10</td><td>$0.75</td></tr>
+<tr><td>Ganancia por jabón ($5 venta)</td><td>$3.90</td><td>$4.25</td></tr>
+<tr><td>Ganancia mensual (150 jabones)</td><td>$585</td><td>$637</td></tr>
+<tr style="font-weight: bold;"><td>Diferencia mensual</td><td></td><td style="color: #1B5E20;">+$52 USD extra/mes</td></tr>
+</table>
+<p>Esos $52 extra/mes son <strong>$624 más al año</strong> — solo por comprar más inteligente. Y a mayor volumen, mayor ahorro.</p>
+</div>
+
+<h2>🏷️ Precios por Tipo de Jabón y Mercado (LATAM)</h2>
+
+<p>Los precios varían significativamente según el país y el canal de venta. Aquí tienes una guía por mercado:</p>
+
+<table>
+<tr><th>Tipo</th><th>🇨🇴 Colombia (COP)</th><th>🇲🇽 México (MXN)</th><th>🇦🇷 Argentina (ARS)</th><th>🇵🇪 Perú (PEN)</th></tr>
+<tr><td>Básico individual</td><td>$8,000-15,000</td><td>$60-90</td><td>$2,500-4,500</td><td>S/8-15</td></tr>
+<tr><td>Terapéutico</td><td>$15,000-22,000</td><td>$90-130</td><td>$4,500-7,000</td><td>S/15-22</td></tr>
+<tr><td>Premium/regalo</td><td>$20,000-35,000</td><td>$120-200</td><td>$6,000-12,000</td><td>S/20-35</td></tr>
+<tr><td>Kit 3 jabones</td><td>$45,000-80,000</td><td>$250-450</td><td>$12,000-25,000</td><td>S/45-80</td></tr>
+<tr><td>Feria (precio evento)</td><td>+10-20% sobre precio base</td><td>+10-20%</td><td>+10-20%</td><td>+10-20%</td></tr>
+</table>
+
+<h2>📋 Impuestos y Legalidad Básica</h2>
+
+<p>Esto es lo que necesitas saber sobre la parte legal para empezar sin miedo:</p>
+
+<div class="green-box">
+<h4>🟢 Para empezar (venta informal/directa):</h4>
+<p>Si vendes a amigos, por WhatsApp, en ferias pequeñas o por Instagram de forma informal, en la mayoría de países de LATAM <strong>NO necesitas permisos especiales</strong> para empezar. Estás vendiendo productos cosméticos artesanales de forma directa.</p>
+</div>
+
+<div class="highlight-box">
+<h4>🟡 Cuando crezcas (venta formal):</h4>
+<p>Si quieres vender en tiendas, por MercadoLibre formalmente, o facturar, considera:</p>
+<ul>
+<li><strong>Registro como emprendedor/monotributista:</strong> En la mayoría de países hay regímenes simplificados para pequeños emprendedores con impuestos bajos.</li>
+<li><strong>Notificación sanitaria:</strong> Algunos países requieren notificar a la autoridad sanitaria que produces cosméticos artesanales. Generalmente es un trámite simple y económico.</li>
+<li><strong>Etiquetado correcto:</strong> Lista de ingredientes (INCI), peso, nombre del productor, lote. (Ver nuestras plantillas de etiquetas en el Bono 2).</li>
+</ul>
+</div>
+
+<div class="warning">
+<h4>🔴 Lo que NO puedes hacer:</h4>
+<ul>
+<li>❌ Hacer claims médicos ("cura el acné", "elimina arrugas") — puedes decir "ayuda a", "contribuye a", "para pieles con tendencia a"</li>
+<li>❌ Vender sin lista de ingredientes en productos que van a tiendas</li>
+<li>❌ Usar ingredientes no permitidos en cosméticos de tu país</li>
+</ul>
+</div>
+
+<table>
+<tr><th>País</th><th>Régimen tributario recomendado</th><th>Organismo sanitario</th><th>¿Notificación obligatoria?</th></tr>
+<tr><td>🇨🇴 Colombia</td><td>Régimen Simple de Tributación</td><td>INVIMA</td><td>Sí para venta formal (NSO)</td></tr>
+<tr><td>🇲🇽 México</td><td>RESICO (Régimen Simplificado)</td><td>COFEPRIS</td><td>Sí para producción comercial</td></tr>
+<tr><td>🇦🇷 Argentina</td><td>Monotributo categoría A o B</td><td>ANMAT</td><td>Sí para venta en comercios</td></tr>
+<tr><td>🇵🇪 Perú</td><td>Nuevo RUS o Régimen MYPE</td><td>DIGEMID</td><td>Sí para venta formal</td></tr>
+<tr><td>🇨🇱 Chile</td><td>Boleta de honorarios / SII</td><td>ISP</td><td>Sí para venta comercial</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>Consejo práctico:</strong> No dejes que la parte legal te paralice. Empieza vendiendo informalmente, genera ingresos, y cuando estés vendiendo $300+/mes consistentemente, ahí formalizas. El 90% de las jaboneras artesanales empiezan así. Primero valida que funciona, después papeles.</p>
+</div>
+
+<h2>💡 10 Tips para Maximizar Ganancias</h2>
+
+<div class="highlight-box">
+<h4>1. 📦 Compra al por mayor</h4>
+<p>Comprar 5 kg de base en vez de 1 kg ahorra 20-35%. Tu costo por jabón baja de $0.70 a $0.45-0.55.</p>
+</div>
+
+<div class="highlight-box">
+<h4>2. 🎁 Crea kits y sets</h4>
+<p>3 jabones de $5 c/u ($15 sueltos) empacados como kit → $18. El cliente siente que ahorra y tú ganas más por la presentación premium. Los kits tienen el MEJOR margen.</p>
+</div>
+
+<div class="highlight-box">
+<h4>3. 🎄 Ediciones especiales</h4>
+<p>Jabones temáticos para Día de la Madre, Navidad, San Valentín, cumpleaños. Las ediciones limitadas justifican un 30-50% más de precio y crean urgencia de compra.</p>
+</div>
+
+<div class="highlight-box">
+<h4>4. 📦 Sube el empaque = sube el precio</h4>
+<p>El mismo jabón de $4 se convierte en uno de $7 con empaque premium. Invierte $0.50 extra en empaque y cobra $3 más. El empaque es la inversión con mejor ROI en jabonería.</p>
+</div>
+
+<div class="highlight-box">
+<h4>5. 🏨 Encuentra clientes mayoristas</h4>
+<p>Un hotel que te compre 100 jabones/mes a $2.50 c/u = $250 de ingreso fijo mensual sin esfuerzo de venta. Spas, hoteles boutique, tiendas naturistas, salones de belleza son clientes ideales.</p>
+</div>
+
+<div class="highlight-box">
+<h4>6. 🔄 Prioriza jabones de alto margen</h4>
+<p>El jabón de café ($0.90 costo → $5 venta = 455% margen) es más rentable que el de rosa mosqueta ($1.80 → $7 = 289%). Produce más de los rentables.</p>
+</div>
+
+<div class="highlight-box">
+<h4>7. ☕ Usa ingredientes gratis</h4>
+<p>Borra de café (cafeterías), aloe vera (tu jardín), hierbas (tu jardín), flores (tu jardín). Menos costo = más ganancia.</p>
+</div>
+
+<div class="highlight-box">
+<h4>8. 📸 Invierte en buenas fotos</h4>
+<p>Fotos profesionales (con tu celular + luz natural) pueden duplicar tus ventas. Una buena foto vende por sí sola. Es inversión de $0 con retorno infinito.</p>
+</div>
+
+<div class="highlight-box">
+<h4>9. 💬 Consigue testimonios</h4>
+<p>Cada cliente satisfecho es un anuncio gratis. Pide capturas de chat y permiso para compartir. Los testimonios son más convincentes que cualquier publicidad.</p>
+</div>
+
+<div class="highlight-box">
+<h4>10. 📊 Lleva registro de TODO</h4>
+<p>Anota cada gasto y cada venta. Usa la calculadora del Bono 3. Saber tus números exactos te permite tomar mejores decisiones y crecer más rápido.</p>
+</div>
+
+<h2>🧮 Cómo Calcular TU Costo Exacto</h2>
+
+<div class="green-box">
+<h3 style="margin-top: 0; color: #1B5E20;">Fórmulas de referencia rápida:</h3>
+<table style="background: transparent;">
+<tr><th style="background: #1B5E20;">Fórmula</th><th style="background: #1B5E20;">Cálculo</th></tr>
+<tr><td>Costo por gramo de base</td><td>Precio del kg ÷ 1000</td></tr>
+<tr><td>Costo por gota de aceite esencial</td><td>Precio del frasco ÷ 200 (gotas en 10ml)</td></tr>
+<tr><td>Precio mínimo de venta</td><td>Costo total × 3</td></tr>
+<tr><td>Margen de ganancia %</td><td>(Ganancia ÷ Costo) × 100</td></tr>
+<tr><td>Jabones por kg de base</td><td>1000 ÷ gramos por jabón</td></tr>
+<tr><td>Punto de equilibrio</td><td>Inversión total ÷ Ganancia por jabón</td></tr>
+<tr><td>Jabones para recuperar inversión</td><td>$45 (kit básico) ÷ $3.90 (ganancia promedio) = 12 jabones</td></tr>
+</table>
+</div>
+
+<p style="text-align: center; font-size: 18px; margin-top: 40px;"><strong>¿Lista para vender? 🛒 Vamos al Módulo 5 →</strong></p>
+
+<div class="footer">
+<p>Jabones Artesanales: Crea y Vende desde Casa © 2026</p>
+<p>Este material es para uso personal del estudiante. Prohibida su distribución.</p>
+</div>
+
+</div>
+</body>
+</html>

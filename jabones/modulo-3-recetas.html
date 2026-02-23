@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 3 — 20 Recetas Paso a Paso</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background: #FFF8F0; color: #3D2B1F; line-height: 1.7; }
+.cover { background: linear-gradient(135deg, #E8743F 0%, #FF9800 50%, #D4A24E 100%); color: white; text-align: center; padding: 80px 40px; }
+.cover h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
+.cover p { font-size: 20px; opacity: 0.9; }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 30px; }
+h2 { font-family: 'Playfair Display', serif; color: #E8743F; font-size: 28px; margin: 50px 0 20px; border-bottom: 3px solid #F5DEB3; padding-bottom: 10px; }
+h3 { color: #5A7247; font-size: 22px; margin: 20px 0 12px; }
+h4 { color: #E8743F; font-size: 17px; margin: 18px 0 8px; }
+p { margin-bottom: 15px; font-size: 16px; }
+.recipe-card { background: white; border-radius: 16px; padding: 30px; margin: 30px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 5px solid #E8743F; page-break-inside: avoid; }
+.recipe-card.terapeutico { border-top-color: #5A7247; }
+.recipe-card.premium { border-top-color: #D4A24E; }
+.recipe-card.creativo { border-top-color: #6A1B9A; }
+.recipe-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; }
+.recipe-title { font-family: 'Playfair Display', serif; font-size: 24px; color: #3D2B1F; }
+.recipe-badges { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 5px; }
+.badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge-easy { background: #E8F5E9; color: #2E7D32; }
+.badge-medium { background: #FFF3E0; color: #E65100; }
+.badge-time { background: #E3F2FD; color: #1565C0; }
+.badge-cost { background: #FCE4EC; color: #C62828; }
+.badge-price { background: #F3E5F5; color: #6A1B9A; }
+.ingredients { background: #FFF8F0; padding: 20px; border-radius: 12px; margin: 15px 0; }
+.ingredients h4 { color: #E8743F; margin-bottom: 10px; }
+.ingredients ul { margin-left: 20px; }
+.ingredients li { margin-bottom: 5px; font-size: 15px; }
+.steps { margin: 15px 0; }
+.steps h4 { color: #5A7247; margin-bottom: 10px; }
+.steps ol { margin-left: 20px; }
+.steps li { margin-bottom: 10px; font-size: 15px; padding-left: 5px; }
+.tip-inline { background: #FFFDE7; border-left: 3px solid #FFB74D; padding: 12px 15px; border-radius: 0 8px 8px 0; margin: 15px 0; font-size: 14px; }
+.error-box { background: #FBE9E7; border-left: 3px solid #E57373; padding: 12px 15px; border-radius: 0 8px 8px 0; margin: 15px 0; font-size: 14px; }
+.variation-box { background: #E8F5E9; border-left: 3px solid #66BB6A; padding: 12px 15px; border-radius: 0 8px 8px 0; margin: 15px 0; font-size: 14px; }
+.section-intro { background: linear-gradient(135deg, #FFF3E0, #FFFDE7); padding: 25px; border-radius: 12px; margin: 20px 0; text-align: center; }
+.section-intro.green { background: linear-gradient(135deg, #E8F5E9, #F1F8E9); }
+.section-intro.gold { background: linear-gradient(135deg, #FFF8E1, #FFF3E0); }
+.section-intro.purple { background: linear-gradient(135deg, #F3E5F5, #EDE7F6); }
+.process-box { background: #E8F5E9; padding: 25px; border-radius: 12px; margin: 30px 0; border: 2px solid #A5D6A7; }
+.footer { text-align: center; padding: 30px; color: #999; font-size: 13px; border-top: 2px solid #F5DEB3; margin-top: 50px; }
+.warning { background: #FBE9E7; border: 2px solid #E57373; padding: 20px; border-radius: 12px; margin: 20px 0; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; }
+th { background: #E8743F; color: white; padding: 12px 15px; text-align: left; font-size: 14px; }
+td { padding: 10px 15px; border-bottom: 1px solid #F5DEB3; font-size: 14px; }
+tr:nth-child(even) { background: #FFF8F0; }
+.highlight-box { background: linear-gradient(135deg, #FFF3E0, #FFFDE7); border-left: 5px solid #E8743F; padding: 25px 30px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<p style="font-size: 16px; letter-spacing: 3px; margin-bottom: 15px;">MÓDULO 3</p>
+<h1>🧪 20 Recetas Paso a Paso</h1>
+<p>El corazón del curso — jabones reales que puedes hacer y vender hoy</p>
+</div>
+
+<div class="container">
+
+<h2>📖 Antes de Empezar: El Proceso Base</h2>
+
+<div class="process-box">
+<h3 style="margin-top: 0;">🔄 El método Melt & Pour (Derretir y Verter)</h3>
+<p>Todas las recetas de este curso usan el método <strong>"Melt & Pour"</strong> (derretir y verter). Es el método más seguro y fácil para principiantes porque:</p>
+<ul>
+<li>❌ NO requiere sosa cáustica (peligrosa)</li>
+<li>❌ NO necesita "curado" de semanas</li>
+<li>✅ La base ya viene pre-saponificada</li>
+<li>✅ Solo derritas, agregas ingredientes, viertes en molde</li>
+<li>✅ Jabones listos en 2-4 horas (solo tiempo de enfriado)</li>
+</ul>
+
+<h3>📝 Pasos base que aplican a TODAS las recetas:</h3>
+<ol>
+<li><strong>Cortar</strong> la base de glicerina en cubos de ~2 cm — cuanto más pequeños, más rápido derriten</li>
+<li><strong>Derretir</strong> en microondas: intervalos de 20-30 segundos, revolviendo entre cada uno. NO dejar hervir (máx 65°C/150°F). Si hierve, pierde propiedades y puede quedar opaca</li>
+<li><strong>Esperar</strong> 30-60 segundos a que baje un poco la temperatura antes de agregar ingredientes</li>
+<li><strong>Agregar</strong> colorantes primero, luego aceites esenciales, luego aditivos sólidos</li>
+<li><strong>Mezclar</strong> suavemente con espátula (sin batir — batir crea burbujas)</li>
+<li><strong>Verter</strong> en el molde lentamente y con cuidado</li>
+<li><strong>Rociar</strong> con alcohol isopropílico (spray) para eliminar burbujas de superficie</li>
+<li><strong>Esperar</strong> 2-4 horas hasta que solidifique completamente (o 1h en refrigerador)</li>
+<li><strong>Desmoldar</strong> con cuidado presionando suavemente el fondo del molde de silicona</li>
+</ol>
+</div>
+
+<div class="warning">
+<p>⚠️ <strong>REGLAS DE SEGURIDAD:</strong></p>
+<ul>
+<li>Trabaja en superficie limpia y seca</li>
+<li>La base derretida QUEMA — ten cuidado al manipularla</li>
+<li>Los aceites esenciales son potentes — no excedas las cantidades indicadas</li>
+<li>Usa guantes si tienes piel sensible</li>
+<li>Mantén el alcohol isopropílico lejos del calor</li>
+<li>Si trabajas con niños, supervisa siempre</li>
+<li>Si la base empieza a hervir/burbujear en el microondas, PARA inmediatamente</li>
+</ul>
+</div>
+
+<div class="highlight-box">
+<h4>🎥 Cómo saber que la base está lista para agregar ingredientes:</h4>
+<p>La base debe estar <strong>completamente líquida y sin grumos</strong>, pero NO burbujeante. Imagina miel líquida tibia — esa es la consistencia ideal. Si ves "humo" o burbujas de ebullición, espera 1-2 minutos antes de agregar nada. Los aceites esenciales se evaporan con calor excesivo y pierdes aroma.</p>
+</div>
+
+<!-- ==================== JABONES BÁSICOS ==================== -->
+
+<div class="section-intro">
+<h2 style="border: none; margin: 0;">🧼 JABONES BÁSICOS (1-5)</h2>
+<p style="margin: 0;">5 recetas para empezar — fáciles, económicas y las más vendidas</p>
+</div>
+
+<!-- RECETA 1 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">1. 💜 Jabón de Glicerina Pura con Lavanda</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $0.80</span>
+<span class="badge badge-price">💵 Venta: $3.50</span>
+</div>
+</div>
+<p>El clásico de clásicos. Transparente, aromático, elegante. La lavanda es el aroma más universalmente aceptado — relaja, calma y gusta a prácticamente todo el mundo. Perfecto como tu primer jabón y como regalo.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente</li>
+<li>6-8 gotas de aceite esencial de lavanda</li>
+<li>1-2 gotas de colorante líquido violeta (o una pizca de mica lila)</li>
+<li>Opcional: brotes de lavanda seca para decorar (1/4 cucharadita)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta la base de glicerina en cubos pequeños (~2cm). Cuanto más pequeños, más rápido y parejo derriten.</li>
+<li>Coloca en recipiente apto para microondas. Tapa con un plato (evita salpicaduras).</li>
+<li>Derrite en intervalos de 20 segundos, revolviendo entre cada uno. Generalmente tarda 40-60 segundos en total. <strong>Para cuando esté líquida sin grumos.</strong></li>
+<li>Una vez líquida, deja reposar 30 segundos para que baje la temperatura.</li>
+<li>Agrega el colorante: empieza con 1 sola gota. Mezcla. ¿Muy claro? Agrega otra. <strong>Menos es más</strong> — siempre puedes agregar, pero no quitar.</li>
+<li>Agrega las gotas de aceite esencial de lavanda. Mezcla suavemente con movimientos lentos (no batir).</li>
+<li>Si usas brotes de lavanda: coloca algunos en el fondo del molde ANTES de verter. Estos serán la "cara" visible del jabón.</li>
+<li>Vierte la mezcla en el molde lentamente, desde poca altura para minimizar burbujas.</li>
+<li>Rocía la superficie con alcohol isopropílico (2-3 disparos). Las burbujas desaparecen mágicamente.</li>
+<li>Deja enfriar 3-4 horas a temperatura ambiente (o 1 hora en refrigerador — pero no congelador).</li>
+<li>Para desmoldar: presiona suavemente el fondo del molde de silicona. Si no sale, pon 5 minutos en el congelador y luego intenta.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Lavanda y Vainilla":</strong> Agrega 3 gotas de fragancia de vainilla además de la lavanda. Combinación irresistible.</li>
+<li><strong>"Lavanda Luxury":</strong> Usa base de leche de cabra en vez de transparente + agrega 1/2 cdta de aceite de almendras. Queda ultra cremoso.</li>
+<li><strong>"Campo de lavanda":</strong> Haz la mitad del molde con base blanca y la mitad con transparente morada + flores. Efecto bicolor precioso.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Demasiado colorante:</strong> Queda oscuro y artificial. Empieza con 1 gota — el violeta es MUY potente.</li>
+<li><strong>Agregar aceite esencial a base muy caliente:</strong> El aroma se evapora. Espera 30 seg mínimo.</li>
+<li><strong>Las flores de lavanda se pusieron marrones:</strong> Esto pasa si viertes la base demasiado caliente sobre las flores. Deja que enfríe un poco más.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip de venta:</strong> Este jabón transparente con flores de lavanda dentro se ve HERMOSO y es perfecto como regalo. Véndelo como "Jabón Artesanal Relajante de Lavanda". Empacado en celofán con cinta lila, se ve de $10.
+</div>
+</div>
+
+<!-- RECETA 2 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">2. 🌾 Jabón Exfoliante de Avena y Miel</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $0.90</span>
+<span class="badge badge-price">💵 Venta: $4.00</span>
+</div>
+</div>
+<p>Un best-seller absoluto. La avena exfolia suavemente y calma irritaciones. La miel hidrata como ningún otro ingrediente natural. Apto para TODO tipo de piel, incluso sensible y bebés. Si solo puedes hacer UN jabón para vender, que sea este.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca (opaca)</li>
+<li>1 cucharadita de avena molida fina (avena de supermercado licuada o procesada)</li>
+<li>1/2 cucharadita de miel pura de abejas</li>
+<li>5-6 gotas de aceite esencial de naranja dulce (o vainilla)</li>
+<li>Opcional: pizca de canela en polvo para color dorado natural</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Prepara la avena: si es en hojuelas, licúa o procesa hasta que quede como harina fina. Si quieres más exfoliación, déjala un poco gruesa.</li>
+<li>Corta y derrite la base blanca en microondas (intervalos de 20 seg).</li>
+<li>Deja reposar 30 segundos para que baje un poco la temperatura.</li>
+<li>Agrega la miel y mezcla bien hasta que se integre completamente. La miel puede crear hilos — mezcla con paciencia.</li>
+<li>Agrega la avena molida. Mezcla suavemente pero bien distribuida.</li>
+<li>Agrega el aceite esencial de naranja. Mezcla.</li>
+<li>Si quieres tono dorado, agrega una pizca mínima de canela o cúrcuma.</li>
+<li>Vierte en molde. La avena tenderá a ir al fondo — esto es normal y crea una capa exfoliante que queda genial.</li>
+<li>Si quieres avena distribuida: espera a que la base esté un poco más espesa (1-2 min) antes de verter.</li>
+<li>Rocía con alcohol. Opcional: espolvorea avena en hojuelas encima para look rústico.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Avena y Almendras":</strong> Sustituye naranja por aceite esencial de almendras dulces. Agrega unas láminas de almendra.</li>
+<li><strong>"Avena para bebé":</strong> Sin aceites esenciales (solo avena + miel). Seguro para pieles ultra sensibles y bebés.</li>
+<li><strong>"Avena Gourmet":</strong> Agrega 1/2 cdta de aceite de coco + pizca de vainilla. Huele a galleta de avena.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Avena demasiado gruesa:</strong> Queda rasposa e incómoda. Muele bien la avena para exfoliación suave.</li>
+<li><strong>Demasiada miel:</strong> Más de 1 cucharadita por 100g hace que el jabón quede pegajoso y "sude". Menos es más.</li>
+<li><strong>Avena se fue toda al fondo:</strong> Si la viertes con la base muy líquida, se hunde. Espera a que espese un poco.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> Esparcir avena en hojuelas encima del jabón antes de que solidifique crea una presentación rústica hermosa que grita "ARTESANAL". Perfecto para ferias.
+</div>
+</div>
+
+<!-- RECETA 3 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">3. 🥛 Jabón Hidratante de Miel y Leche de Cabra</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.10</span>
+<span class="badge badge-price">💵 Venta: $4.50</span>
+</div>
+</div>
+<p>Ultra hidratante y cremoso. La base de leche de cabra combinada con miel es un lujo para la piel seca. La leche de cabra contiene ácido láctico que exfolia suavemente y proteínas que nutren. Suena (y se siente) premium.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina con leche de cabra</li>
+<li>1 cucharadita de miel pura</li>
+<li>1/2 cucharadita de aceite de coco virgen</li>
+<li>4-5 gotas de aceite esencial de vainilla o naranja dulce</li>
+<li>Pizca de mica dorada (opcional, para brillo elegante)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base de leche de cabra en intervalos de 20 seg.</li>
+<li>Agrega el aceite de coco. La base ya es cremosa; el coco la hace más hidratante.</li>
+<li>Agrega la miel. Mezcla hasta integrar completamente (la miel tarda un poco).</li>
+<li>Agrega la mica dorada si usas — da un brillo sutil precioso.</li>
+<li>Agrega el aceite esencial. Mezcla suavemente.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Leche y Rosas":</strong> Sustituye la vainilla por aceite de geranio + pétalos de rosa secos encima.</li>
+<li><strong>"Miel y Canela":</strong> Agrega pizca de canela en polvo + aceite esencial de canela (máx 2 gotas). Cálido y reconfortante.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Sobre-calentar la base de leche de cabra:</strong> Es más delicada que la transparente. Usa intervalos de 15 seg.</li>
+<li><strong>El jabón "suda" gotitas:</strong> Demasiados aditivos líquidos (miel + aceite). No excedas 1.5 cdtas de líquidos en total.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip de venta:</strong> Véndelo como "Jabón Cremoso de Miel y Leche de Cabra — hidratación profunda". La palabra "leche de cabra" suena premium y justifica un precio más alto. ¡La gente PAGA por eso!
+</div>
+</div>
+
+<!-- RECETA 4 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">4. ⚫ Jabón Purificante de Carbón Activado</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $0.95</span>
+<span class="badge badge-price">💵 Venta: $4.50</span>
+</div>
+</div>
+<p>Visualmente impactante (negro intenso) y excelente para piel grasa y con acné. El carbón activado absorbe impurezas, toxinas y exceso de sebo como un imán. ¡Se vende solo por lo cool que se ve! Es de los más instagrameables.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente</li>
+<li>1/2 cucharadita de carbón activado en polvo</li>
+<li>6-8 gotas de aceite esencial de tea tree (árbol de té)</li>
+<li>Opcional: 2-3 gotas de aceite esencial de eucalipto para más frescura</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base transparente.</li>
+<li>Agrega el carbón activado <strong>poco a poco</strong>, mezclando bien. Es MUY pigmentado — una pizca ya tiñe bastante. Va a quedar negro intenso.</li>
+<li>Agrega los aceites esenciales. Mezcla suavemente.</li>
+<li>Vierte en molde. Rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Mármol Blanco y Negro":</strong> Derrite por separado base transparente con carbón (negra) y base blanca. Vierte ambas en el molde alternando y pasa un palillo para crear vetas de mármol. ¡INCREÍBLE!</li>
+<li><strong>"Carbón y Sal del Himalaya":</strong> Agrega 1/2 cdta de sal rosada triturada al jabón negro. Puntos rosados sobre negro = espectacular.</li>
+<li><strong>"Carbón Detox Facial":</strong> Usa base de leche de cabra + carbón para un jabón facial más suave.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Demasiado carbón:</strong> Mancha todo (manos, toalla, lavabo). 1/2 cdta es suficiente para negro intenso.</li>
+<li><strong>No mezclar bien:</strong> Quedan grumos negros. El carbón es fino pero necesita mezcla vigorosa.</li>
+<li><strong>El carbón mancha la ropa:</strong> Avísale a tus clientes que es normal y se quita con agua. O pon esa advertencia en la etiqueta.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip de marketing:</strong> El jabón de carbón tiene una ESTÉTICA increíble para fotos. Negro sobre fondo blanco de mármol = foto que vende sola en Instagram. Publícalo como "Jabón Detox de Carbón Activado — limpieza profunda".
+</div>
+</div>
+
+<!-- RECETA 5 -->
+<div class="recipe-card">
+<div class="recipe-header">
+<div class="recipe-title">5. 🍊 Jabón Cítrico Energizante de Naranja</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $0.85</span>
+<span class="badge badge-price">💵 Venta: $3.50</span>
+</div>
+</div>
+<p>Fresco, alegre y con un color naranja vibrante. Perfecto para la ducha matutina — el aroma cítrico despierta, energiza y levanta el ánimo. Es científicamente comprobado que los cítricos mejoran el estado de ánimo.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente</li>
+<li>8-10 gotas de aceite esencial de naranja dulce</li>
+<li>2-3 gotas de colorante naranja (o 1/4 cucharadita de cúrcuma en polvo para naranja natural)</li>
+<li>1/2 cucharadita de ralladura de naranja seca (opcional, decorativa)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Si usas ralladura: ralla la cáscara de una naranja y sécala al sol o en horno bajo (1h a 80°C). Debe estar completamente seca.</li>
+<li>Corta y derrite la base transparente.</li>
+<li>Agrega el colorante naranja o cúrcuma. Mezcla hasta obtener un naranja bonito y uniforme.</li>
+<li>Agrega el aceite esencial de naranja dulce. Como es cítrico, se evapora más rápido — agrega al final y mezcla rápido.</li>
+<li>Si usas ralladura, agrégala y mezcla suave.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Naranja y Canela":</strong> Agrega 2 gotas de aceite de canela (hoja) + pizca de canela en polvo. Aroma navideño.</li>
+<li><strong>"Cítrico Triple":</strong> Mezcla naranja + limón + pomelo (3 gotas de cada uno). Explosión cítrica.</li>
+<li><strong>"Naranja Cremosa":</strong> Usa base blanca en vez de transparente. Queda como un "creamsicle" hermoso.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>La cúrcuma mancha:</strong> Trabaja sobre papel periódico o superficie que puedas limpiar. Las manchas de cúrcuma salen con limón + sol.</li>
+<li><strong>Aroma cítrico se desvanece rápido:</strong> Los aceites cítricos son más volátiles. Usa 8-10 gotas (no 6) y agrega al FINAL, con la base más fría posible.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> La naranja dulce es uno de los aceites esenciales más BARATOS ($2-3/10ml) y con mejor aroma. El jabón de naranja es de los que mejor relación costo-beneficio tiene.
+</div>
+</div>
+
+<!-- ==================== JABONES TERAPÉUTICOS ==================== -->
+
+<div class="section-intro green">
+<h2 style="border: none; margin: 0; color: #5A7247;">🌿 JABONES TERAPÉUTICOS (6-10)</h2>
+<p style="margin: 0;">5 recetas con propiedades especiales para pieles con necesidades específicas</p>
+</div>
+
+<!-- RECETA 6 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">6. 🌳 Jabón Antibacterial de Tea Tree</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.10</span>
+<span class="badge badge-price">💵 Venta: $5.00</span>
+</div>
+</div>
+<p>El tea tree (árbol de té) es reconocido mundialmente por sus propiedades antibacteriales y antifúngicas. Ideal para pieles con acné, impurezas o tendencia grasa. Es el jabón más "medicinal" y tiene altísima demanda.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente</li>
+<li>8-10 gotas de aceite esencial de tea tree (árbol de té)</li>
+<li>3-4 gotas de aceite esencial de limón</li>
+<li>Pizca de colorante verde (o 1/4 cdta spirulina en polvo para color natural)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base transparente.</li>
+<li>Agrega el colorante verde — solo un toquecito para un verde suave y natural. NO quieres verde neón, quieres "verde naturaleza".</li>
+<li>Agrega los aceites esenciales de tea tree y limón. El limón complementa al tea tree y suaviza su aroma medicinal. Mezcla suavemente.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Tea Tree + Carbón":</strong> Agrega 1/4 cdta de carbón activado. Jabón gris oscuro con doble poder purificante.</li>
+<li><strong>"Tea Tree Facial":</strong> Usa base de leche de cabra + tea tree. Más suave para uso diario en el rostro.</li>
+<li><strong>"Anti-Acné Power":</strong> Tea tree + 2 gotas de aceite de romero + pizca de arcilla verde. Triple acción.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Demasiado tea tree:</strong> El aceite de tea tree es potente. Más de 10 gotas por 100g puede irritar pieles sensibles.</li>
+<li><strong>Color verde demasiado artificial:</strong> Usa spirulina para un verde natural creíble, no colorante sintético verde fosforescente.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Marketing tip:</strong> Véndelo como "Jabón Purificante — piel limpia y libre de impurezas". Tiene MUCHA demanda entre adolescentes y adultos con piel grasa. Es un jabón que la gente busca activamente.
+</div>
+</div>
+
+<!-- RECETA 7 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">7. 🌼 Jabón Calmante de Caléndula</div>
+<div class="recipe-badges">
+<span class="badge badge-medium">🟡 Medio</span>
+<span class="badge badge-time">⏱ 25 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.30</span>
+<span class="badge badge-price">💵 Venta: $5.50</span>
+</div>
+</div>
+<p>La caléndula es antiinflamatoria y cicatrizante por excelencia. Perfecta para pieles sensibles, irritadas, con dermatitis o rosácea. Los pétalos de caléndula dentro del jabón transparente se ven PRECIOSOS — es de los más fotogénicos.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca (o transparente para ver los pétalos)</li>
+<li>1 cucharada de pétalos de caléndula secos</li>
+<li>1/2 cucharadita de aceite de caléndula (macerado) — si no consigues, usa aceite de almendras dulces</li>
+<li>5-6 gotas de aceite esencial de manzanilla o lavanda</li>
+<li>Pizca de mica amarilla/dorada (opcional)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base.</li>
+<li>Agrega el aceite de caléndula (o almendras). Mezcla.</li>
+<li>Agrega el aceite esencial y la mica si usas. Mezcla.</li>
+<li><strong>Técnica de pétalos flotantes:</strong> Coloca algunos pétalos en el fondo del molde (serán la "cara" del jabón).</li>
+<li>Vierte un poco de base derretida sobre los pétalos (solo 1cm de altura). Rocía con alcohol. Deja reposar 2-3 minutos para que los pétalos se fijen en su lugar.</li>
+<li>Agrega el resto de pétalos a la base sobrante y mezcla.</li>
+<li>Vierte el resto en el molde.</li>
+<li>Rocía con alcohol. Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Caléndula Transparente":</strong> Usa base transparente — los pétalos se ven DENTRO del jabón flotando. Efecto espectacular para regalo.</li>
+<li><strong>"Caléndula para bebé":</strong> Sin aceites esenciales, solo caléndula + base de leche de cabra. Ultra suave.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Pétalos se quemaron:</strong> La base estaba demasiado caliente al verter. Deja enfriar más.</li>
+<li><strong>Pétalos se fueron todos al fondo:</strong> Usa la técnica de 2 capas descrita arriba.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> La versión transparente con pétalos dentro es PERFECTA como jabón decorativo. Cobra un 20-30% más por esa versión "premium visual".
+</div>
+</div>
+
+<!-- RECETA 8 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">8. 🌱 Jabón Hidratante de Aloe Vera</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.00</span>
+<span class="badge badge-price">💵 Venta: $4.50</span>
+</div>
+</div>
+<p>El aloe vera (sábila) es el rey de la hidratación y la calma. Ideal para pieles quemadas por el sol, irritadas, con eczema o simplemente secas. Su color verde natural es precioso y el "aloe vera" es una de las palabras más buscadas en cosmética.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente (o base de aloe vera si la encuentras)</li>
+<li>1 cucharada de gel puro de aloe vera (de farmacia o directamente de la planta)</li>
+<li>5-6 gotas de aceite esencial de lavanda</li>
+<li>2-3 gotas de colorante verde (o dejar el color natural del aloe)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Si usas planta fresca: corta una hoja gruesa, córtala por la mitad a lo largo, extrae el gel transparente con una cuchara, licúa hasta que quede sin grumos.</li>
+<li>Corta y derrite la base transparente.</li>
+<li><strong>IMPORTANTE:</strong> Deja enfriar 45-60 segundos. El aloe pierde propiedades con calor excesivo.</li>
+<li>Agrega el gel de aloe vera y mezcla bien hasta integrar completamente.</li>
+<li>Agrega el colorante verde y el aceite esencial. Mezcla.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Aloe After-Sun":</strong> Agrega 2 gotas de aceite esencial de menta para efecto refrescante. Perfecto para verano.</li>
+<li><strong>"Aloe + Pepino":</strong> Agrega 1 cdta de jugo de pepino. Calmante extremo para pieles enrojecidas.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Demasiado aloe:</strong> Más de 1 cucharada por 100g hace que el jabón "sude" o quede blando.</li>
+<li><strong>Gel de aloe con conservantes:</strong> Algunos geles de farmacia tienen alcohol y preservantes. Busca el más puro posible (99% aloe).</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> Si tienes una planta de sábila en casa, ¡tu ingrediente principal es GRATIS! Un jabón de aloe vera hecho con planta real es más "auténtico" que con gel de farmacia.
+</div>
+</div>
+
+<!-- RECETA 9 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">9. 🌿 Jabón Estimulante de Romero</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.00</span>
+<span class="badge badge-price">💵 Venta: $4.50</span>
+</div>
+</div>
+<p>El romero estimula la circulación, fortalece el cabello, tiene propiedades antioxidantes y un aroma herbal refrescante. Encanta tanto a mujeres como a hombres — es uno de los mejores para crear una "línea masculina".</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>8-10 gotas de aceite esencial de romero</li>
+<li>1/2 cucharadita de hojas de romero seco triturado (para textura y visual)</li>
+<li>Colorante verde oscuro (pizca) o spirulina en polvo</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base blanca.</li>
+<li>Agrega el colorante para un verde herbal — no fosforescente, piensa "verde bosque".</li>
+<li>Agrega el aceite esencial de romero. Mezcla.</li>
+<li>Agrega las hojas de romero triturado. Mezcla suavemente — las hojas dan textura e interés visual.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Romero para Cabello":</strong> Agrega 3 gotas de aceite de menta. Estimula el cuero cabelludo. Véndelo como "jabón para cabello".</li>
+<li><strong>"Bosque Fresco" (masculino):</strong> Romero + ciprés + eucalipto (3 gotas de cada uno). Empaque en papel kraft con sello de cera.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> Empaca este jabón con papel kraft oscuro, cuerda de yute y una ramita de romero atada. Véndelo como línea "para él" o "unisex herbal". Los hombres aman este jabón.
+</div>
+</div>
+
+<!-- RECETA 10 -->
+<div class="recipe-card terapeutico">
+<div class="recipe-header">
+<div class="recipe-title">10. 🟢 Jabón Detox de Arcilla Verde</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.10</span>
+<span class="badge badge-price">💵 Venta: $5.00</span>
+</div>
+</div>
+<p>La arcilla verde francesa es un clásico de la cosmética natural desde hace siglos. Absorbe el exceso de grasa, desintoxica los poros y deja la piel mate y limpia. El color verde oliváceo natural se ve súper elegante.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1 cucharadita de arcilla verde en polvo (french green clay)</li>
+<li>5-6 gotas de aceite esencial de limón</li>
+<li>3-4 gotas de aceite esencial de eucalipto</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base blanca.</li>
+<li>Agrega la arcilla verde poco a poco, mezclando bien para evitar grumos. Puedes pre-mezclarla con 1/2 cdta de agua tibia para hacer una pasta antes de agregarla.</li>
+<li>La arcilla dará un color verde oliváceo natural precioso — no necesitas colorante adicional.</li>
+<li>Agrega los aceites esenciales. Mezcla.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Arcilla Blanca (Kaolín)":</strong> Para pieles sensibles. Mismo proceso pero con arcilla blanca. Color crema puro.</li>
+<li><strong>"Arcilla Roja":</strong> Para pieles maduras. Color terracota rosado precioso.</li>
+<li><strong>"Triple Arcilla":</strong> Haz 3 capas (blanca, verde, roja). Visual espectacular.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> ¡Tres variantes con la misma receta base! Arcilla verde (pieles grasas), blanca (sensibles), roja (maduras). Véndelas como "Colección Arcillas" — un set de 3 que se ve increíble.
+</div>
+</div>
+
+<!-- ==================== JABONES PREMIUM ==================== -->
+
+<div class="section-intro gold">
+<h2 style="border: none; margin: 0; color: #BF8C00;">✨ JABONES PREMIUM / REGALO (11-15)</h2>
+<p style="margin: 0;">5 recetas de mayor valor — perfectas para vender como regalo o línea premium</p>
+</div>
+
+<!-- RECETA 11 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">11. 🌹 Jabón Regenerador de Rosa Mosqueta</div>
+<div class="recipe-badges">
+<span class="badge badge-medium">🟡 Medio</span>
+<span class="badge badge-time">⏱ 20 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.80</span>
+<span class="badge badge-price">💵 Venta: $7.00</span>
+</div>
+</div>
+<p>El aceite de rosa mosqueta es oro líquido: antiarrugas, antimanchas, regenerador celular. Es el aceite más buscado en cosmética antiedad. Este jabón se siente, se ve y se vende como un producto de lujo.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1 cucharadita de aceite de rosa mosqueta</li>
+<li>5-6 gotas de aceite esencial de geranio (complementa perfecto a la rosa)</li>
+<li>Mica color rosa pálido</li>
+<li>Opcional: 1/4 cucharadita de vitamina E líquida + pétalos de rosa secos</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base blanca.</li>
+<li>Agrega el aceite de rosa mosqueta y la vitamina E si usas. Mezcla bien.</li>
+<li>Agrega la mica rosa para un color rosa suave y elegante. Piensa "rosa palo", no "rosa chicle".</li>
+<li>Agrega el aceite esencial de geranio. Mezcla suavemente.</li>
+<li>Si usas pétalos: coloca algunos en el fondo del molde antes de verter.</li>
+<li>Vierte, rocía con alcohol. Deja enfriar. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Rosa Luxury":</strong> Base de karité + rosa mosqueta + pétalos de rosa. El jabón más premium de tu línea.</li>
+<li><strong>"Rosa Anti-Edad":</strong> Agrega 1/4 cdta de aceite de argán. Combinación antiarrugas poderosa.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Presentación premium:</strong> Envuelve en papel tissue rosa, ata con cinta de raso blanca y una flor seca. Se ve de $15+ y te costó centavos de empaque. Véndelo como "Jabón Anti-Edad de Rosa Mosqueta".
+</div>
+</div>
+
+<!-- RECETA 12 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">12. ☕ Jabón Exfoliante de Café</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $0.90</span>
+<span class="badge badge-price">💵 Venta: $5.00</span>
+</div>
+</div>
+<p>¡De los más vendidos en TODO el mundo! El café exfolia, estimula la circulación, tiene propiedades anticelulíticas y un aroma absolutamente irresistible. La gente lo compra solo por cómo huele. Tiene el MEJOR margen de todos porque el café puede ser gratis.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca o transparente</li>
+<li>1 cucharada de café molido (grano fino) o borra de café seca</li>
+<li>1/2 cucharadita de aceite de coco virgen</li>
+<li>5-6 gotas de aceite esencial de vainilla o canela</li>
+<li>Opcional: 1/2 cucharadita de cacao en polvo (para más color y aroma)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Si usas borra de café: sécala bien en el horno a baja temperatura (80°C por 30-45 min) o al sol (1-2 días). Debe estar COMPLETAMENTE seca para evitar moho.</li>
+<li>Corta y derrite la base.</li>
+<li>Agrega el aceite de coco. Mezcla bien.</li>
+<li>Agrega el aceite esencial de vainilla. Mezcla.</li>
+<li>Agrega el café molido (y cacao si usas). Mezcla bien y rápido — el café se asienta rápido.</li>
+<li>Vierte RÁPIDO en el molde (antes de que el café se hunda todo).</li>
+<li>Rocía con alcohol. Deja enfriar. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Café Mocha":</strong> Agrega 1 cdta de cacao en polvo + fragancia de chocolate. Huele a moka.</li>
+<li><strong>"Café Anticelulítico":</strong> Usa café grueso para exfoliación intensa + 3 gotas de aceite de ciprés (mejora circulación).</li>
+<li><strong>"Café con Leche":</strong> Haz mitad base blanca y mitad base transparente con café. Efecto capuchino precioso.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Borra de café húmeda:</strong> ¡Moho garantizado en días! Sécala completamente.</li>
+<li><strong>Café demasiado grueso:</strong> Raspa la piel. Usa grano fino o borra (que ya es fina).</li>
+<li><strong>Todo el café se fue al fondo:</strong> Vierte cuando la base esté un poco más espesa, o haz 2 capas.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip PRO:</strong> ¿Tienes cafetería cerca? ¡La borra de café es GRATIS! Pídela, sécala, y tienes tu ingrediente estrella sin costo. Este jabón tiene el mejor margen: costo $0.90, venta $5.00 = $4.10 de ganancia (455%).
+</div>
+</div>
+
+<!-- RECETA 13 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">13. 🥥 Jabón Tropical de Coco y Vainilla</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.20</span>
+<span class="badge badge-price">💵 Venta: $5.50</span>
+</div>
+</div>
+<p>El aroma de coco-vainilla transporta al Caribe. Cremoso, hidratante y con un olor que enamora a todo el mundo. Éxito de ventas garantizado, especialmente en primavera y verano.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1 cucharadita de aceite de coco virgen</li>
+<li>1 cucharadita de coco rallado fino</li>
+<li>6-8 gotas de fragancia de vainilla cosmetic-grade (o extracto natural)</li>
+<li>2-3 gotas de aceite esencial de naranja dulce</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base blanca.</li>
+<li>Agrega el aceite de coco. Mezcla hasta integrar.</li>
+<li>Agrega la fragancia de vainilla y naranja. Mezcla.</li>
+<li>Agrega la mitad del coco rallado a la mezcla.</li>
+<li>Vierte en molde.</li>
+<li>Espolvorea el resto del coco rallado encima antes de que solidifique — queda como "nieve de coco".</li>
+<li>Rocía con alcohol. Deja enfriar. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Playa Tropical":</strong> Base transparente + mica azul en capas para simular el mar + coco rallado arriba como "arena". Jabón decorativo viral.</li>
+<li><strong>"Piña Colada":</strong> Coco + fragancia de piña. Aroma veraniego irresistible.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> El jabón "Playa Tropical" con efecto mar + arena es VIRAL en Instagram y TikTok. Búscalo para inspirarte — se venden como locos en verano.
+</div>
+</div>
+
+<!-- RECETA 14 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">14. 🍫 Jabón Gourmet de Chocolate</div>
+<div class="recipe-badges">
+<span class="badge badge-medium">🟡 Medio</span>
+<span class="badge badge-time">⏱ 20 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.40</span>
+<span class="badge badge-price">💵 Venta: $6.00</span>
+</div>
+</div>
+<p>Un jabón que parece y huele a chocolate. El cacao es antioxidante potente y la manteca de cacao hidrata profundamente. ¡La gente lo AMA como regalo! Funciona increíble para San Valentín, Día de la Madre y Navidad.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1 cucharada de cacao puro en polvo (sin azúcar)</li>
+<li>1 cucharadita de manteca de cacao (o aceite de coco como sustituto)</li>
+<li>5-6 gotas de fragancia de chocolate o vainilla cosmetic-grade</li>
+<li>Opcional: pizca de mica bronce para brillo elegante</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Si usas manteca de cacao: derrítela aparte en microondas (10 segundos bastan).</li>
+<li>Corta y derrite la base blanca.</li>
+<li>Agrega la manteca de cacao derretida. Mezcla bien.</li>
+<li>Agrega el cacao en polvo POCO A POCO, mezclando vigorosamente para evitar grumos. Queda un color marrón chocolate hermoso.</li>
+<li>Agrega la fragancia y mica bronce si usas. Mezcla.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Chocolate con Naranja":</strong> Agrega 4 gotas de aceite de naranja dulce. La combinación choco-naranja es gourmet.</li>
+<li><strong>"Chocolate con Menta":</strong> Agrega 3 gotas de aceite de menta. Like a mint chocolate chip.</li>
+<li><strong>"Bombón de Chocolate":</strong> Usa moldes de corazón. Set de 3 = regalo de San Valentín de $15-20.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Idea de producto:</strong> Haz jabones de chocolate con moldes de corazón → empaca en caja con papel de seda → "Set Bombones de Chocolate para la Piel". 3 jabones-corazón = $15-20. ¡Se venden SOLOS en Día de la Madre y San Valentín!
+</div>
+</div>
+
+<!-- RECETA 15 -->
+<div class="recipe-card premium">
+<div class="recipe-header">
+<div class="recipe-title">15. 🌿❄️ Jabón Spa de Eucalipto y Menta</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.10</span>
+<span class="badge badge-price">💵 Venta: $5.50</span>
+</div>
+</div>
+<p>Eucalipto + menta = pura frescura. Descongestionante, energizante, perfecto para la ducha matutina. La sensación "mentolada" en la piel es adictiva — tus clientes van a recomprar este más que ningún otro.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente</li>
+<li>5-6 gotas de aceite esencial de eucalipto</li>
+<li>4-5 gotas de aceite esencial de menta piperita</li>
+<li>Colorante verde esmeralda (pizca) o mica verde</li>
+<li>Opcional: hojas de eucalipto o menta seca dentro para decorar</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base transparente.</li>
+<li>Agrega el colorante verde. Busca un verde intenso tipo "spa".</li>
+<li>Agrega ambos aceites esenciales. Mezcla suavemente.</li>
+<li>Si usas hojas secas, agrégalas a la mezcla.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Bicolor Spa":</strong> Haz 2 capas — verde oscura (eucalipto) y verde clara (menta). Espera que la primera capa esté semifirme (30 min), raspa la superficie con tenedor, vierte la segunda.</li>
+<li><strong>"Menta Refrescante":</strong> Solo menta + base transparente. Minimalista y potente.</li>
+<li><strong>"Spa Nocturno":</strong> Eucalipto + lavanda (en vez de menta). Relajante y descongestionante para antes de dormir.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> Este jabón es PERFECTO para la temporada de gripes e invierno. El eucalipto descongestionante se siente como un spa en la ducha. Promuévelo en otoño/invierno.
+</div>
+</div>
+
+<!-- ==================== JABONES CREATIVOS ==================== -->
+
+<div class="section-intro purple">
+<h2 style="border: none; margin: 0; color: #6A1B9A;">🎨 JABONES CREATIVOS (16-20)</h2>
+<p style="margin: 0;">5 recetas únicas y originales — para diferenciarte y sorprender</p>
+</div>
+
+<!-- RECETA 16 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">16. 🍺 Jabón de Cerveza Artesanal</div>
+<div class="recipe-badges">
+<span class="badge badge-medium">🟡 Medio</span>
+<span class="badge badge-time">⏱ 25 min + 4h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.30</span>
+<span class="badge badge-price">💵 Venta: $6.00</span>
+</div>
+</div>
+<p>¡Sí, cerveza en un jabón! La cerveza es rica en vitaminas B, proteínas y lúpulo que nutren la piel y el cabello. Además, es un jabón con una HISTORIA que vende solo: "¿Jabón de cerveza? ¡Cuéntame más!" Es perfecto como regalo para hombres.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1 cucharada de cerveza artesanal (preferiblemente oscura/stout) — desgasificada</li>
+<li>1/2 cucharadita de miel de abejas</li>
+<li>5-6 gotas de aceite esencial de naranja dulce o cedro</li>
+<li>Pizca de cúrcuma para color ámbar dorado (como cerveza)</li>
+<li>Opcional: avena en hojuelas encima para look rústico</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li><strong>Desgasificar la cerveza:</strong> Abre la cerveza y déjala reposar 12-24 horas sin tapa (o viértela en un vaso y revuelve para quitar el gas). Debe estar completamente plana — el gas crea burbujas y espuma indeseada en el jabón.</li>
+<li>Corta y derrite la base blanca.</li>
+<li>Deja enfriar 45 segundos. Agrega la cerveza desgasificada. Mezcla bien.</li>
+<li>Agrega la miel. Mezcla hasta integrar.</li>
+<li>Agrega la cúrcuma para color ámbar. Mezcla.</li>
+<li>Agrega el aceite esencial. Mezcla.</li>
+<li>Vierte en molde. Espolvorea avena en hojuelas encima (simula la espuma de la cerveza 🍻).</li>
+<li>Rocía con alcohol. Deja enfriar 4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Cerveza Negra y Café":</strong> Usa cerveza stout + 1 cdta de café molido. Color oscuro, aroma increíble.</li>
+<li><strong>"Cerveza con Miel":</strong> Duplica la miel a 1 cdta para un jabón ultra hidratante tipo "honey ale".</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Cerveza sin desgasificar:</strong> Burbujas enormes y espuma dentro del jabón. Queda horrible.</li>
+<li><strong>Demasiada cerveza:</strong> Máx 1 cucharada por 100g. Más hace que el jabón quede blando.</li>
+<li><strong>La cerveza no huele en el jabón final:</strong> Normal — el aroma de cerveza no sobrevive. Necesitas aceite esencial para el aroma.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip de venta:</strong> Empácalo tipo "producto masculino": papel kraft oscuro, etiqueta estilo cervecería artesanal, cuerda gruesa. Véndelo como "Jabón de Cerveza Artesanal — para él". Regalo PERFECTO para Día del Padre, cumpleaños masculinos, despedidas de soltero.
+</div>
+</div>
+
+<!-- RECETA 17 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">17. 🥥 Jabón de Leche de Coco</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.15</span>
+<span class="badge badge-price">💵 Venta: $5.50</span>
+</div>
+</div>
+<p>La leche de coco es un hidratante tropical poderoso, rico en ácido láurico (antibacterial natural) y grasas que nutren la piel seca. Este jabón cremoso de color blanco puro tiene un aroma dulce y delicado que transporta al trópico.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1 cucharada de leche de coco pura (de lata, la espesa — no la de cartón para beber)</li>
+<li>1/2 cucharadita de aceite de coco virgen</li>
+<li>6-8 gotas de fragancia de coco o aceite esencial de ylang ylang</li>
+<li>Coco rallado fino para decorar encima</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>Corta y derrite la base blanca.</li>
+<li>Deja enfriar 30 seg. Agrega la leche de coco y mezcla bien hasta integrar.</li>
+<li>Agrega el aceite de coco. Mezcla.</li>
+<li>Agrega la fragancia. Mezcla suavemente.</li>
+<li>Vierte en molde.</li>
+<li>Espolvorea coco rallado encima antes de que solidifique.</li>
+<li>Rocía con alcohol. Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Coco y Limón":</strong> Agrega 4 gotas de aceite de limón. Fresco y tropical.</li>
+<li><strong>"Coco Triple":</strong> Leche de coco + aceite de coco + coco rallado. La máxima experiencia de coco.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Leche de coco en cartón:</strong> Esa es "bebida de coco" diluida. Usa la leche de coco en LATA (espesa, grasa). Es la que nutre la piel.</li>
+<li><strong>Exceso de leche:</strong> Máx 1 cucharada por 100g. Más = jabón blando que "llora".</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> Véndelo como "Jabón de Leche de Coco — hidratación tropical". El coco rallado encima le da un look artesanal irresistible en fotos.
+</div>
+</div>
+
+<!-- RECETA 18 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">18. 🌾 Jabón de Cúrcuma y Jengibre</div>
+<div class="recipe-badges">
+<span class="badge badge-easy">🟢 Fácil</span>
+<span class="badge badge-time">⏱ 15 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.00</span>
+<span class="badge badge-price">💵 Venta: $5.00</span>
+</div>
+</div>
+<p>La cúrcuma es el ingrediente estrella de la cosmética asiática: antiinflamatoria, antioxidante, ilumina la piel y reduce manchas. El jengibre mejora la circulación y tiene propiedades antienvejecimiento. ¡Combo poderoso con un color dorado espectacular!</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina blanca</li>
+<li>1/2 cucharadita de cúrcuma en polvo (da color dorado intenso)</li>
+<li>1/4 cucharadita de jengibre en polvo</li>
+<li>1/2 cucharadita de miel de abejas</li>
+<li>5-6 gotas de aceite esencial de naranja dulce o jengibre</li>
+<li>Pizca de mica dorada (opcional, para brillo)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li>⚠️ Protege tu superficie: la cúrcuma MANCHA. Trabaja sobre papel periódico o una bolsa plástica.</li>
+<li>Corta y derrite la base blanca.</li>
+<li>Agrega la cúrcuma y el jengibre en polvo. Mezcla vigorosamente para evitar grumos. El color se vuelve un dorado PRECIOSO.</li>
+<li>Agrega la miel. Mezcla.</li>
+<li>Agrega la mica dorada y el aceite esencial. Mezcla.</li>
+<li>Vierte en molde, rocía con alcohol.</li>
+<li>Deja enfriar 3-4 horas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Golden Milk Soap":</strong> Agrega 1 cdta de leche en polvo. Inspirado en el "golden latte" de cúrcuma.</li>
+<li><strong>"Cúrcuma Anti-Manchas":</strong> Agrega 3 gotas de aceite de limón. Potencia el efecto aclarante.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Demasiada cúrcuma:</strong> Mancha la piel temporalmente (se va con agua). 1/2 cdta es suficiente.</li>
+<li><strong>Manchas en superficies:</strong> Trabaja con protección. Las manchas de cúrcuma salen con limón + sol.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> La cúrcuma está de MODA en cosmética. Busca "turmeric soap" en Instagram y verás millones de posts. Véndelo como "Jabón Iluminador de Cúrcuma — piel radiante y sin manchas". Suena a producto de $20.
+</div>
+</div>
+
+<!-- RECETA 19 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">19. 🍃🍫 Jabón de Menta y Chocolate Blanco</div>
+<div class="recipe-badges">
+<span class="badge badge-medium">🟡 Medio</span>
+<span class="badge badge-time">⏱ 25 min + 3h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.35</span>
+<span class="badge badge-price">💵 Venta: $6.00</span>
+</div>
+</div>
+<p>¡Like a mint chocolate! Este jabón bicolor combina la frescura de la menta con la cremosidad del chocolate blanco (manteca de cacao). Se ve hermoso en verde y blanco y huele absolutamente delicioso. Perfecto para regalo.</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>60g de base de glicerina blanca (capa blanca — "chocolate blanco")</li>
+<li>40g de base de glicerina transparente (capa verde — "menta")</li>
+<li>1/2 cucharadita de manteca de cacao</li>
+<li>6-8 gotas de aceite esencial de menta piperita</li>
+<li>Colorante verde para la capa de menta</li>
+<li>Fragancia de vainilla (3-4 gotas, para la capa blanca)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso — Técnica de 2 Capas:</h4>
+<ol>
+<li><strong>Capa 1 (blanca):</strong> Derrite los 60g de base blanca. Agrega la manteca de cacao derretida + fragancia de vainilla. Vierte en molde. Rocía con alcohol. Deja reposar 25-30 minutos hasta que esté semifirme pero NO sólida.</li>
+<li><strong>Preparar la superficie:</strong> Con un tenedor, raspa suavemente la superficie de la primera capa. Esto crea "agarre" para la segunda capa. Rocía con alcohol.</li>
+<li><strong>Capa 2 (verde):</strong> Derrite los 40g de base transparente. Agrega colorante verde + aceite esencial de menta. Mezcla.</li>
+<li>Vierte la capa verde SUAVEMENTE sobre la capa blanca. Hazlo desde poca altura y lentamente.</li>
+<li>Rocía con alcohol. Deja enfriar 3-4 horas completas. Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"After Eight":</strong> Haz la capa de chocolate con cacao (marrón oscuro) en vez de blanca. Parece un after eight gigante.</li>
+<li><strong>"Remolino Mint Choc":</strong> En vez de capas, vierte ambas mezclas al mismo tiempo y pasa un palillo para crear remolinos.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Las capas se separan:</strong> No raspaste la superficie o no rociaste alcohol entre capas. El alcohol es crucial para la adhesión.</li>
+<li><strong>La segunda capa derritió la primera:</strong> La base estaba demasiado caliente. Deja enfriar más antes de verter.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip:</strong> Este jabón bicolor verde/blanco es visualmente IMPACTANTE. Fotografía cortándolo por la mitad para mostrar las capas — ese tipo de foto genera muchos likes y comentarios en redes.
+</div>
+</div>
+
+<!-- RECETA 20 -->
+<div class="recipe-card creativo">
+<div class="recipe-header">
+<div class="recipe-title">20. 🍷 Jabón de Vino Tinto Antioxidante</div>
+<div class="recipe-badges">
+<span class="badge badge-medium">🟡 Medio</span>
+<span class="badge badge-time">⏱ 25 min + 4h secado</span>
+<span class="badge badge-cost">💰 Costo: $1.40</span>
+<span class="badge badge-price">💵 Venta: $7.00</span>
+</div>
+</div>
+<p>¡El jabón más original y lujoso de tu colección! El vino tinto es rico en resveratrol (antioxidante potentísimo), polifenoles y ácidos que combaten el envejecimiento. El color burdeos/vino es ELEGANTÍSIMO. Este jabón GRITA "premium".</p>
+<div class="ingredients">
+<h4>📋 Ingredientes (1 jabón de 100g):</h4>
+<ul>
+<li>100g de base de glicerina transparente</li>
+<li>1 cucharada de vino tinto (cualquier marca — preferiblemente Malbec o Cabernet)</li>
+<li>1/2 cucharadita de aceite de semilla de uva (grapeseed oil) — antioxidante</li>
+<li>5-6 gotas de aceite esencial de geranio o lavanda</li>
+<li>1-2 gotas de colorante rojo/burdeos (el vino solo da color tenue)</li>
+<li>Pizca de mica dorada (para elegancia)</li>
+</ul>
+</div>
+<div class="steps">
+<h4>👣 Paso a paso:</h4>
+<ol>
+<li><strong>Reducir el vino:</strong> En una ollita pequeña, calienta la cucharada de vino a fuego bajo por 2-3 minutos. Esto evapora el alcohol pero conserva los antioxidantes y concentra el color. Deja enfriar.</li>
+<li>Corta y derrite la base transparente.</li>
+<li>Deja enfriar 45 segundos. Agrega el vino reducido y mezcla bien.</li>
+<li>Agrega el aceite de semilla de uva. Mezcla.</li>
+<li>Agrega el colorante burdeos — busca un color "vino tinto elegante", no rojo Santa Claus.</li>
+<li>Agrega la mica dorada — da un brillo sutil que grita lujo.</li>
+<li>Agrega el aceite esencial. Mezcla.</li>
+<li>Vierte en molde. Rocía con alcohol. Deja enfriar 4 horas (este tarda un poco más). Desmolda.</li>
+</ol>
+</div>
+<div class="variation-box">
+🔄 <strong>Variaciones:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>"Vino y Rosas":</strong> Agrega pétalos de rosa secos dentro. Burdeos + pétalos = visual de ensueño.</li>
+<li><strong>"Spa Vinoterapia":</strong> Agrega 1/4 cdta de sal del Himalaya triturada. Exfoliante + antioxidante.</li>
+</ul>
+</div>
+<div class="error-box">
+❌ <strong>Errores comunes:</strong>
+<ul style="margin: 8px 0 0 15px; font-size: 14px;">
+<li><strong>Vino sin reducir:</strong> El alcohol crudo puede irritar pieles sensibles. Reduce siempre.</li>
+<li><strong>El color quedó muy tenue:</strong> El vino solo no da suficiente color — necesitas colorante adicional para el burdeos intenso.</li>
+<li><strong>Demasiado vino:</strong> 1 cucharada máx. Más debilita la base.</li>
+</ul>
+</div>
+<div class="tip-inline">
+💡 <strong>Tip de venta:</strong> Este jabón se vende SOLO con el nombre: "Jabón Anti-Edad de Vino Tinto — Vinoterapia para tu Piel". Empácalo en papel negro o burdeos con etiqueta dorada. Se ve de $15+. Es perfecto como regalo para mujeres sofisticadas, Navidad, aniversarios.
+</div>
+</div>
+
+<!-- ==================== COMBINACIONES CREATIVAS ==================== -->
+
+<h2>🎨 Combinaciones Creativas — Mezcla Técnicas</h2>
+
+<p>Ahora que dominas las 20 recetas base, aquí tienes ideas para combinar técnicas y crear jabones ÚNICOS:</p>
+
+<div class="highlight-box">
+<h4>🌈 Técnica "Arcoíris" (3-4 capas de colores)</h4>
+<p>Usa la técnica de capas del jabón de menta-chocolate pero con 3-4 colores diferentes. Cada capa de 25g, deja reposar 20 min entre capas, raspa + alcohol entre cada una. El resultado: un jabón multicolor que parece una obra de arte.</p>
+<p><strong>Ejemplo:</strong> Morado (lavanda) + blanco (leche) + verde (menta) + naranja (naranja dulce).</p>
+</div>
+
+<div class="highlight-box">
+<h4>🌀 Técnica "Remolino" (Swirl)</h4>
+<p>Prepara 2 bases de colores diferentes. Viértelas JUNTAS en el molde (alternando) y pasa un palillo en zigzag o espiral. Cada jabón queda con un patrón único e irrepetible. Perfecto para jabones "artísticos" de precio alto.</p>
+<p><strong>Ejemplo:</strong> Negro (carbón) + blanco = efecto mármol. Rosa (rosa mosqueta) + blanco = efecto romántico.</p>
+</div>
+
+<div class="highlight-box">
+<h4>🧊 Técnica "Gemas / Cristales"</h4>
+<p>Haz jabones de colores sólidos, deja enfriar, córtalos en pedazos irregulares. Colócalos dentro de un molde más grande y vierte base transparente encima. Resultado: jabón transparente con "gemas" de colores dentro. Viral en redes.</p>
+</div>
+
+<div class="highlight-box">
+<h4>🏔️ Técnica "Paisaje"</h4>
+<p>Capas de diferentes tonos de azul/verde para simular mar/montañas + blanco encima como "nieve" o "espuma". Los jabones paisaje son MUY populares en Etsy y se venden como jabones decorativos a $10-15.</p>
+</div>
+
+<!-- RESUMEN -->
+<h2>📊 Resumen de las 20 Recetas</h2>
+
+<table>
+<tr><th>#</th><th>Jabón</th><th>Categoría</th><th>Costo</th><th>Venta</th><th>Ganancia</th></tr>
+<tr><td>1</td><td>💜 Glicerina con Lavanda</td><td>Básico</td><td>$0.80</td><td>$3.50</td><td>$2.70</td></tr>
+<tr><td>2</td><td>🌾 Avena y Miel</td><td>Básico</td><td>$0.90</td><td>$4.00</td><td>$3.10</td></tr>
+<tr><td>3</td><td>🥛 Miel y Leche</td><td>Básico</td><td>$1.10</td><td>$4.50</td><td>$3.40</td></tr>
+<tr><td>4</td><td>⚫ Carbón Activado</td><td>Básico</td><td>$0.95</td><td>$4.50</td><td>$3.55</td></tr>
+<tr><td>5</td><td>🍊 Naranja Cítrico</td><td>Básico</td><td>$0.85</td><td>$3.50</td><td>$2.65</td></tr>
+<tr><td>6</td><td>🌳 Tea Tree</td><td>Terapéutico</td><td>$1.10</td><td>$5.00</td><td>$3.90</td></tr>
+<tr><td>7</td><td>🌼 Caléndula</td><td>Terapéutico</td><td>$1.30</td><td>$5.50</td><td>$4.20</td></tr>
+<tr><td>8</td><td>🌱 Aloe Vera</td><td>Terapéutico</td><td>$1.00</td><td>$4.50</td><td>$3.50</td></tr>
+<tr><td>9</td><td>🌿 Romero</td><td>Terapéutico</td><td>$1.00</td><td>$4.50</td><td>$3.50</td></tr>
+<tr><td>10</td><td>🟢 Arcilla Verde</td><td>Terapéutico</td><td>$1.10</td><td>$5.00</td><td>$3.90</td></tr>
+<tr><td>11</td><td>🌹 Rosa Mosqueta</td><td>Premium</td><td>$1.80</td><td>$7.00</td><td>$5.20</td></tr>
+<tr><td>12</td><td>☕ Café Exfoliante</td><td>Premium</td><td>$0.90</td><td>$5.00</td><td>$4.10</td></tr>
+<tr><td>13</td><td>🥥 Coco-Vainilla</td><td>Premium</td><td>$1.20</td><td>$5.50</td><td>$4.30</td></tr>
+<tr><td>14</td><td>🍫 Chocolate</td><td>Premium</td><td>$1.40</td><td>$6.00</td><td>$4.60</td></tr>
+<tr><td>15</td><td>🌿❄️ Eucalipto-Menta</td><td>Premium</td><td>$1.10</td><td>$5.50</td><td>$4.40</td></tr>
+<tr><td>16</td><td>🍺 Cerveza Artesanal</td><td>Creativo</td><td>$1.30</td><td>$6.00</td><td>$4.70</td></tr>
+<tr><td>17</td><td>🥥 Leche de Coco</td><td>Creativo</td><td>$1.15</td><td>$5.50</td><td>$4.35</td></tr>
+<tr><td>18</td><td>🌾 Cúrcuma y Jengibre</td><td>Creativo</td><td>$1.00</td><td>$5.00</td><td>$4.00</td></tr>
+<tr><td>19</td><td>🍃🍫 Menta-Chocolate Blanco</td><td>Creativo</td><td>$1.35</td><td>$6.00</td><td>$4.65</td></tr>
+<tr><td>20</td><td>🍷 Vino Tinto</td><td>Creativo</td><td>$1.40</td><td>$7.00</td><td>$5.60</td></tr>
+<tr style="background: #FFF3E0; font-weight: bold;"><td></td><td colspan="2">PROMEDIO</td><td>$1.13</td><td>$5.15</td><td>$4.02</td></tr>
+</table>
+
+<div class="process-box">
+<h3 style="margin-top: 0;">🎯 ¿Cuáles hacer primero?</h3>
+<p>Si estás empezando, te recomiendo este orden:</p>
+<ol>
+<li><strong>Jabón de Lavanda (#1)</strong> — el más fácil, para ganar confianza y aprender la técnica base</li>
+<li><strong>Jabón de Avena y Miel (#2)</strong> — el más popular y fácil de vender a cualquier persona</li>
+<li><strong>Jabón de Café (#12)</strong> — el que mejor margen tiene y más llama la atención</li>
+<li><strong>Jabón de Carbón (#4)</strong> — visualmente impactante, perfecto para Instagram</li>
+<li><strong>Jabón de Cúrcuma (#18)</strong> — ingrediente de moda, color espectacular</li>
+</ol>
+<p>Con estos 5 ya tienes una línea completa: relajante, suave, energizante, purificante e iluminador. ¡Listo para vender!</p>
+</div>
+
+<div class="highlight-box">
+<h4>🏆 Tu "Colección Estrella" sugerida para empezar a vender:</h4>
+<table style="background: transparent;">
+<tr><th style="background: #D4A24E;">Nombre comercial</th><th style="background: #D4A24E;">Receta base</th><th style="background: #D4A24E;">Público objetivo</th></tr>
+<tr><td>"Dulces Sueños"</td><td>#1 Lavanda</td><td>Mujeres que buscan relajación</td></tr>
+<tr><td>"Suavecito"</td><td>#2 Avena y Miel</td><td>Todo público, pieles sensibles</td></tr>
+<tr><td>"Energía Pura"</td><td>#12 Café</td><td>Quien quiere despertar, anti-celulitis</td></tr>
+<tr><td>"Detox"</td><td>#4 Carbón</td><td>Adolescentes, piel grasa, hombres</td></tr>
+<tr><td>"Golden Glow"</td><td>#18 Cúrcuma</td><td>Anti-manchas, anti-edad, piel radiante</td></tr>
+</table>
+</div>
+
+<p style="text-align: center; font-size: 18px; margin-top: 40px;"><strong>¡Ahora a sacar los números! 💰 → Módulo 4</strong></p>
+
+<div class="footer">
+<p>Jabones Artesanales: Crea y Vende desde Casa © 2026</p>
+<p>Este material es para uso personal del estudiante. Prohibida su distribución.</p>
+</div>
+
+</div>
+</body>
+</html>

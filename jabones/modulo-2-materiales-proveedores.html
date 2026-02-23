@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Módulo 2 — Materiales y Proveedores</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background: #FFF8F0; color: #3D2B1F; line-height: 1.7; }
+.cover { background: linear-gradient(135deg, #5A7247 0%, #8BC34A 100%); color: white; text-align: center; padding: 80px 40px; }
+.cover h1 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 10px; }
+.cover p { font-size: 20px; opacity: 0.9; }
+.container { max-width: 800px; margin: 0 auto; padding: 40px 30px; }
+h2 { font-family: 'Playfair Display', serif; color: #5A7247; font-size: 28px; margin: 40px 0 20px; border-bottom: 3px solid #C8E6C9; padding-bottom: 10px; }
+h3 { color: #E8743F; font-size: 20px; margin: 25px 0 12px; }
+h4 { color: #5A7247; font-size: 17px; margin: 18px 0 10px; }
+p { margin-bottom: 15px; font-size: 16px; }
+.highlight-box { background: linear-gradient(135deg, #FFF3E0, #FFFDE7); border-left: 5px solid #E8743F; padding: 25px 30px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+.green-box { background: linear-gradient(135deg, #E8F5E9, #F1F8E9); border-left: 5px solid #5A7247; padding: 25px 30px; border-radius: 0 12px 12px 0; margin: 25px 0; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; border-radius: 12px; overflow: hidden; }
+th { background: #5A7247; color: white; padding: 14px 18px; text-align: left; font-size: 14px; }
+td { padding: 12px 18px; border-bottom: 1px solid #E0E0E0; font-size: 15px; }
+tr:nth-child(even) { background: #F9FBF7; }
+ul, ol { margin: 10px 0 20px 25px; }
+li { margin-bottom: 8px; }
+.tip { background: #FFF8E1; border: 2px dashed #FFB74D; padding: 20px; border-radius: 12px; margin: 20px 0; }
+.warning { background: #FBE9E7; border: 2px solid #E57373; padding: 20px; border-radius: 12px; margin: 20px 0; }
+.footer { text-align: center; padding: 30px; color: #999; font-size: 13px; border-top: 2px solid #C8E6C9; margin-top: 50px; }
+.category { background: #5A7247; color: white; display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 10px; }
+.kit-card { background: white; border-radius: 16px; padding: 30px; margin: 25px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-top: 5px solid #5A7247; }
+.kit-card.intermedio { border-top-color: #E8743F; }
+.kit-card.avanzado { border-top-color: #D4A24E; }
+.kit-price { font-family: 'Playfair Display', serif; font-size: 36px; color: #5A7247; text-align: center; margin: 10px 0; }
+.kit-card.intermedio .kit-price { color: #E8743F; }
+.kit-card.avanzado .kit-price { color: #D4A24E; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+<p style="font-size: 16px; letter-spacing: 3px; margin-bottom: 15px;">MÓDULO 2</p>
+<h1>🛒 Materiales y Proveedores</h1>
+<p>Todo lo que necesitas, dónde comprarlo y cuánto invertir</p>
+</div>
+
+<div class="container">
+
+<h2>📦 Lista Completa de Materiales</h2>
+
+<p>Antes de hacer tu primer jabón, necesitas conocer cada material, para qué sirve y cuánto cuesta. En esta guía te doy TODO con detalle para que no te quedes con dudas. Vamos material por material.</p>
+
+<h3>1. 🧱 Bases de Jabón de Glicerina (Lo más importante)</h3>
+
+<p>La base de glicerina es el ingrediente principal de todos nuestros jabones. Es una base <strong>pre-saponificada</strong>, lo que significa que ya pasó por el proceso químico de convertir grasas en jabón. Tú solo la derritas, le agregas tus ingredientes creativos y listo. Sin peligro, sin sosa cáustica.</p>
+
+<h4>Tabla Comparativa de Bases de Glicerina</h4>
+
+<table>
+<tr><th>Base</th><th>Color</th><th>Mejor para</th><th>Textura</th><th>Espuma</th><th>Precio/kg</th></tr>
+<tr><td><strong>Transparente</strong></td><td>Cristalina</td><td>Jabones con flores, capas, colores vibrantes</td><td>Lisa, firme</td><td>Media</td><td>$5-8</td></tr>
+<tr><td><strong>Blanca (opaca)</strong></td><td>Blanco cremoso</td><td>Jabones con aditivos (avena, café), colores pastel</td><td>Cremosa</td><td>Abundante</td><td>$5-8</td></tr>
+<tr><td><strong>Leche de cabra</strong></td><td>Blanco marfil</td><td>Pieles secas, sensibles, bebés</td><td>Ultra cremosa</td><td>Suave, rica</td><td>$7-10</td></tr>
+<tr><td><strong>Aloe vera</strong></td><td>Verde traslúcido</td><td>Pieles irritadas, quemaduras solares</td><td>Gel-cremosa</td><td>Media</td><td>$7-10</td></tr>
+<tr><td><strong>Karité (shea butter)</strong></td><td>Crema/marfil</td><td>Pieles maduras, extra hidratación</td><td>Muy cremosa</td><td>Rica, densa</td><td>$8-12</td></tr>
+</table>
+
+<div class="green-box">
+<h4 style="margin-top: 0; color: #5A7247;">¿Cuál comprar primero?</h4>
+<p><strong>Si solo puedes comprar UNA:</strong> Base transparente. Es la más versátil — sirve para jabones coloridos, con flores dentro, capas, y puedes agregar dióxido de titanio para hacerla blanca si necesitas.</p>
+<p><strong>Si puedes comprar DOS:</strong> Transparente + blanca. Con estas dos haces el 90% de las recetas del curso.</p>
+<p><strong>Si quieres línea premium:</strong> Agrega leche de cabra. Justifica un precio más alto y la textura es notablemente superior.</p>
+</div>
+
+<div class="tip">
+<p>💡 <strong>TIP:</strong> Con 1 kg de base haces entre 8-10 jabones de 100g. ¡Tu primer kilo es suficiente para empezar! No compres de más hasta que vendas los primeros.</p>
+</div>
+
+<h4>Marcas recomendadas de base de glicerina:</h4>
+<ul>
+<li><strong>Stephenson</strong> (Reino Unido) — Estándar de la industria. Crystal ST (transparente) y Crystal WST (blanca). Excelente calidad.</li>
+<li><strong>SFIC</strong> (USA) — Muy popular en América. Buena relación calidad-precio.</li>
+<li><strong>Crafter's Choice</strong> (USA) — Favorita de jaboneras en Amazon. Muchas variedades.</li>
+<li><strong>Marcas locales</strong> — En cada país hay fabricantes locales de base melt &amp; pour. Busca en MercadoLibre "base glicerina melt and pour".</li>
+</ul>
+
+<div class="warning">
+<p>⚠️ <strong>CUIDADO:</strong> No confundas "glicerina líquida" (que venden en farmacias como humectante) con "base de glicerina para jabones". Son productos DIFERENTES. Necesitas la BASE SÓLIDA tipo melt &amp; pour.</p>
+</div>
+
+<!-- ACEITES ESENCIALES -->
+<h3>2. 🌿 Guía Completa de Aceites Esenciales</h3>
+
+<p>Los aceites esenciales son el alma de tus jabones — le dan aroma, propiedades terapéuticas y valor. Aquí tienes los <strong>20 aceites esenciales más útiles</strong> para jabonería artesanal, organizados por tipo de piel y uso.</p>
+
+<div class="warning">
+<p>⚠️ <strong>IMPORTANTE:</strong> Los aceites esenciales son CONCENTRADOS de plantas. Son potentes. <strong>Dosificación segura: 1-3% del peso total del jabón</strong> (5-9 gotas por cada 100g de base). NUNCA apliques aceite esencial puro directamente sobre la piel. Y NUNCA uses "esencias aromáticas" sintéticas baratas pensando que son lo mismo.</p>
+</div>
+
+<h4>🌸 Top 20 Aceites Esenciales para Jabonería</h4>
+
+<table>
+<tr><th>#</th><th>Aceite Esencial</th><th>Propiedades</th><th>Tipo de Piel</th><th>Aroma</th><th>Precio ~10ml</th></tr>
+<tr><td>1</td><td><strong>Lavanda</strong></td><td>Relajante, cicatrizante, antibacterial</td><td>Todas, sensible</td><td>Floral herbal</td><td>$3-5</td></tr>
+<tr><td>2</td><td><strong>Tea Tree</strong></td><td>Antibacterial, antifúngico, antiséptico</td><td>Grasa, acné</td><td>Herbal medicinal</td><td>$3-5</td></tr>
+<tr><td>3</td><td><strong>Eucalipto</strong></td><td>Descongestionante, refrescante, antimicrobiano</td><td>Mixta, grasa</td><td>Fresco mentolado</td><td>$2-4</td></tr>
+<tr><td>4</td><td><strong>Menta</strong></td><td>Energizante, refrescante, analgésico suave</td><td>Grasa, normal</td><td>Fresco intenso</td><td>$3-4</td></tr>
+<tr><td>5</td><td><strong>Romero</strong></td><td>Estimulante circulatorio, fortalece cabello</td><td>Mixta, capilar</td><td>Herbal fresco</td><td>$3-5</td></tr>
+<tr><td>6</td><td><strong>Naranja dulce</strong></td><td>Antiestrés, tonificante, antioxidante</td><td>Opaca, normal</td><td>Cítrico dulce</td><td>$2-3</td></tr>
+<tr><td>7</td><td><strong>Limón</strong></td><td>Astringente, aclarante, antibacterial</td><td>Grasa, mixta</td><td>Cítrico fresco</td><td>$2-3</td></tr>
+<tr><td>8</td><td><strong>Geranio</strong></td><td>Equilibrante, regenerador, antiinflamatorio</td><td>Todas, madura</td><td>Floral rosado</td><td>$4-7</td></tr>
+<tr><td>9</td><td><strong>Ylang ylang</strong></td><td>Afrodisíaco, hidratante, regulador sebáceo</td><td>Mixta, seca</td><td>Floral exótico</td><td>$5-8</td></tr>
+<tr><td>10</td><td><strong>Manzanilla</strong></td><td>Calmante, antiinflamatorio, hipoalergénico</td><td>Sensible, bebés</td><td>Herbal dulce</td><td>$6-10</td></tr>
+<tr><td>11</td><td><strong>Canela</strong></td><td>Estimulante circulatorio, antibacterial</td><td>Normal (⚠️ irritante)</td><td>Cálido especiado</td><td>$3-5</td></tr>
+<tr><td>12</td><td><strong>Cedro</strong></td><td>Astringente, antiséptico, anti-caspa</td><td>Grasa, capilar</td><td>Amaderado</td><td>$3-5</td></tr>
+<tr><td>13</td><td><strong>Pachulí</strong></td><td>Regenerador celular, anti-envejecimiento</td><td>Madura, seca</td><td>Terroso cálido</td><td>$4-6</td></tr>
+<tr><td>14</td><td><strong>Rosa</strong></td><td>Anti-aging, tonificante, hidratante</td><td>Madura, seca</td><td>Floral intenso</td><td>$8-15</td></tr>
+<tr><td>15</td><td><strong>Incienso (frankincense)</strong></td><td>Regenerador, antiinflamatorio, meditativo</td><td>Madura, todas</td><td>Resinoso cálido</td><td>$6-10</td></tr>
+<tr><td>16</td><td><strong>Bergamota</strong></td><td>Equilibrante, antidepresivo, antiséptico</td><td>Grasa, mixta</td><td>Cítrico floral</td><td>$4-6</td></tr>
+<tr><td>17</td><td><strong>Jengibre</strong></td><td>Estimulante, antiinflamatorio, cálido</td><td>Normal, circulación</td><td>Especiado cálido</td><td>$4-6</td></tr>
+<tr><td>18</td><td><strong>Palmarosa</strong></td><td>Hidratante, antibacterial, regenerador</td><td>Seca, madura</td><td>Floral rosado</td><td>$3-5</td></tr>
+<tr><td>19</td><td><strong>Ciprés</strong></td><td>Astringente, desodorante, circulatorio</td><td>Grasa, sudoración</td><td>Amaderado fresco</td><td>$3-5</td></tr>
+<tr><td>20</td><td><strong>Vetiver</strong></td><td>Calmante profundo, regenerador, fijador</td><td>Todas</td><td>Terroso profundo</td><td>$5-8</td></tr>
+</table>
+
+<h4>⚠️ Precauciones con Aceites Esenciales</h4>
+<div class="warning">
+<ul>
+<li><strong>Canela y clavo:</strong> Pueden irritar la piel. Usa máximo 0.5% (2-3 gotas por 100g). Nunca en jabones para bebés o piel sensible.</li>
+<li><strong>Cítricos (limón, naranja, bergamota):</strong> Son fotosensibilizantes — pueden causar manchas si te expones al sol después de usarlos. Avisa a tus clientes en la etiqueta.</li>
+<li><strong>Menta/eucalipto:</strong> Evitar en jabones para menores de 3 años. Sensación de frescor puede ser intensa.</li>
+<li><strong>Embarazadas:</strong> Evitar romero, canela, cedro, salvia, jengibre en los primeros meses.</li>
+<li><strong>Mascotas:</strong> Tea tree, eucalipto y menta son TÓXICOS para gatos. Si vendes jabones, ten cuidado con la publicidad "para mascotas".</li>
+</ul>
+</div>
+
+<h4>🧪 Combinaciones de Aromas que Funcionan</h4>
+<table>
+<tr><th>Combinación</th><th>Personalidad</th><th>Ideal para</th></tr>
+<tr><td>Lavanda + Naranja dulce</td><td>Relajante cálido</td><td>Jabón nocturno, anti-estrés</td></tr>
+<tr><td>Menta + Eucalipto</td><td>Spa refrescante</td><td>Ducha matutina, jabón energizante</td></tr>
+<tr><td>Tea tree + Limón</td><td>Limpieza profunda</td><td>Piel grasa, acné</td></tr>
+<tr><td>Geranio + Lavanda</td><td>Floral elegante</td><td>Línea femenina premium</td></tr>
+<tr><td>Cedro + Romero</td><td>Herbal masculino</td><td>Línea para hombres</td></tr>
+<tr><td>Canela + Naranja</td><td>Cálido especiado</td><td>Navidad, edición invernal</td></tr>
+<tr><td>Ylang ylang + Pachulí</td><td>Exótico sensual</td><td>Línea premium, regalo parejas</td></tr>
+<tr><td>Rosa + Incienso</td><td>Lujo meditativo</td><td>Jabón premium, spa</td></tr>
+<tr><td>Bergamota + Cedro + Vetiver</td><td>Sofisticado unisex</td><td>Línea premium unisex</td></tr>
+<tr><td>Jengibre + Limón + Menta</td><td>Energía tropical</td><td>Verano, revitalizante</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>REGLA DE LOS TERCIOS:</strong> Una buena combinación de aromas tiene 3 niveles: nota alta (lo primero que hueles — cítricos, menta), nota media (el corazón — lavanda, geranio) y nota baja (lo que dura — cedro, vetiver, pachulí). Mezcla una de cada nivel para un aroma profesional y duradero.</p>
+</div>
+
+<!-- COLORANTES -->
+<h3>3. 🎨 Colorantes: Naturales vs Sintéticos</h3>
+
+<p>El color es lo que hace que tus jabones sean IRRESISTIBLES visualmente. Tienes dos opciones: colorantes naturales (de plantas y minerales) o cosméticos (fabricados para uso en piel). Aquí te explico ambos para que elijas según tu marca.</p>
+
+<h4>Colorantes Naturales (ingredientes de cocina/herboristería)</h4>
+<table>
+<tr><th>Colorante</th><th>Color que da</th><th>Cantidad por 100g</th><th>Estabilidad</th><th>Notas</th></tr>
+<tr><td><strong>Cúrcuma en polvo</strong></td><td>Amarillo dorado</td><td>1/4 - 1/2 cdta</td><td>⭐⭐⭐</td><td>Puede manchar superficies. Color intenso.</td></tr>
+<tr><td><strong>Carbón activado</strong></td><td>Negro intenso</td><td>1/4 - 1/2 cdta</td><td>⭐⭐⭐⭐⭐</td><td>El más estable. No migra. Perfecto.</td></tr>
+<tr><td><strong>Arcilla verde</strong></td><td>Verde oliva</td><td>1/2 - 1 cdta</td><td>⭐⭐⭐⭐</td><td>Color suave, natural. Aporta propiedades.</td></tr>
+<tr><td><strong>Arcilla roja</strong></td><td>Terracota/rosa</td><td>1/2 - 1 cdta</td><td>⭐⭐⭐⭐</td><td>Color cálido, natural. Para pieles maduras.</td></tr>
+<tr><td><strong>Arcilla blanca (kaolín)</strong></td><td>Blanco cremoso</td><td>1/2 - 1 cdta</td><td>⭐⭐⭐⭐</td><td>Suaviza y aclara sin colorante fuerte.</td></tr>
+<tr><td><strong>Spirulina</strong></td><td>Verde azulado</td><td>1/4 cdta</td><td>⭐⭐⭐</td><td>Color intenso. Puede desvanecerse con el tiempo.</td></tr>
+<tr><td><strong>Cacao en polvo</strong></td><td>Marrón chocolate</td><td>1 cdta</td><td>⭐⭐⭐⭐</td><td>También aporta aroma delicioso.</td></tr>
+<tr><td><strong>Pimentón/paprika</strong></td><td>Naranja-rojo</td><td>1/4 cdta</td><td>⭐⭐⭐</td><td>Color cálido. Puede irritar pieles sensibles.</td></tr>
+<tr><td><strong>Café molido fino</strong></td><td>Marrón moteado</td><td>1/2 - 1 cdta</td><td>⭐⭐⭐⭐</td><td>También es exfoliante. Doble función.</td></tr>
+<tr><td><strong>Remolacha/betabel en polvo</strong></td><td>Rosa/fucsia</td><td>1/4 cdta</td><td>⭐⭐</td><td>Se desvanece con el tiempo. Ideal para jabones de uso rápido.</td></tr>
+</table>
+
+<h4>Colorantes Cosméticos (fabricados para uso en piel)</h4>
+<table>
+<tr><th>Tipo</th><th>Descripción</th><th>Ventajas</th><th>Desventajas</th><th>Precio</th></tr>
+<tr><td><strong>Micas cosméticas</strong></td><td>Polvos minerales con brillo/shimmer</td><td>Colores vibrantes, estables, variedad infinita, brillantes</td><td>Pueden "migrar" en base transparente</td><td>$4-8 set 6-12 colores</td></tr>
+<tr><td><strong>Colorantes líquidos cosméticos</strong></td><td>Líquido concentrado skin-safe</td><td>Fácil de dosificar, se mezcla rápido, colores uniformes</td><td>Menos variedad que micas</td><td>$2-4 por frasco</td></tr>
+<tr><td><strong>Óxidos de hierro</strong></td><td>Pigmentos minerales (rojo, amarillo, negro)</td><td>Ultra estables, no migran, aprobados por FDA</td><td>Colores limitados (tierra)</td><td>$3-5 por frasco</td></tr>
+<tr><td><strong>Dióxido de titanio</strong></td><td>Polvo blanco opacificante</td><td>Convierte base transparente en blanca</td><td>Se necesita dispersar bien para evitar grumos</td><td>$3-5 por frasco</td></tr>
+</table>
+
+<div class="highlight-box">
+<h4 style="margin-top: 0;">🏷️ ¿Natural o cosmético? Depende de tu marca</h4>
+<p><strong>Si vendes como "100% natural":</strong> Usa solo colorantes naturales (cúrcuma, carbón, arcillas, cacao, spirulina). Puedes cobrar más y tu diferenciador es claro.</p>
+<p><strong>Si quieres colores vibrantes y variados:</strong> Usa micas cosméticas. Son seguras para la piel (cosmetic-grade) y ofrecen colores que los naturales no pueden lograr (morado, rosa chicle, azul eléctrico).</p>
+<p><strong>Lo que NUNCA debes usar:</strong> Colorantes alimentarios (se desvanecen y migran), pinturas, tintes textiles, o cualquier cosa no aprobada para uso cosmético.</p>
+</div>
+
+<!-- ADITIVOS -->
+<h3>4. 🌾 Guía Completa de Aditivos</h3>
+
+<p>Los aditivos son los ingredientes "estrella" que hacen cada jabón único. Se dividen en categorías:</p>
+
+<h4>🧹 Exfoliantes</h4>
+<table>
+<tr><th>Exfoliante</th><th>Intensidad</th><th>Beneficio extra</th><th>Cantidad por 100g</th><th>Dónde conseguir</th></tr>
+<tr><td><strong>Avena molida fina</strong></td><td>Suave ⭐</td><td>Calmante, antiinflamatoria</td><td>1/2 - 1 cdta</td><td>Supermercado (licúa avena normal)</td></tr>
+<tr><td><strong>Café molido fino</strong></td><td>Media ⭐⭐</td><td>Anticelulítico, estimulante</td><td>1/2 - 1 cda</td><td>Supermercado o borra gratis de cafetería</td></tr>
+<tr><td><strong>Azúcar morena</strong></td><td>Media ⭐⭐</td><td>Humectante natural (ácido glicólico)</td><td>1/2 cdta</td><td>Supermercado</td></tr>
+<tr><td><strong>Sal de mar fina</strong></td><td>Media-fuerte ⭐⭐⭐</td><td>Mineralizante, desintoxicante</td><td>1/2 cdta</td><td>Supermercado</td></tr>
+<tr><td><strong>Coco rallado fino</strong></td><td>Suave ⭐</td><td>Aroma tropical, decorativo</td><td>1/2 - 1 cdta</td><td>Supermercado</td></tr>
+<tr><td><strong>Semillas de amapola</strong></td><td>Media ⭐⭐</td><td>Decorativas, exfolian suavemente</td><td>1/4 cdta</td><td>Tienda naturista/Amazon</td></tr>
+<tr><td><strong>Cáscara de nuez molida</strong></td><td>Fuerte ⭐⭐⭐</td><td>Exfoliación profunda</td><td>1/4 cdta</td><td>Tienda naturista</td></tr>
+<tr><td><strong>Piedra pómez en polvo</strong></td><td>Fuerte ⭐⭐⭐</td><td>Para pies y manos ásperas</td><td>1/2 cdta</td><td>Farmacia</td></tr>
+</table>
+
+<h4>🌿 Hierbas y Flores</h4>
+<table>
+<tr><th>Hierba/Flor</th><th>Propiedades</th><th>Uso en jabón</th><th>Cantidad por 100g</th></tr>
+<tr><td><strong>Lavanda seca</strong></td><td>Relajante, aromática</td><td>Decorar, infusión en base</td><td>1/4 cdta en la mezcla + pétalos encima</td></tr>
+<tr><td><strong>Pétalos de rosa</strong></td><td>Antioxidante, hidratante</td><td>Decorar (se ven hermosas dentro)</td><td>5-8 pétalos por jabón</td></tr>
+<tr><td><strong>Caléndula seca</strong></td><td>Antiinflamatoria, cicatrizante</td><td>Decorar + propiedades</td><td>1 cda de pétalos</td></tr>
+<tr><td><strong>Manzanilla seca</strong></td><td>Calmante, antiinflamatoria</td><td>Infusión + decorar</td><td>1/2 cda</td></tr>
+<tr><td><strong>Romero seco</strong></td><td>Estimulante, antioxidante</td><td>Textura + decorar</td><td>1/2 cdta triturado</td></tr>
+<tr><td><strong>Menta seca</strong></td><td>Refrescante, antibacterial</td><td>Textura + aroma</td><td>1/2 cdta</td></tr>
+<tr><td><strong>Hibiscus (jamaica)</strong></td><td>Astringente, colorante natural rosa</td><td>Color + propiedades</td><td>1/2 cdta en polvo</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>OJO con las flores frescas:</strong> NUNCA metas flores frescas en el jabón. Se pudren. Solo usa flores y hierbas SECAS. Las puedes secar tú misma colgándolas boca abajo 1-2 semanas, o comprarlas ya secas en herboristerías.</p>
+</div>
+
+<h4>🥛 Leches y Líquidos</h4>
+<table>
+<tr><th>Aditivo</th><th>Beneficio</th><th>Cantidad por 100g</th><th>Notas</th></tr>
+<tr><td><strong>Miel de abejas</strong></td><td>Humectante, antibacterial, suavizante</td><td>1/2 - 1 cdta</td><td>No exceder — puede hacer que el jabón sude</td></tr>
+<tr><td><strong>Leche de coco</strong></td><td>Hidratante, cremosidad, espuma</td><td>1 cda</td><td>Agregar tibia, no caliente</td></tr>
+<tr><td><strong>Leche de avena</strong></td><td>Calmante, suavizante</td><td>1 cda</td><td>Reduce la vida útil — vender rápido</td></tr>
+<tr><td><strong>Gel de aloe vera</strong></td><td>Hidratante, cicatrizante, refrescante</td><td>1 cda</td><td>Máximo 1 cda, si no queda blando</td></tr>
+<tr><td><strong>Yogur natural</strong></td><td>Ácido láctico, suavizante</td><td>1/2 cda</td><td>Reduce vida útil. Solo para uso personal o venta inmediata.</td></tr>
+<tr><td><strong>Cerveza reducida</strong></td><td>Vitaminas B, brillo capilar</td><td>1 cda (hervida y enfriada)</td><td>Hervir primero para eliminar alcohol y gas</td></tr>
+<tr><td><strong>Vino tinto reducido</strong></td><td>Antioxidante, resveratrol</td><td>1 cdta (reducido a sirope)</td><td>Reducir a 1/4 del volumen original</td></tr>
+</table>
+
+<h4>🧴 Aceites y Mantecas Vegetales (aditivos, no la base)</h4>
+<table>
+<tr><th>Aceite/Manteca</th><th>Beneficio</th><th>Cantidad por 100g</th><th>Precio aprox.</th></tr>
+<tr><td><strong>Aceite de coco</strong></td><td>Hidratante, espuma, textura cremosa</td><td>1/2 cdta</td><td>$3-5/250ml</td></tr>
+<tr><td><strong>Aceite de almendras dulces</strong></td><td>Suavizante, pieles sensibles</td><td>1/2 cdta</td><td>$3-5/100ml</td></tr>
+<tr><td><strong>Aceite de rosa mosqueta</strong></td><td>Antiarrugas, regenerador, cicatrices</td><td>1/2 cdta</td><td>$5-8/30ml</td></tr>
+<tr><td><strong>Aceite de jojoba</strong></td><td>Equilibrante, no comedogénico</td><td>1/2 cdta</td><td>$5-8/30ml</td></tr>
+<tr><td><strong>Aceite de argán</strong></td><td>Anti-aging, nutritivo</td><td>1/4 cdta</td><td>$6-10/30ml</td></tr>
+<tr><td><strong>Manteca de cacao</strong></td><td>Ultra hidratante, barrera protectora</td><td>1/2 cdta (derretida)</td><td>$4-6/100g</td></tr>
+<tr><td><strong>Manteca de karité</strong></td><td>Regeneradora, protectora</td><td>1/2 cdta (derretida)</td><td>$4-6/100g</td></tr>
+<tr><td><strong>Vitamina E líquida</strong></td><td>Antioxidante, conservante natural</td><td>3-5 gotas</td><td>$3-5/30ml</td></tr>
+</table>
+
+<div class="warning">
+<p>⚠️ <strong>REGLA IMPORTANTE:</strong> No agregues más de 1 cucharadita TOTAL de aceites/mantecas extra por cada 100g de base. Si excedes, el jabón puede quedar blando, aceitoso o "sudar" gotas de grasa en la superficie. Menos es más con los aceites.</p>
+</div>
+
+<!-- ARCILLAS -->
+<h4>🏺 Arcillas Especiales</h4>
+<table>
+<tr><th>Arcilla</th><th>Color</th><th>Tipo de piel ideal</th><th>Propiedades</th></tr>
+<tr><td><strong>Verde francesa</strong></td><td>Verde oliva</td><td>Grasa, mixta, acné</td><td>Absorbe grasa, desintoxica, limpia poros</td></tr>
+<tr><td><strong>Blanca (kaolín)</strong></td><td>Blanco</td><td>Sensible, seca, bebés</td><td>Suave limpieza, no irrita, calma</td></tr>
+<tr><td><strong>Roja (illita)</strong></td><td>Terracota</td><td>Madura, opaca</td><td>Revitalizante, mejora circulación, aporta color cálido</td></tr>
+<tr><td><strong>Rosa</strong></td><td>Rosa suave</td><td>Normal, mixta</td><td>Mezcla de blanca+roja. Versátil y bonita.</td></tr>
+<tr><td><strong>Bentonita</strong></td><td>Gris verdoso</td><td>Muy grasa</td><td>La más absorbente. Limpieza profunda.</td></tr>
+<tr><td><strong>Ghassoul (Rhassoul)</strong></td><td>Marrón</td><td>Cabello, piel mixta</td><td>Marroquí. Excelente para cabello y piel.</td></tr>
+</table>
+
+<!-- HERRAMIENTAS -->
+<h3>5. 🔧 Herramientas y Utensilios</h3>
+
+<table>
+<tr><th>Utensilio</th><th>Uso</th><th>Precio aprox.</th><th>¿Imprescindible?</th></tr>
+<tr><td><strong>Moldes de silicona</strong> (rectangulares, cuadrados, formas)</td><td>Dar forma al jabón</td><td>$3-8 c/u</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Recipiente de vidrio o plástico apto microondas</strong></td><td>Derretir la base</td><td>$1-3</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Espátula de silicona</strong></td><td>Mezclar sin crear burbujas</td><td>$1-2</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Cuchillo grande</strong></td><td>Cortar la base en cubos</td><td>Ya tienes uno 😉</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Alcohol isopropílico en spray (70-91%)</strong></td><td>Eliminar burbujas de aire</td><td>$2-3</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Balanza de cocina digital</strong> (en gramos)</td><td>Pesar ingredientes exactos</td><td>$5-8</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Gotero/pipeta</strong></td><td>Dosificar aceites esenciales y colorantes</td><td>$1</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Tabla de cortar</strong></td><td>Superficie de trabajo</td><td>Ya tienes una</td><td>✅ SÍ</td></tr>
+<tr><td><strong>Termómetro de cocina</strong></td><td>Controlar temperatura (máx 65°C)</td><td>$3-5</td><td>⭐ Recomendado</td></tr>
+<tr><td><strong>Palillos de madera / mondadientes</strong></td><td>Crear diseños de remolino/mármol</td><td>$1</td><td>⭐ Recomendado</td></tr>
+<tr><td><strong>Cortador de jabón recto</strong></td><td>Cortar barras en piezas uniformes</td><td>$5-10</td><td>⭐ Opcional (para barras grandes)</td></tr>
+<tr><td><strong>Guantes de latex/nitrilo</strong></td><td>Proteger manos de colorantes</td><td>$3/caja</td><td>⭐ Recomendado</td></tr>
+</table>
+
+<!-- KITS -->
+<h2>🛍️ 3 Kits de Inicio — Elige el Tuyo</h2>
+
+<p>Te armé 3 kits según tu presupuesto. Cada uno incluye TODO lo que necesitas para empezar a producir y vender. Elige el que se ajuste a tu bolsillo:</p>
+
+<div class="kit-card">
+<h3 style="color: #5A7247; margin-top: 0; text-align: center;">🌱 KIT BÁSICO — "Emprendedora"</h3>
+<div class="kit-price">~$30 USD</div>
+<p style="text-align: center; color: #666;">Para hacer tus primeros 15-20 jabones y empezar a vender</p>
+
+<table>
+<tr><th>Item</th><th>Cantidad</th><th>Costo</th></tr>
+<tr><td>Base de glicerina transparente</td><td>1 kg</td><td>$6</td></tr>
+<tr><td>Aceite esencial de lavanda</td><td>10 ml</td><td>$4</td></tr>
+<tr><td>Aceite esencial de naranja dulce</td><td>10 ml</td><td>$3</td></tr>
+<tr><td>Micas cosméticas (set 4 colores)</td><td>1 set</td><td>$4</td></tr>
+<tr><td>Avena molida (del supermercado)</td><td>200g</td><td>$1</td></tr>
+<tr><td>Miel de abejas</td><td>250g</td><td>$2</td></tr>
+<tr><td>Molde de silicona rectangular (6 cavidades)</td><td>1</td><td>$4</td></tr>
+<tr><td>Alcohol isopropílico spray</td><td>1 frasco</td><td>$2</td></tr>
+<tr><td>Gotero plástico</td><td>2</td><td>$1</td></tr>
+<tr style="background: #E8F5E9; font-weight: bold;"><td colspan="2">TOTAL</td><td>~$31 USD</td></tr>
+</table>
+<p>📦 <strong>Produces:</strong> ~10 jabones (lavanda, avena-miel, naranja) → Vendes a $4 prom. = <strong>$40 en ventas. ¡Recuperas inversión con la primera tanda!</strong></p>
+</div>
+
+<div class="kit-card intermedio">
+<h3 style="color: #E8743F; margin-top: 0; text-align: center;">🌿 KIT INTERMEDIO — "Jabonera Pro"</h3>
+<div class="kit-price">~$60 USD</div>
+<p style="text-align: center; color: #666;">Para crear 6-8 tipos de jabones y tener variedad de productos</p>
+
+<table>
+<tr><th>Item</th><th>Cantidad</th><th>Costo</th></tr>
+<tr><td>Base de glicerina transparente</td><td>1 kg</td><td>$6</td></tr>
+<tr><td>Base de glicerina blanca</td><td>1 kg</td><td>$6</td></tr>
+<tr><td>Aceite esencial de lavanda</td><td>10 ml</td><td>$4</td></tr>
+<tr><td>Aceite esencial de tea tree</td><td>10 ml</td><td>$4</td></tr>
+<tr><td>Aceite esencial de menta</td><td>10 ml</td><td>$3</td></tr>
+<tr><td>Aceite esencial de naranja dulce</td><td>10 ml</td><td>$3</td></tr>
+<tr><td>Micas cosméticas (set 8 colores)</td><td>1 set</td><td>$6</td></tr>
+<tr><td>Carbón activado</td><td>50g</td><td>$3</td></tr>
+<tr><td>Avena + café + miel + coco rallado</td><td>Variado</td><td>$5</td></tr>
+<tr><td>Aceite de coco virgen</td><td>250ml</td><td>$4</td></tr>
+<tr><td>Moldes de silicona (2 diferentes)</td><td>2</td><td>$8</td></tr>
+<tr><td>Alcohol isopropílico spray</td><td>1 frasco</td><td>$2</td></tr>
+<tr><td>Balanza digital de cocina</td><td>1</td><td>$6</td></tr>
+<tr style="background: #FFF3E0; font-weight: bold;"><td colspan="2">TOTAL</td><td>~$60 USD</td></tr>
+</table>
+<p>📦 <strong>Produces:</strong> ~20 jabones variados → Vendes a $5 prom. = <strong>$100 en ventas. Ganancia neta ~$40.</strong></p>
+</div>
+
+<div class="kit-card avanzado">
+<h3 style="color: #D4A24E; margin-top: 0; text-align: center;">✨ KIT AVANZADO — "Negocio Serio"</h3>
+<div class="kit-price">~$100 USD</div>
+<p style="text-align: center; color: #666;">Para producción seria: 10+ tipos de jabones + kits regalo + línea premium</p>
+
+<table>
+<tr><th>Item</th><th>Cantidad</th><th>Costo</th></tr>
+<tr><td>Base de glicerina transparente</td><td>2 kg</td><td>$11</td></tr>
+<tr><td>Base de glicerina blanca</td><td>2 kg</td><td>$11</td></tr>
+<tr><td>Base de leche de cabra</td><td>500g</td><td>$5</td></tr>
+<tr><td>Aceites esenciales × 6 (lavanda, tea tree, menta, naranja, eucalipto, romero)</td><td>6 × 10ml</td><td>$20</td></tr>
+<tr><td>Micas cosméticas (set 12 colores)</td><td>1 set</td><td>$8</td></tr>
+<tr><td>Carbón activado + arcilla verde + spirulina</td><td>Variado</td><td>$6</td></tr>
+<tr><td>Aditivos (avena, café, miel, coco, cacao)</td><td>Variado</td><td>$6</td></tr>
+<tr><td>Aceites vegetales (coco + almendras + rosa mosqueta)</td><td>Variado</td><td>$10</td></tr>
+<tr><td>Flores secas (lavanda + caléndula + rosa)</td><td>Variado</td><td>$5</td></tr>
+<tr><td>Moldes de silicona (3 diferentes + 1 de formas)</td><td>4</td><td>$12</td></tr>
+<tr><td>Alcohol isopropílico spray</td><td>1 frasco</td><td>$2</td></tr>
+<tr><td>Balanza digital</td><td>1</td><td>$6</td></tr>
+<tr style="background: #FFFDE7; font-weight: bold;"><td colspan="2">TOTAL</td><td>~$102 USD</td></tr>
+</table>
+<p>📦 <strong>Produces:</strong> ~45 jabones variados (incluyendo premium) → Vendes a $5.50 prom. = <strong>$247 en ventas. Ganancia neta ~$145.</strong></p>
+</div>
+
+<!-- PROVEEDORES -->
+<h2>🏪 Dónde Comprar — Proveedores Específicos</h2>
+
+<h3>🛒 Amazon — Productos Específicos Recomendados</h3>
+<div class="green-box">
+<p>Busca estos nombres exactos en Amazon (disponibles con envío a LATAM o en Amazon de tu país):</p>
+<ul>
+<li><strong>Base de glicerina:</strong> "Crafter's Choice Detergent Free Glycerin Melt &amp; Pour Soap Base" (2 lb = ~900g por ~$10)</li>
+<li><strong>Kit completo para principiantes:</strong> "CraftZee Soap Making Kit" (~$25-30, incluye base + colorantes + molde + aceites)</li>
+<li><strong>Aceites esenciales set:</strong> "Lagunamoon Essential Oils Top 6 Set" (lavanda, tea tree, eucalipto, naranja, menta, limón) (~$10-12)</li>
+<li><strong>Aceites esenciales set grande:</strong> "Majestic Pure Essential Oils Set 20" (~$20-25)</li>
+<li><strong>Micas cosméticas:</strong> "Mica Powder 24 Colors by Seisso" (~$8-10)</li>
+<li><strong>Moldes de silicona:</strong> "Rectangle Silicone Soap Mold 6 Cavity" (~$5-7)</li>
+<li><strong>Carbón activado:</strong> "Viva Doria Activated Charcoal Powder" (~$5/100g)</li>
+<li><strong>Film termoencogible:</strong> "Shrink Wrap Bags 6x6" (~$5/100 unidades)</li>
+</ul>
+</div>
+
+<h3>🛒 MercadoLibre — Búsquedas Exactas</h3>
+<div class="green-box">
+<p>Copia y pega estos términos de búsqueda en MercadoLibre de tu país:</p>
+<ul>
+<li><strong>"base de glicerina melt and pour 1 kg"</strong> → Base de jabón</li>
+<li><strong>"kit jabones artesanales"</strong> → Kits completos (algunos incluyen todo por $15-25)</li>
+<li><strong>"aceites esenciales puros set"</strong> → Sets de aceites</li>
+<li><strong>"micas cosméticas jabón"</strong> → Colorantes</li>
+<li><strong>"molde silicona jabón"</strong> → Moldes</li>
+<li><strong>"papel kraft rollo"</strong> → Para empaque</li>
+<li><strong>"bolsas organza por mayor"</strong> → Para empaque premium</li>
+<li><strong>"cajas cartón kraft pequeñas"</strong> → Para kits regalo</li>
+<li><strong>"alcohol isopropílico spray"</strong> → Para burbujas</li>
+<li><strong>"flores secas cosméticas"</strong> → Lavanda, caléndula, rosa</li>
+</ul>
+</div>
+
+<h3>🌎 Proveedores por País</h3>
+
+<h4>🇨🇴 Colombia</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Químicos JM</strong> (quimicosjm.com) — Base de glicerina, aceites, colorantes. Envío nacional.</li>
+<li><strong>Disproalquímicos</strong> — Insumos cosméticos y jabonería, Bogotá. Venta al por mayor.</li>
+<li><strong>Natural Mystic Cosmetics</strong> — Aceites esenciales puros, Medellín.</li>
+<li><strong>MercadoLibre Colombia</strong> — Buscar "base glicerina jabón". Hay vendedores en Bogotá, Medellín, Cali.</li>
+<li><strong>Tiendas naturistas locales</strong> — Aceites esenciales y hierbas. Hay en todo barrio.</li>
+<li><strong>Grupos Facebook:</strong> "Jaboneras Artesanales Colombia" — comparten proveedores y hacen compras grupales.</li>
+</ul>
+</div>
+
+<h4>🇲🇽 México</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Materias Primas San Ángel</strong> (materiasprimassanangel.com) — El más completo de México.</li>
+<li><strong>La Casa del Jabón</strong> — Insumos especializados en jabonería artesanal.</li>
+<li><strong>Prodexa Químicos</strong> — Base de glicerina y materias primas, CDMX.</li>
+<li><strong>Amazon México</strong> — Kits completos disponibles con envío Prime.</li>
+<li><strong>MercadoLibre México</strong> — "base de glicerina melt and pour".</li>
+<li><strong>Grupos Facebook:</strong> "Jaboneras de México", "Insumos Cosméticos México".</li>
+</ul>
+</div>
+
+<h4>🇦🇷 Argentina</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Del Jabón</strong> — Tienda de insumos en CABA y envíos a todo el país.</li>
+<li><strong>Hierbas del Oasis</strong> — Aceites esenciales puros y aditivos.</li>
+<li><strong>Cosmética Natural Argentina</strong> — Insumos para cosmética artesanal.</li>
+<li><strong>MercadoLibre Argentina</strong> — "base de glicerina jabones artesanales".</li>
+<li><strong>Grupos Facebook:</strong> "Jabones Artesanales Argentina", "Cosmética Natural Argentina".</li>
+</ul>
+</div>
+
+<h4>🇵🇪 Perú</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Insumos Naturales Perú</strong> — Aceites esenciales, bases, aditivos. Lima.</li>
+<li><strong>MercadoLibre Perú</strong> — "base glicerina jabón artesanal".</li>
+<li><strong>Boticas y farmacias naturistas</strong> — Aceites esenciales y arcillas.</li>
+<li><strong>Grupos Facebook:</strong> "Jaboneras Artesanales Perú".</li>
+</ul>
+</div>
+
+<h4>🇨🇱 Chile</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>Materias Primas Chile</strong> — Insumos cosméticos, Santiago.</li>
+<li><strong>La Jabonera</strong> — Especializada en insumos para jabonería.</li>
+<li><strong>MercadoLibre Chile</strong> — "base glicerina melt and pour".</li>
+<li><strong>Grupos Facebook:</strong> "Jaboneras Artesanales Chile".</li>
+</ul>
+</div>
+
+<h4>🇪🇨 Ecuador</h4>
+<div class="highlight-box">
+<ul>
+<li><strong>MercadoLibre Ecuador</strong> — "insumos jabonería artesanal".</li>
+<li><strong>Tiendas naturistas en Quito y Guayaquil</strong> — Aceites esenciales.</li>
+<li><strong>Facebook Marketplace</strong> — Hay vendedores locales de bases de glicerina.</li>
+</ul>
+</div>
+
+<div class="tip">
+<p>💡 <strong>TRUCO PRO:</strong> Busca en Facebook grupos como "Jaboneras artesanales [tu país]" — ahí comparten proveedores locales confiables y hasta hacen compras grupales para bajar costos. También revisa Instagram con #insumosjabonesartesanales + tu país.</p>
+</div>
+
+<!-- EQUIVALENCIAS -->
+<h2>📐 Tabla de Equivalencias y Medidas</h2>
+
+<p>En jabonería artesanal la precisión importa. Aquí tienes todas las equivalencias que necesitas:</p>
+
+<h3>Medidas generales</h3>
+<table>
+<tr><th>Medida</th><th>Equivalente</th></tr>
+<tr><td>1 jabón estándar</td><td>80-120 gramos</td></tr>
+<tr><td>1 kg de base de glicerina</td><td>8-12 jabones (según tamaño del molde)</td></tr>
+<tr><td>1 libra (lb) de base</td><td>~454 gramos = ~4-5 jabones</td></tr>
+<tr><td>1 cucharadita (cdta)</td><td>~5 ml / ~5 gramos</td></tr>
+<tr><td>1 cucharada (cda)</td><td>~15 ml / ~15 gramos</td></tr>
+<tr><td>1 onza (oz)</td><td>~28 gramos</td></tr>
+<tr><td>1 onza líquida (fl oz)</td><td>~30 ml</td></tr>
+</table>
+
+<h3>Aceites esenciales</h3>
+<table>
+<tr><th>Medida</th><th>Equivalente</th></tr>
+<tr><td>1 frasco de 10 ml</td><td>~200 gotas (con gotero estándar)</td></tr>
+<tr><td>1 frasco de 15 ml</td><td>~300 gotas</td></tr>
+<tr><td>1 ml de aceite esencial</td><td>~20 gotas</td></tr>
+<tr><td>Dosificación por jabón de 100g</td><td>5-9 gotas (0.25-0.45 ml) = 0.5-1% concentración</td></tr>
+<tr><td>Dosificación máxima segura</td><td>3% = ~60 gotas por 100g (NUNCA tanto — solo para fórmulas especiales)</td></tr>
+<tr><td>1 frasco de 10ml alcanza para</td><td>~25-40 jabones de 100g</td></tr>
+</table>
+
+<h3>Colorantes</h3>
+<table>
+<tr><th>Tipo de colorante</th><th>Cantidad por 100g de base</th><th>Notas</th></tr>
+<tr><td>Colorante líquido cosmético</td><td>2-5 gotas</td><td>Empieza con 2, agrega de a 1</td></tr>
+<tr><td>Mica en polvo</td><td>Punta de cuchillo (~1/8 cdta)</td><td>Un poquito rinde mucho</td></tr>
+<tr><td>Colorantes naturales (cúrcuma, cacao)</td><td>1/4 - 1 cdta según intensidad deseada</td><td>Más cantidad = más color</td></tr>
+<tr><td>Carbón activado</td><td>1/4 - 1/2 cdta</td><td>Muy poquito = gris. 1/2 cdta = negro intenso</td></tr>
+<tr><td>Óxido de hierro</td><td>1/4 cdta</td><td>Dispersar en un poquito de alcohol o aceite primero</td></tr>
+</table>
+
+<h3>Temperatura</h3>
+<table>
+<tr><th>Paso</th><th>Temperatura</th><th>Cómo saber sin termómetro</th></tr>
+<tr><td>Derretir la base</td><td>55-65°C (130-150°F)</td><td>Líquida sin grumos, NO burbujeante</td></tr>
+<tr><td>Agregar ingredientes</td><td>50-55°C (122-130°F)</td><td>Puedes tocarlo 2 seg sin quemarte pero está caliente</td></tr>
+<tr><td>Verter en molde</td><td>45-55°C (113-130°F)</td><td>Tibio-caliente. Si tiene "nata" ya se enfrió demasiado</td></tr>
+<tr><td>NUNCA pasar de</td><td>70°C (158°F)</td><td>Si burbujea o hace espuma, ya te pasaste. Quema aromas.</td></tr>
+</table>
+
+<div class="tip">
+<p>💡 <strong>¿Sin termómetro?</strong> No es el fin del mundo. La regla es: derrite en intervalos de 20 segundos en microondas, revuelve entre cada uno, y cuando esté completamente líquido SIN burbujear, ya está. Espera 30 segundos antes de agregar aceites esenciales para que no se evaporen.</p>
+</div>
+
+<!-- COMPRAS INTELIGENTES -->
+<h2>💰 Compras Inteligentes — Ahorra Comprando por Mayor</h2>
+
+<table>
+<tr><th>Material</th><th>Precio individual</th><th>Precio por mayor</th><th>Ahorro</th><th>Cuándo comprar por mayor</th></tr>
+<tr><td>Base de glicerina</td><td>$7/kg</td><td>$4-5/kg (compra 5-10 kg)</td><td>30-40%</td><td>Cuando vendas 20+ jabones/semana</td></tr>
+<tr><td>Aceites esenciales</td><td>$4/10ml</td><td>$12-15/100ml</td><td>60-70%</td><td>Cuando definas tus 3-4 aromas estrella</td></tr>
+<tr><td>Micas cosméticas</td><td>$6/set 6 colores</td><td>$12/set 24 colores</td><td>50%</td><td>Desde el inicio si puedes</td></tr>
+<tr><td>Moldes de silicona</td><td>$5 c/u</td><td>$15/set de 4 diferentes</td><td>25%</td><td>Cuando necesites más producción</td></tr>
+<tr><td>Film termoencogible</td><td>$5/50 unidades</td><td>$8/200 unidades</td><td>60%</td><td>Desde que empaques regularmente</td></tr>
+<tr><td>Papel kraft en rollo</td><td>$5/rollo pequeño</td><td>$8/rollo grande (100m)</td><td>50%</td><td>Desde el inicio</td></tr>
+</table>
+
+<div class="green-box">
+<h4 style="margin-top: 0; color: #5A7247;">🤝 Tip: Compras grupales</h4>
+<p>Únete a grupos de jaboneras en tu ciudad y hagan compras grupales. Si 5 personas compran 5 kg de base cada una (25 kg total), el proveedor puede dar precio especial de $3.50/kg en vez de $7/kg. ¡Todos ganan!</p>
+</div>
+
+<h2>📋 Checklist Final — ¿Tienes Todo?</h2>
+
+<div class="highlight-box">
+<h4 style="margin-top: 0;">Antes de ir al Módulo 3 (recetas), verifica:</h4>
+<ul>
+<li>☐ Base de glicerina (mínimo 1 kg)</li>
+<li>☐ Al menos 2 aceites esenciales</li>
+<li>☐ Algún colorante (mica, natural o líquido)</li>
+<li>☐ 1-2 aditivos (avena, miel, café — del supermercado)</li>
+<li>☐ Molde de silicona (al menos 1)</li>
+<li>☐ Alcohol isopropílico en spray</li>
+<li>☐ Recipiente apto microondas</li>
+<li>☐ Espátula</li>
+<li>☐ Cuchillo y tabla de cortar</li>
+<li>☐ Balanza (ideal, pero puedes empezar sin ella midiendo con cucharas)</li>
+</ul>
+<p style="margin-bottom: 0;">✅ <strong>¿Tienes al menos los primeros 6?</strong> ¡Estás lista para hacer jabones!</p>
+</div>
+
+<p style="text-align: center; font-size: 18px; margin-top: 40px;"><strong>¡Ya tienes todo! Ahora vamos a hacer jabones 🧼 → Módulo 3</strong></p>
+
+<div class="footer">
+<p>Jabones Artesanales: Crea y Vende desde Casa © 2026</p>
+<p>Este material es para uso personal del estudiante. Prohibida su distribución.</p>
+</div>
+
+</div>
+</body>
+</html>

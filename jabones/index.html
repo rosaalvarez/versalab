@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jabones Artesanales: Crea y Vende desde Casa</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #fdf6f0 0%, #fff5eb 50%, #fef0e7 100%);
+    min-height: 100vh;
+    color: #3d2c2c;
+  }
+  
+  .hero {
+    text-align: center;
+    padding: 60px 20px 40px;
+    background: linear-gradient(180deg, #fff 0%, transparent 100%);
+  }
+  
+  .hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #e8985a, #d4764e);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    color: #2c1810;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  
+  h1 span { color: #d4764e; }
+  
+  .subtitle {
+    font-size: 1.1rem;
+    color: #6b5050;
+    max-width: 550px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+  }
+  
+  .modules {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: #2c1810;
+    margin: 20px 0 8px;
+    padding-left: 4px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px 28px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 2px 12px rgba(180,120,80,0.08);
+    transition: all 0.25s ease;
+    border: 1px solid rgba(212,118,78,0.1);
+  }
+  
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(180,120,80,0.15);
+    border-color: rgba(212,118,78,0.3);
+  }
+  
+  .card-num {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .m1 .card-num { background: linear-gradient(135deg, #e8985a, #d4764e); }
+  .m2 .card-num { background: linear-gradient(135deg, #7cb87a, #5a9e58); }
+  .m3 .card-num { background: linear-gradient(135deg, #e07bac, #c7577d); }
+  .m4 .card-num { background: linear-gradient(135deg, #5b9bd5, #4178b0); }
+  .m5 .card-num { background: linear-gradient(135deg, #9b7ed8, #7c5fbf); }
+  .bonus .card-num { background: linear-gradient(135deg, #f0c040, #e0a020); font-size: 1.3rem; }
+  
+  .card-text h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #2c1810;
+  }
+  
+  .card-text p {
+    font-size: 0.88rem;
+    color: #8a7070;
+    line-height: 1.4;
+  }
+  
+  .card-arrow {
+    margin-left: auto;
+    font-size: 1.2rem;
+    color: #cbb8a8;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover .card-arrow { transform: translateX(4px); color: #d4764e; }
+  
+  .footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #a08080;
+    font-size: 0.85rem;
+  }
+  
+  .footer a {
+    color: #d4764e;
+    text-decoration: none;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .cta-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #e8985a, #d4764e);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(212,118,78,0.35);
+    transition: all 0.3s;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 28px rgba(212,118,78,0.45);
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Curso Completo</div>
+  <h1>Jabones Artesanales:<br><span>Crea y Vende desde Casa</span></h1>
+  <p class="subtitle">Aprende paso a paso a crear jabones artesanales hermosos y monta tu negocio desde casa con una inversión mínima.</p>
+</div>
+
+<div class="modules">
+  <div class="section-title">📚 Módulos del Curso</div>
+  
+  <a href="modulo-1-por-que-jabones.html" class="card m1">
+    <div class="card-num">1</div>
+    <div class="card-text">
+      <h3>¿Por Qué Jabones Artesanales?</h3>
+      <p>El mercado, la oportunidad y por qué este negocio funciona</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <a href="modulo-2-materiales-proveedores.html" class="card m2">
+    <div class="card-num">2</div>
+    <div class="card-text">
+      <h3>Materiales y Proveedores</h3>
+      <p>Todo lo que necesitas, dónde comprarlo y 3 kits según tu presupuesto</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <a href="modulo-3-recetas.html" class="card m3">
+    <div class="card-num">3</div>
+    <div class="card-text">
+      <h3>20 Recetas Paso a Paso</h3>
+      <p>De básico a avanzado — jabones que la gente quiere comprar</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <a href="modulo-4-costos-precios.html" class="card m4">
+    <div class="card-num">4</div>
+    <div class="card-text">
+      <h3>Costos, Precios y Plan de Negocio</h3>
+      <p>Cuánto invertir, cuánto cobrar y tu plan mes a mes</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <a href="modulo-5-como-vender.html" class="card m5">
+    <div class="card-num">5</div>
+    <div class="card-text">
+      <h3>Cómo Vender</h3>
+      <p>WhatsApp, Instagram, ferias y estrategias que funcionan</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <div class="section-title">🎁 Bonos Incluidos</div>
+  
+  <a href="bonos/calculadora-costos.html" class="card bonus">
+    <div class="card-num">🧮</div>
+    <div class="card-text">
+      <h3>Calculadora de Costos</h3>
+      <p>Calcula el costo exacto de cada jabón al instante</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <a href="bonos/guia-empaque-profesional.html" class="card bonus">
+    <div class="card-num">📦</div>
+    <div class="card-text">
+      <h3>Guía de Empaque Profesional</h3>
+      <p>Presenta tus jabones como producto premium</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+  
+  <a href="bonos/plantilla-etiquetas.html" class="card bonus">
+    <div class="card-num">🏷️</div>
+    <div class="card-text">
+      <h3>Plantillas de Etiquetas</h3>
+      <p>Etiquetas listas para imprimir y personalizar</p>
+    </div>
+    <div class="card-arrow">→</div>
+  </a>
+</div>
+
+<div class="footer">
+  <p>© 2026 Jabones Artesanales — Un curso de <a href="https://versalab.pro">VersaLab</a></p>
+</div>
+
+</body>
+</html>
